@@ -1,0 +1,6 @@
+.DS_Store
+/blog.md
+__pycache__/
+*.py[cod]
+*.log
+node_modules/

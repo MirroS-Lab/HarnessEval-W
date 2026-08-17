@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f2f9" />
+    <meta
+      name="description"
+      content="HarnessEval-W is a next-generation Skill-based benchmark for interactive world models."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HarnessEval-W Benchmark" />
+    <meta
+      property="og:description"
+      content="Next-generation, Skill-based evaluation for interactive world models."
+    />
+    <meta property="og:image" content="./assets/figures/arenanext-world-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HarnessEval-W Benchmark" />
+    <meta
+      name="twitter:description"
+      content="Next-generation, Skill-based evaluation for interactive world models."
+    />
+    <meta name="twitter:image" content="./assets/figures/arenanext-world-og.jpg" />
+    <title>HarnessEval-W</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/brand/mirros-mark.svg" />
+    <link rel="preload" as="image" type="image/webp" href="./assets/hero/set-a-1-street-market.webp" />
+    <link rel="preload" as="image" type="image/webp" href="./assets/hero/set-a-2-mountain-trail.webp" />
+    <link rel="preload" as="image" type="image/webp" href="./assets/hero/set-a-3-prism-dispersion.webp" />
+    <link rel="preload" as="image" type="image/webp" href="./assets/hero/set-a-4-museum-revisit.webp" />
+    <link rel="preload" as="image" type="image/webp" href="./assets/hero/set-a-5-river-waterfall.webp" />
+    <link rel="preload" as="image" type="image/webp" href="./assets/hero/set-a-6-orchard-path.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Poppins:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260818-poppins-nav" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <a class="brand" href="#contributions" aria-label="Jump to Why HarnessEval-W">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="./assets/brand/mirros-mark.svg" alt="" width="847" height="847" />
+          </span>
+          <span>HarnessEval-W</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#statistics">Statistics</a>
+          <a href="#contributions">HarnessEval-W</a>
+          <a href="#leaderboard">Leaderboard</a>
+          <a href="#gallery">Gallery</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            class="icon-button menu-button"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="mobile-navigation"
+            data-menu-toggle
+            title="Open navigation"
+          >
+            <i data-lucide="menu" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden>
+        <a href="#statistics">Statistics</a>
+        <a href="#contributions">HarnessEval-W</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-media" data-hero-grid aria-hidden="true">
+          <div class="hero-tile" data-hero-tile data-case-id="sem_0001">
+            <img class="hero-tile-image is-active" src="./assets/hero/set-a-1-street-market.webp" alt="" width="960" height="540" decoding="async" fetchpriority="high" />
+          </div>
+          <div class="hero-tile" data-hero-tile data-case-id="nav_0002">
+            <img class="hero-tile-image is-active" src="./assets/hero/set-a-2-mountain-trail.webp" alt="" width="960" height="540" decoding="async" fetchpriority="high" />
+          </div>
+          <div class="hero-tile" data-hero-tile data-case-id="phy_prism_dispersion_fan_single_disperse_clean">
+            <img class="hero-tile-image is-active" src="./assets/hero/set-a-3-prism-dispersion.webp" alt="" width="960" height="540" decoding="async" />
+          </div>
+          <div class="hero-tile" data-hero-tile data-case-id="per_nav_0007_revisit">
+            <img class="hero-tile-image is-active" src="./assets/hero/set-a-4-museum-revisit.webp" alt="" width="960" height="540" decoding="async" />
+          </div>
+          <div class="hero-tile" data-hero-tile data-case-id="sem_0036">
+            <img class="hero-tile-image is-active" src="./assets/hero/set-a-5-river-waterfall.webp" alt="" width="960" height="540" decoding="async" />
+          </div>
+          <div class="hero-tile" data-hero-tile data-case-id="nav_0017">
+            <img class="hero-tile-image is-active" src="./assets/hero/set-a-6-orchard-path.webp" alt="" width="960" height="540" decoding="async" />
+          </div>
+        </div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <div class="hero-brand-row">
+              <span class="mirros-byline">
+                <small>A benchmark from</small>
+                <img src="./assets/brand/mirros-lockup-white.svg" alt="MirroS" width="2347" height="847" />
+              </span>
+            </div>
+            <h1 id="hero-title">Harness<span class="hero-eval-word">Eval</span>-W</h1>
+            <p class="hero-subtitle">Agentifying the Evaluation of Visual Worlds</p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#leaderboard">
+                View leaderboard results
+                <i data-lucide="bar-chart-3" aria-hidden="true"></i>
+              </a>
+              <span
+                class="button button-ghost button-disabled"
+                role="link"
+                aria-disabled="true"
+                title="Technical report coming soon"
+              >
+                Technical report
+                <i data-lucide="file-text" aria-hidden="true"></i>
+              </span>
+              <span class="button button-ghost button-disabled" role="link" aria-disabled="true" title="Blog link not configured">
+                Blog
+                <i data-lucide="newspaper" aria-hidden="true"></i>
+              </span>
+              <span class="button button-ghost button-disabled" role="link" aria-disabled="true" title="Code link not configured">
+                Code
+                <i data-lucide="github" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <p class="hero-thesis">
+          <span class="hero-thesis-line">Evaluation defines the taste of evolution.</span>
+        </p>
+      </section>
+
+      <section class="snapshot-band" id="statistics" aria-labelledby="statistics-title">
+        <div class="section-shell">
+          <div class="band-heading">
+            <div>
+              <p class="eyebrow">July 2026 dataset snapshot</p>
+              <h2 id="statistics-title">Coverage at a glance</h2>
+            </div>
+          </div>
+          <div class="stat-grid">
+            <article class="stat-item">
+              <strong>330</strong>
+              <span>Evaluation cases</span>
+              <small>108 exploratory, 51 intentional, 66 physical; 34 drift, 34 revisit, 37 offscreen</small>
+            </article>
+            <article class="stat-item">
+              <strong>11</strong>
+              <span>Skill number</span>
+              <small>11 specialized evaluation skills spanning quality, transitions, and persistence</small>
+            </article>
+            <article class="stat-item">
+              <strong>5,940</strong>
+              <span>Scored rollouts</span>
+              <small>Each with a complete reasoning trace from planner routing through validation</small>
+            </article>
+            <article class="stat-item">
+              <strong>18</strong>
+              <span>Models in the leaderboard</span>
+              <small>18 representative world models evaluated across the full 330-case benchmark</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contrib-section" id="contributions" aria-labelledby="contrib-title">
+        <div class="section-shell">
+          <header class="section-heading heading-split" data-navigation-target>
+            <div>
+              <p class="eyebrow">Why HarnessEval-W</p>
+              <h2 id="contrib-title">More than a scalar score</h2>
+            </div>
+            <p>
+              HarnessEval-W brings the harness paradigm from the LLM ecosystem to world-model
+              benchmarking: every verdict is backed by an inspectable reasoning chain.
+            </p>
+          </header>
+
+          <div class="contrib-grid">
+            <article class="contrib-card" tabindex="0" aria-label="Agentified evaluation harness">
+              <div class="contrib-card-inner">
+                <div class="contrib-card-face contrib-card-front">
+                  <div class="contrib-card-head">
+                    <span class="contrib-index">01</span>
+                    <i data-lucide="workflow" aria-hidden="true"></i>
+                  </div>
+                  <h3>Agentified evaluation</h3>
+                  <span class="contrib-flip-hint">
+                    <i data-lucide="rotate-3d" aria-hidden="true"></i>
+                    Flip for details
+                  </span>
+                </div>
+                <div class="contrib-card-face contrib-card-back">
+                  <p>
+                    Rather than applying a fixed rubric, the harness interprets the context of each
+                    case, decomposes the question into measurable subproblems, and spawns specialized
+                    sub-agents with tailored context and diagnostic tools.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="contrib-card" tabindex="0" aria-label="Transparent evidence trees">
+              <div class="contrib-card-inner">
+                <div class="contrib-card-face contrib-card-front">
+                  <div class="contrib-card-head">
+                    <span class="contrib-index">02</span>
+                    <i data-lucide="git-branch" aria-hidden="true"></i>
+                  </div>
+                  <h3>Transparent evidence trees</h3>
+                  <span class="contrib-flip-hint">
+                    <i data-lucide="rotate-3d" aria-hidden="true"></i>
+                    Flip for details
+                  </span>
+                </div>
+                <div class="contrib-card-face contrib-card-back">
+                  <p>
+                    Every evaluation becomes an evidence tree that records exactly what was tested,
+                    which tool supplied the visual grounding, and the complete logical chain that
+                    justifies the final score &mdash; auditable end to end.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="contrib-card" tabindex="0" aria-label="Human-aligned and robust">
+              <div class="contrib-card-inner">
+                <div class="contrib-card-face contrib-card-front">
+                  <div class="contrib-card-head">
+                    <span class="contrib-index">03</span>
+                    <i data-lucide="users" aria-hidden="true"></i>
+                  </div>
+                  <h3>Human-aligned and robust</h3>
+                  <span class="contrib-flip-hint">
+                    <i data-lucide="rotate-3d" aria-hidden="true"></i>
+                    Flip for details
+                  </span>
+                </div>
+                <div class="contrib-card-face contrib-card-back">
+                  <p>
+                    Judgments closely track human A/B preferences on the hardest settings &mdash;
+                    intentional and physical transitions &mdash; and stay consistent under repeated
+                    evaluation runs.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="contrib-card" tabindex="0" aria-label="A living benchmark">
+              <div class="contrib-card-inner">
+                <div class="contrib-card-face contrib-card-front">
+                  <div class="contrib-card-head">
+                    <span class="contrib-index">04</span>
+                    <i data-lucide="sprout" aria-hidden="true"></i>
+                  </div>
+                  <h3>A living benchmark</h3>
+                  <span class="contrib-flip-hint">
+                    <i data-lucide="rotate-3d" aria-hidden="true"></i>
+                    Flip for details
+                  </span>
+                </div>
+                <div class="contrib-card-face contrib-card-back">
+                  <p>
+                    Open-sourced as an executable agentic system: the skill library is extensible, and
+                    new skills and evaluation cases grow as world models evolve.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="contrib-evidence" aria-label="Human alignment evidence">
+            <div class="contrib-evidence-item">
+              <strong>&rho; = 0.93</strong>
+              <span>Spearman correlation with human Bradley&ndash;Terry ranking on Intentional Transition</span>
+            </div>
+            <div class="contrib-evidence-item">
+              <strong>71.7%</strong>
+              <span>Pairwise accuracy vs. human choices on Physical &mdash; up from 31.9% for the closest WBench protocol</span>
+            </div>
+            <div class="contrib-evidence-item">
+              <strong>4.9&times;</strong>
+              <span>Narrower repeat-evaluation envelope than WBench across three independent runs</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hidden for the current release.
+      <section class="section axes-section" id="axes" aria-labelledby="axes-title">
+        <div class="section-shell">
+          <header class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">What we test</p>
+              <h2 id="axes-title">Three axes, eight settings</h2>
+            </div>
+            <p>
+              Derived from the world-model factorization: rendering observations from state,
+              updating state under actions, and maintaining state over time.
+            </p>
+          </header>
+
+          <div class="axes-stack" data-axes-stack>
+            <article class="axes-band axes-band-obs">
+              <header class="axes-band-head">
+                <div class="axes-band-topline">
+                  <div class="axes-band-actions">
+                    <span class="axes-band-symbol" aria-hidden="true">
+                      <img src="assets/icons/axis-observation.png" alt="" width="200" height="200" />
+                    </span>
+                    <button
+                      class="axes-expand-button"
+                      type="button"
+                      data-axes-toggle
+                      aria-expanded="false"
+                      aria-controls="axis-observation-details axis-transition-details axis-persistence-details"
+                      aria-label="Expand all settings"
+                      title="Expand all settings"
+                    >
+                      <i data-lucide="chevron-down" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <h3>Observation Quality</h3>
+                <span class="axes-band-count">2 settings</span>
+              </header>
+              <div class="axes-band-details" id="axis-observation-details">
+                <div class="axes-band-details-inner">
+                  <p class="axes-band-summary">Rendering observations from the current state</p>
+                  <div class="axes-settings">
+                    <div class="axes-setting">
+                      <h4>Render Quality</h4>
+                      <p>Is the rollout coherent, stable, and sufficiently readable to serve as evidence?</p>
+                    </div>
+                    <div class="axes-setting">
+                      <h4>Physical Observation</h4>
+                      <p>Is the rendered state structurally and physically plausible?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="axes-band axes-band-trans">
+              <header class="axes-band-head">
+                <div class="axes-band-topline">
+                  <div class="axes-band-actions">
+                    <span class="axes-band-symbol" aria-hidden="true">
+                      <img src="assets/icons/axis-transition.png" alt="" width="200" height="200" />
+                    </span>
+                    <button
+                      class="axes-expand-button"
+                      type="button"
+                      data-axes-toggle
+                      aria-expanded="false"
+                      aria-controls="axis-observation-details axis-transition-details axis-persistence-details"
+                      aria-label="Expand all settings"
+                      title="Expand all settings"
+                    >
+                      <i data-lucide="chevron-down" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <h3>Transition Correctness</h3>
+                <span class="axes-band-count">3 settings</span>
+              </header>
+              <div class="axes-band-details" id="axis-transition-details">
+                <div class="axes-band-details-inner">
+                  <p class="axes-band-summary">Updating the state under interventions</p>
+                  <div class="axes-settings">
+                    <div class="axes-setting">
+                      <h4>Exploratory Transition</h4>
+                      <p>Does the requested viewpoint change occur while the world remains compatible?</p>
+                    </div>
+                    <div class="axes-setting">
+                      <h4>Intentional Transition</h4>
+                      <p>Does the specified target change while protected state remains stable?</p>
+                    </div>
+                    <div class="axes-setting">
+                      <h4>Physical Transition</h4>
+                      <p>Does a physical intervention produce the corresponding dynamical response?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="axes-band axes-band-persist">
+              <header class="axes-band-head">
+                <div class="axes-band-topline">
+                  <div class="axes-band-actions">
+                    <span class="axes-band-symbol" aria-hidden="true">
+                      <img src="assets/icons/axis-persistence.png" alt="" width="200" height="200" />
+                    </span>
+                    <button
+                      class="axes-expand-button"
+                      type="button"
+                      data-axes-toggle
+                      aria-expanded="false"
+                      aria-controls="axis-observation-details axis-transition-details axis-persistence-details"
+                      aria-label="Expand all settings"
+                      title="Expand all settings"
+                    >
+                      <i data-lucide="chevron-down" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <h3>World Persistence</h3>
+                <span class="axes-band-count">3 settings</span>
+              </header>
+              <div class="axes-band-details" id="axis-persistence-details">
+                <div class="axes-band-details-inner">
+                  <p class="axes-band-summary">Maintaining the state over time</p>
+                  <div class="axes-settings">
+                    <div class="axes-setting">
+                      <h4>Drift Resistance</h4>
+                      <p>Do world invariants survive a long rollout?</p>
+                    </div>
+                    <div class="axes-setting">
+                      <h4>Return / Revisit Consistency</h4>
+                      <p>Does a place or entity remain compatible after leaving and returning?</p>
+                    </div>
+                    <div class="axes-setting">
+                      <h4>Offscreen Evolution</h4>
+                      <p>Does an unobserved endogenous process continue rather than freeze or reset?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- Hidden for the current release.
+      <section class="section worldprobe-section" id="worldprobe" aria-labelledby="worldprobe-title">
+        <div class="section-shell">
+          <header class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">How it works</p>
+              <h2 id="worldprobe-title">HarnessEval-W routes evidence to skills</h2>
+            </div>
+            <p>
+              Cases remain stable while adapters, validators, evidence extractors, and metric
+              skills evolve with model interfaces.
+            </p>
+          </header>
+
+          <ol class="pipeline-steps" aria-label="Evaluation pipeline">
+            <li class="pipeline-step">
+              <span class="pipeline-index">01</span>
+              <div>
+                <h3>Case-specific skill routing</h3>
+                <p>
+                  The planner interprets the case context and routes it to applicable skills,
+                  recording an evidence-grounded reason for every activated and skipped skill.
+                </p>
+              </div>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-index">02</span>
+              <div>
+                <h3>Sub-agent reasoning</h3>
+                <p>
+                  Each skill decomposes its question into measurable sub-questions answered by
+                  specialized sub-agents, each returning a discrete score with diagnostics.
+                </p>
+              </div>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-index">03</span>
+              <div>
+                <h3>Validate &amp; aggregate</h3>
+                <p>
+                  The parent agent validates the collected evidence before merging it into
+                  per-dimension scores and an interpretable final score.
+                </p>
+              </div>
+            </li>
+          </ol>
+
+          <figure class="method-figure">
+            <video
+              id="skill-library-video"
+              poster="./assets/figures/skill-library-poster.png"
+              muted
+              playsinline
+              preload="metadata"
+              aria-label="HarnessEval-W skill library showing evaluation skills and their checks"
+            >
+              <source src="./assets/figures/skill-library.mp4" type="video/mp4" />
+              <img
+                src="./assets/figures/skill-library.png?v=20260816-harnesseval"
+                alt="HarnessEval-W skill library showing evaluation skills and their checks"
+                loading="lazy"
+              />
+            </video>
+            <figcaption>
+              Evaluation skills cover rendering, plausibility, navigation, intentional change,
+              physical response and dynamics, drift, return consistency, and offscreen evolution.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+      -->
+
+      <section class="section leaderboard-section" id="leaderboard" aria-labelledby="leaderboard-title">
+        <div class="section-shell">
+          <header class="section-heading heading-split">
+            <div>
+              <!-- <p class="eyebrow">Official paper results</p> -->
+              <!-- <h2 id="leaderboard-title">Leaderboard</h2> -->
+              <h2 id="leaderboard-title">HarnessEval-W Leaderboard</h2>
+            </div>
+            <div class="release-stamp">
+              <span>Snapshot</span>
+              <strong>2026-08-18 V1</strong>
+            </div>
+          </header>
+
+          <div class="leaderboard-overview" aria-label="Leaderboard release overview">
+            <div class="leaderboard-timeline" aria-label="Release timeline">
+              <div class="leaderboard-timeline-head">
+                <span>Leaderboard release</span>
+                <strong data-timeline-head-date>2026-08-18 V1</strong>
+              </div>
+              <div class="leaderboard-rail" data-timeline-rail>
+                <span class="leaderboard-rail-line"></span>
+                <span class="leaderboard-rail-progress" data-timeline-progress style="width: 0%"></span>
+                <button
+                  class="leaderboard-dot is-active"
+                  type="button"
+                  style="left: 0%"
+                  data-timeline-choice="release"
+                  aria-label="2026-08-18 V1 release"
+                  aria-pressed="true"
+                ></button>
+                <button
+                  class="leaderboard-dot"
+                  type="button"
+                  style="left: 100%"
+                  data-timeline-choice="coming-soon"
+                  aria-label="Coming Soon"
+                  aria-pressed="false"
+                ></button>
+              </div>
+              <div class="leaderboard-timeline-ends">
+                <span>2026-08-18 V1</span>
+                <span>Coming Soon</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="leaderboard-toolbar" aria-label="Leaderboard controls">
+            <div class="leaderboard-filter-row">
+              <label class="leaderboard-search">
+                <i data-lucide="search" aria-hidden="true"></i>
+                <span class="visually-hidden">Search models</span>
+                <input type="search" data-leaderboard-search placeholder="Search model or organization" autocomplete="off" />
+              </label>
+
+              <label class="leaderboard-select">
+                <span class="visually-hidden">Filter by interface</span>
+                <select data-leaderboard-interface>
+                  <option value="all">All interfaces</option>
+                  <option value="Prompt I2V">Prompt I2V</option>
+                  <option value="Camera pose">Camera pose</option>
+                  <option value="Native action">Native action</option>
+                </select>
+                <i data-lucide="chevron-down" aria-hidden="true"></i>
+              </label>
+
+              <span class="leaderboard-summary" data-leaderboard-summary aria-live="polite"></span>
+            </div>
+
+            <div class="leaderboard-action-row" aria-label="Metric display controls">
+              <div class="leaderboard-groups" aria-label="Metric groups">
+                <button class="leaderboard-chip" type="button" aria-pressed="true" data-leaderboard-group="observation">
+                  Observation
+                </button>
+                <button class="leaderboard-chip" type="button" aria-pressed="true" data-leaderboard-group="transition">
+                  Transition
+                </button>
+                <button class="leaderboard-chip" type="button" aria-pressed="true" data-leaderboard-group="persistence">
+                  Persistence
+                </button>
+                <button class="leaderboard-chip" type="button" aria-pressed="true" data-leaderboard-group="summary">
+                  Overall
+                </button>
+              </div>
+
+              <button class="leaderboard-reset" type="button" data-leaderboard-reset>Reset</button>
+            </div>
+          </div>
+
+          <div class="leaderboard-panel">
+            <div class="table-scroll" tabindex="0">
+              <table class="leaderboard-table">
+                <caption>Selected 330-case leaderboard scores from the 2026-08-18 V1 snapshot.</caption>
+                <thead data-leaderboard-head></thead>
+                <tbody data-leaderboard-body></tbody>
+              </table>
+            </div>
+            <div class="leaderboard-empty" data-leaderboard-empty hidden>
+              <strong>No matching rows</strong>
+              <span>Change the search term, interface filter, or metric group filter.</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <div class="section-shell">
+          <header class="section-heading heading-split gallery-heading">
+            <div>
+              <!-- <p class="eyebrow">Evaluation gallery</p> -->
+              <h2 id="gallery-title">Evaluation Gallery</h2>
+            </div>
+            <!--
+            <p>
+              Browse six selected benchmark cases across four HarnessEval-W evaluation families.
+            </p>
+            -->
+          </header>
+
+          <div class="gallery-view gallery-unified">
+            <div class="gallery-toolbar">
+              <!--
+              <label class="search-field">
+                <i data-lucide="search" aria-hidden="true"></i>
+                <span class="visually-hidden">Search evaluation cases</span>
+                <input type="search" placeholder="Search case, family, or scene" data-case-search />
+              </label>
+              -->
+              <!--
+              <div class="filter-buttons" aria-label="Filter evaluation cases" data-case-filter-list>
+                <button type="button" class="is-active" aria-pressed="true" data-case-filter="all">
+                  All <span>6</span>
+                </button>
+              </div>
+              -->
+              <label class="sort-field">
+                <span class="visually-hidden">Sort evaluation cases</span>
+                <select data-case-sort>
+                  <option value="family">Sort: family</option>
+                  <option value="id">Sort: case ID</option>
+                  <option value="scene">Sort: scene</option>
+                  <option value="score">Sort: mean score</option>
+                </select>
+                <i data-lucide="chevron-down" aria-hidden="true"></i>
+              </label>
+            </div>
+
+            <!--
+            <div class="gallery-status" role="status" aria-live="polite">
+              <span data-output-count>Loading evaluation gallery...</span>
+            </div>
+            -->
+            <div class="output-gallery-grid" data-output-grid>
+              <div class="gallery-loading"><span></span><span></span><span></span></div>
+            </div>
+            <button class="button load-more" type="button" data-output-load-more hidden>
+              Load more cases
+              <i data-lucide="plus" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section bibtex-section" id="bibtex" aria-labelledby="bibtex-title">
+        <div class="section-shell bibtex-shell">
+          <div class="bibtex-heading-row">
+            <h2 id="bibtex-title">BibTeX</h2>
+            <button
+              class="bibtex-copy-button"
+              type="button"
+              aria-label="Copy BibTeX citation"
+              title="Copy BibTeX citation"
+              data-bibtex-copy
+            >
+              <i class="bibtex-copy-default" data-lucide="copy" aria-hidden="true"></i>
+              <i class="bibtex-copy-success" data-lucide="check" aria-hidden="true"></i>
+              <span aria-live="polite" data-bibtex-copy-label>Copy</span>
+            </button>
+          </div>
+          <pre class="bibtex-code"><code data-bibtex-code>@misc{mirros2026harnessevalw,
+    title  = {Agentifying the Evaluation of Visual Worlds},
+    author = {{MirroS Team}},
+    year   = {2026},
+    month  = {Aug}
+}</code></pre>
+        </div>
+      </section>
+
+    </main>
+
+    <button class="icon-button back-to-top" type="button" aria-label="Back to top" title="Back to top" data-back-to-top hidden>
+      <i data-lucide="arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <dialog class="detail-dialog output-dialog" data-output-dialog>
+      <div class="dialog-shell">
+        <header class="dialog-header">
+          <div>
+            <span class="dialog-tag" data-output-dialog-family></span>
+            <h2 data-output-dialog-title>Model output</h2>
+            <code class="dialog-case-id" data-output-dialog-case-id></code>
+          </div>
+          <button class="icon-button" type="button" aria-label="Close output details" title="Close" data-close-output>
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </header>
+        <div class="output-case-overview">
+          <figure class="output-initial-observation">
+            <span>Initial observation</span>
+            <img data-output-dialog-input alt="Initial observation for this case" />
+          </figure>
+          <section class="output-action-panel" aria-label="Action">
+            <div class="output-section-kicker">Action</div>
+            <strong data-output-action-type></strong>
+            <p data-output-action-text></p>
+            <div class="output-action-chunks" data-output-action-chunks></div>
+          </section>
+        </div>
+        <section class="output-results-section" aria-label="Model results">
+          <header class="output-section-head">
+            <div>
+              <span>Evaluation</span>
+              <h3 data-output-results-title>Model results</h3>
+            </div>
+            <strong data-output-mean-score></strong>
+          </header>
+          <div class="output-result-layout">
+            <div class="output-result-table-wrap">
+              <table class="output-result-table">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody data-output-result-rows></tbody>
+              </table>
+            </div>
+            <div class="output-video-panel">
+              <div class="output-video-placeholder" data-output-video-placeholder>Select a model result</div>
+              <video data-output-dialog-video controls loop muted playsinline preload="none" hidden></video>
+              <p data-output-video-model></p>
+            </div>
+          </div>
+        </section>
+        <section class="output-reasoning-section" aria-label="Model diagnostics">
+          <header class="output-section-head output-reasoning-head">
+            <div>
+              <span>Decision trace</span>
+              <h3 data-output-reasoning-model>Select a model</h3>
+            </div>
+            <div class="output-reasoning-score">
+              <strong data-output-reasoning-score>-</strong>
+              <span data-output-reasoning-state>Not loaded</span>
+            </div>
+          </header>
+          <div class="output-skill-heading">
+            <div><span>Formal evaluation</span><h3>Selected skill reasoning</h3></div>
+            <strong data-output-skill-count>0 skills</strong>
+          </div>
+          <div class="output-skill-detail-list" data-output-skill-list></div>
+          <div class="output-skill-heading output-rejected-heading">
+            <div><h3>Rejected / skipped skills</h3></div>
+            <strong data-output-rejected-skill-count>0 skills</strong>
+          </div>
+          <div class="output-skill-detail-list" data-output-rejected-skill-list></div>
+        </section>
+      </div>
+    </dialog>
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./script.js?v=20260818-static-gallery"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "harnesseval-skill-library-motion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts SkillLibrary ../assets/figures/skill-library.mp4 --codec h264 --crf 18",
+    "poster": "remotion still src/index.ts SkillLibrary ../assets/figures/skill-library-poster.png --frame 359"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0",
+    "@remotion/cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.5.0"
+  }
+}
