@@ -1,0 +1,64 @@
+{
+  "schema_version": "harnesseval.render_quality.cache",
+  "skill_id": "render_quality_inspector",
+  "definition_version": "harnesseval.render_quality",
+  "metrics": {
+    "aesthetic": 0.5921849956879249,
+    "imaging": 0.5044989283268269,
+    "hpsv3": 0.5890203138068318,
+    "flickering": 0.9247780070585363
+  },
+  "details": {
+    "aesthetic_quality": {
+      "component": "aesthetic",
+      "raw_score": 0.5921849956879249,
+      "score": 0.5921849956879249,
+      "sampling": {
+        "fps": 2.0
+      },
+      "sampled_frames": 65
+    },
+    "imaging_quality": {
+      "component": "imaging",
+      "raw_score": 0.5044989283268269,
+      "score": 0.5044989283268269,
+      "sampling": {
+        "fps": 2.0
+      },
+      "sampled_frames": 65
+    },
+    "hpsv3_quality": {
+      "component": "hpsv3",
+      "raw_score": 3.780406276136637,
+      "score": 0.5890203138068318,
+      "sampling": {
+        "max_frames": 20
+      },
+      "sampled_frames": 20
+    },
+    "temporal_flickering": {
+      "component": "flickering",
+      "raw_score": 0.9247780070585363,
+      "score": 0.9247780070585363,
+      "sampling": {
+        "fps": 10.0
+      },
+      "sampled_frames": 385
+    }
+  },
+  "provenance": {
+    "input_digest": "6d715e97a0f850604c8406ac66a7af8e14f3199e60e3be51c85a0a7f009ef378",
+    "cache_contract_version": "harnesseval.render_quality.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "size_bytes": 4400447,
+      "mtime_ns": 1786886994283493351
+    },
+    "backend": {
+      "backend_id": "harnesseval.render_quality",
+      "backend_version": "harnesseval.render_quality.four_metrics",
+      "config_digest": "defec4b60939d2dab0b70132cf4e650d0ec441890b563456c641dfac3dfa0e06"
+    },
+    "execution_mode": "local"
+  }
+}

@@ -1,0 +1,2 @@
+model,overall,observation_quality,observation_physical_plausibility,transition_exploratory,transition_intentional,transition_physical,persistence_drift,persistence_return,persistence_offscreen
+seedance-2.0-standard,0.787629,0.847664,0.621197,0.866805,0.854834,0.858426,0.804672,0.715636,0.625403

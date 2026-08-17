@@ -1,0 +1,75 @@
+{
+  "schema_version": "harnesseval.drift_stage_audit",
+  "created_at": "2026-08-17T11:07:14.566441+00:00",
+  "runner_id": "harnesseval.runner",
+  "stage": "motion",
+  "run_context": {
+    "shard": {
+      "count": 1,
+      "index": 0,
+      "key": "round_robin(skill_id, probe_family, sorted case_id)"
+    },
+    "filters": {
+      "skills": [
+        "drift_degradation_analyzer"
+      ],
+      "models": [
+        "seedance-2.0-standard"
+      ],
+      "case_ids": [
+        "harnesseval_w_drift_0001_old_town_lane"
+      ],
+      "limit": 0
+    },
+    "backend_config": "runs/example/results_example/run/harnesseval/models/seedance-2.0-standard/backend_config.json",
+    "drift_stage": "motion"
+  },
+  "plan": {
+    "schema_version": "harnesseval.skill_run_plan",
+    "task_count": 1,
+    "rollout_count": 1,
+    "case_count": 1,
+    "skill_counts": {
+      "drift_degradation_analyzer": 1
+    },
+    "family_counts": {
+      "drift_resistance": 1
+    },
+    "shared_stage1_task_count": 0
+  },
+  "status": "passed",
+  "status_counts": {
+    "ok": 1
+  },
+  "cache_hits": 8,
+  "cache_misses": 0,
+  "outcomes": [
+    {
+      "case_id": "harnesseval_w_drift_0001_old_town_lane",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "world_persistence",
+      "probe_family": "drift_resistance",
+      "skill_id": "drift_degradation_analyzer",
+      "plan_role": "core",
+      "video": "runs/example/results_example/generation/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_drift_0001_old_town_lane.png",
+      "plan": "benchmark/plans/drift_resistance/harnesseval_w_drift_0001_old_town_lane.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/drift_resistance/harnesseval_w_drift_0001_old_town_lane.metrics.json",
+      "status": "ok",
+      "cache_hits": 8,
+      "cache_misses": 0,
+      "cache_paths": [
+        "runs/example/results_example/run/harnesseval/metric_cache/artifacts/drift_stages/motion/d5/d52eefd14b45c9179e1c78ef15b3541294f60db71c7a23c219821eb63b297dce.json",
+        "runs/example/results_example/run/harnesseval/metric_cache/artifacts/drift_stages/motion/86/8682760ae81a351ff79ae6771ef899988f237b1eddc3c065f8ac77ad3c6dc1b3.json",
+        "runs/example/results_example/run/harnesseval/metric_cache/artifacts/drift_stages/motion/1c/1c016928b4ca19d953f1829f81d78f98801588c48237bca45bd6650b594eaeef.json",
+        "runs/example/results_example/run/harnesseval/metric_cache/artifacts/drift_stages/motion/b7/b753f59fc3ed86c17501090451fbd19364a56bdc2a71ac108c279edfabf10947.json",
+        "runs/example/results_example/run/harnesseval/metric_cache/artifacts/drift_stages/motion/70/70676091c88efa3389597e7abd5eeb5ba8947f1d20d73f3a2af2b3d56f8fc680.json",
+        "runs/example/results_example/run/harnesseval/metric_cache/artifacts/drift_stages/motion/e0/e02efa227183f475f2c59037ec1f29e9dff1959cce775190e89c5d31cd3c204a.json",
+        "runs/example/results_example/run/harnesseval/metric_cache/artifacts/drift_stages/motion/46/46759c7ef28c9bb2459774121b796b2a0a67aa854a1153587595576526413c41.json",
+        "runs/example/results_example/run/harnesseval/metric_cache/artifacts/drift_stages/motion/fa/facdd22519d902a7af0fb2a426a03b212abbd9129cb82bab8a5756c5edab86cc.json"
+      ]
+    }
+  ],
+  "audit_path": "runs/example/results_example/run/harnesseval/metric_cache/run_audits/drift_degradation_analyzer/shard-000-of-001.9444c8284ef0.json"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "harnesseval.physical_plausibility.cache",
+  "skill_id": "physical_plausibility_inspector",
+  "definition_version": "harnesseval.physical_plausibility.pavrm",
+  "metrics": {
+    "visual_plausibility": 0.50456
+  },
+  "details": {
+    "pavrm": {
+      "raw_score": 2.5228,
+      "score": 0.50456,
+      "sampling": {
+        "fps": 2.0,
+        "max_pixels": 602112
+      }
+    }
+  },
+  "provenance": {
+    "input_digest": "7131baa14b4951fc1cd03bbc134cd48356f7e569def6ec8b2ec01260dbe69b1c",
+    "cache_contract_version": "harnesseval.physical_plausibility.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "size_bytes": 4400447,
+      "mtime_ns": 1786886994283493351
+    },
+    "backend": {
+      "backend_id": "harnesseval.physical_plausibility.pavrm",
+      "backend_version": "harnesseval.pavrm_qwen3vl_a3b",
+      "config_digest": "28fb755b9922a36fabd9b7359618b3f43d7f2d443f370ff7cc8b6d13fe62d6c0"
+    },
+    "execution_mode": "local"
+  }
+}

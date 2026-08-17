@@ -1,0 +1,130 @@
+{
+  "schema_version": "harnesseval.skill_run_audit",
+  "created_at": "2026-08-17T10:56:45.289762+00:00",
+  "runner_id": "harnesseval.runner",
+  "run_context": {
+    "shard": {
+      "count": 1,
+      "index": 0,
+      "key": "round_robin(skill_id, probe_family, sorted case_id)"
+    },
+    "filters": {
+      "skills": [
+        "intentional_change_verifier_vlm",
+        "offscreen_evolution_verifier",
+        "physical_response_verifier_vlm"
+      ],
+      "models": [
+        "seedance-2.0-standard"
+      ],
+      "case_ids": [],
+      "limit": 0
+    },
+    "backend_config": "examples/v2_vlm_backend_config.json",
+    "drift_stage": null
+  },
+  "plan": {
+    "schema_version": "harnesseval.skill_run_plan",
+    "task_count": 3,
+    "rollout_count": 3,
+    "case_count": 3,
+    "skill_counts": {
+      "intentional_change_verifier_vlm": 1,
+      "offscreen_evolution_verifier": 1,
+      "physical_response_verifier_vlm": 1
+    },
+    "family_counts": {
+      "intentional_transition": 1,
+      "offscreen_evolution": 1,
+      "physical_transition": 1
+    },
+    "shared_stage1_task_count": 3
+  },
+  "status": "failed",
+  "status_counts": {
+    "failed": 3
+  },
+  "skill_status_counts": {
+    "intentional_change_verifier_vlm/failed": 1,
+    "offscreen_evolution_verifier/failed": 1,
+    "physical_response_verifier_vlm/failed": 1
+  },
+  "backends": {
+    "intentional_change_verifier_vlm": {
+      "backend_id": "openai_compatible.intentional_change_vlm",
+      "backend_version": "gpt-5.5",
+      "config_digest": "93dc736fe2796334d6e71f9edc8467b92de552fc2e67ed42da7cf85d87d3c624",
+      "execution_mode": "api",
+      "resource_mode": null,
+      "model_load_count": null
+    },
+    "physical_response_verifier_vlm": {
+      "backend_id": "openai_compatible.physical_response_vlm",
+      "backend_version": "gpt-5.5",
+      "config_digest": "afc1884794750a78a33114245800b97706713662d0c3e644f8ce823fe8fd3616",
+      "execution_mode": "api",
+      "resource_mode": null,
+      "model_load_count": null
+    },
+    "offscreen_evolution_verifier": {
+      "backend_id": "openai_compatible.offscreen_evolution_vlm",
+      "backend_version": "gpt-5.5",
+      "config_digest": "dd63db4803747770f685bb1cc322eaa535820d5fdac24fe61d90d958a99505e8",
+      "execution_mode": "api",
+      "resource_mode": null,
+      "model_load_count": null
+    }
+  },
+  "cache_hits": 0,
+  "cache_misses": 0,
+  "score_min": null,
+  "score_max": null,
+  "outcomes": [
+    {
+      "case_id": "harnesseval_w_intentional_0001_living_room_table_ceramic_mug",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "transition_correctness",
+      "probe_family": "intentional_transition",
+      "skill_id": "intentional_change_verifier_vlm",
+      "plan_role": "core",
+      "video": "runs/example/results_example/generation/outputs/transition_correctness/intentional_transition/seedance-2.0-standard/harnesseval_w_intentional_0001_living_room_table_ceramic_mug/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/transition_correctness/intentional_transition/seedance-2.0-standard/harnesseval_w_intentional_0001_living_room_table_ceramic_mug/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.png",
+      "plan": "benchmark/plans/intentional_transition/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/intentional_transition/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.metrics.json",
+      "status": "failed",
+      "error": "RuntimeError('intentional VLM request failed: {\"code\": \"API_KEY_REQUIRED\", \"message\": \"API key is required in Authorization header (Bearer scheme), x-api-key header, or x-goog-api-key header\"}')"
+    },
+    {
+      "case_id": "harnesseval_w_offscreen_0002_torch_gateway",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "world_persistence",
+      "probe_family": "offscreen_evolution",
+      "skill_id": "offscreen_evolution_verifier",
+      "plan_role": "core",
+      "video": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_offscreen_0002_torch_gateway.png",
+      "plan": "benchmark/plans/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.metrics.json",
+      "status": "failed",
+      "error": "RuntimeError('Offscreen VLM request failed: {\"code\": \"API_KEY_REQUIRED\", \"message\": \"API key is required in Authorization header (Bearer scheme), x-api-key header, or x-goog-api-key header\"}')"
+    },
+    {
+      "case_id": "harnesseval_w_physical_0001_wind_flag_deformation_v02",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "transition_correctness",
+      "probe_family": "physical_transition",
+      "skill_id": "physical_response_verifier_vlm",
+      "plan_role": "core",
+      "video": "runs/example/results_example/generation/outputs/transition_correctness/physical_transition/seedance-2.0-standard/harnesseval_w_physical_0001_wind_flag_deformation_v02/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/transition_correctness/physical_transition/seedance-2.0-standard/harnesseval_w_physical_0001_wind_flag_deformation_v02/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_physical_0001_wind_flag_deformation_v02.png",
+      "plan": "benchmark/plans/physical_transition/harnesseval_w_physical_0001_wind_flag_deformation_v02.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/physical_transition/harnesseval_w_physical_0001_wind_flag_deformation_v02.metrics.json",
+      "status": "failed",
+      "error": "RuntimeError('physical response VLM request failed: {\"code\": \"API_KEY_REQUIRED\", \"message\": \"API key is required in Authorization header (Bearer scheme), x-api-key header, or x-goog-api-key header\"}')"
+    }
+  ],
+  "audit_path": "runs/example/results_example/run/harnesseval/metric_cache/run_audits/multi-skill/shard-000-of-001.047d262b1b83.json"
+}

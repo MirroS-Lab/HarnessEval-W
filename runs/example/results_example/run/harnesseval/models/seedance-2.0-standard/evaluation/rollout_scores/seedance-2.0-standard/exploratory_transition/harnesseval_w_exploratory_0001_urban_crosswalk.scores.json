@@ -1,0 +1,346 @@
+{
+  "schema_version": "harnesseval.skill_eval",
+  "scorer_id": "harnesseval.score",
+  "created_at": "2026-08-17T11:08:55.463273+00:00",
+  "case_id": "harnesseval_w_exploratory_0001_urban_crosswalk",
+  "action_id": "explore_0001",
+  "taxonomy": {
+    "primary_axis": "transition_correctness",
+    "probe_family": "exploratory_transition"
+  },
+  "model": "ep-20260816184220-sdqt8",
+  "model_id": "seedance-2.0-standard",
+  "paths": {
+    "metadata": "runs/example/results_example/generation/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/metadata.json",
+    "output_video": "runs/example/results_example/generation/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/output.mp4",
+    "skill_plan": "benchmark/plans/exploratory_transition/harnesseval_w_exploratory_0001_urban_crosswalk.skill_plan.json",
+    "metric_bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/exploratory_transition/harnesseval_w_exploratory_0001_urban_crosswalk.metrics.json"
+  },
+  "video_validity": {
+    "status": "ok",
+    "score": 1.0,
+    "score_type": "cache_fingerprint_verified"
+  },
+  "skill_plan": {
+    "schema_version": "harnesseval.skill_plan",
+    "routing_mode": "shipped_case_plan",
+    "selected_skill_ids": [
+      "render_quality_inspector",
+      "motion_quality_inspector",
+      "appearance_consistency_inspector",
+      "physical_plausibility_inspector",
+      "viewpoint_trajectory_verifier"
+    ],
+    "observation_skill_ids": [
+      "render_quality_inspector",
+      "motion_quality_inspector",
+      "appearance_consistency_inspector",
+      "physical_plausibility_inspector"
+    ],
+    "core_skill_ids": [
+      "viewpoint_trajectory_verifier"
+    ],
+    "diagnostic_skill_ids": [],
+    "selected_skills": [
+      {
+        "skill_id": "render_quality_inspector",
+        "role": "observation",
+        "reason": "Generated urban crosswalk frames must remain technically clean, free of severe artifacts, blur, watermark-like text artifacts, broken geometry, or ambiguous navigation affordances.",
+        "parameters": {
+          "check_for": [
+            "clean first-person urban rendering",
+            "no split-screen or collage artifacts",
+            "no severe blur or watermark",
+            "stable visibility of crosswalk, traffic lights, corner shop, and bus shelter when in view"
+          ]
+        }
+      },
+      {
+        "skill_id": "motion_quality_inspector",
+        "role": "observation",
+        "reason": "The rollout is driven by navigation controls, so motion should be present across chunks and temporally smooth rather than jittery, frozen, or discontinuous.",
+        "parameters": {
+          "expected_motion": [
+            "forward movement during W",
+            "leftward camera turn during left"
+          ],
+          "check_for": [
+            "temporal smoothness",
+            "no frame popping",
+            "no sudden unexplained jumps"
+          ]
+        }
+      },
+      {
+        "skill_id": "appearance_consistency_inspector",
+        "role": "observation",
+        "reason": "The same street corner world should persist through the exploratory movement, with stable anchors retaining coherent appearance and layout as viewpoint changes.",
+        "parameters": {
+          "stable_anchors": [
+            "crosswalk",
+            "traffic lights",
+            "corner shop",
+            "bus shelter"
+          ],
+          "check_for": [
+            "anchor identity consistency",
+            "spatial relationship consistency",
+            "lighting and scene style consistency"
+          ]
+        }
+      },
+      {
+        "skill_id": "physical_plausibility_inspector",
+        "role": "observation",
+        "reason": "Camera translation and rotation through an urban street scene should obey plausible perspective, scale, parallax, and collision constraints.",
+        "parameters": {
+          "check_for": [
+            "plausible ego-motion",
+            "consistent perspective and parallax",
+            "no passing through solid objects",
+            "reasonable street-level camera height"
+          ]
+        }
+      },
+      {
+        "skill_id": "viewpoint_trajectory_verifier",
+        "role": "core",
+        "reason": "The primary case target is an exploratory navigation transition with explicit action sequence W followed by left, requiring verification that the viewpoint moves forward and then turns left along a judgeable path.",
+        "parameters": {
+          "control_scheme": "harnesseval_navigation_v1",
+          "action_sequence": [
+            {
+              "chunk_id": "c01",
+              "action": "W",
+              "expected_viewpoint_change": "forward movement along the visible street or crosswalk approach"
+            },
+            {
+              "chunk_id": "c02",
+              "action": "left",
+              "expected_viewpoint_change": "leftward rotation or turn from the advanced position"
+            }
+          ],
+          "navigation_affordances": [
+            "visible path",
+            "stable near-mid-far anchors",
+            "camera motion judgeable"
+          ],
+          "stable_anchors": [
+            "crosswalk",
+            "traffic lights",
+            "corner shop",
+            "bus shelter"
+          ]
+        }
+      }
+    ]
+  },
+  "skills": [
+    {
+      "skill_id": "render_quality_inspector",
+      "status": "ok",
+      "score": 0.692303,
+      "metrics": {
+        "aesthetic": 0.523299,
+        "imaging": 0.583776,
+        "hpsv3": 0.707899,
+        "flickering": 0.954239
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.render_quality",
+        "cache_contract_version": "harnesseval.render_quality.cache_contract",
+        "aggregation": "equal_mean_required_components",
+        "missing_components": [],
+        "invalid_components": []
+      },
+      "notes": [],
+      "plan_role": "observation",
+      "plan_reason": "Generated urban crosswalk frames must remain technically clean, free of severe artifacts, blur, watermark-like text artifacts, broken geometry, or ambiguous navigation affordances.",
+      "plan_parameters": {
+        "check_for": [
+          "clean first-person urban rendering",
+          "no split-screen or collage artifacts",
+          "no severe blur or watermark",
+          "stable visibility of crosswalk, traffic lights, corner shop, and bus shelter when in view"
+        ]
+      }
+    },
+    {
+      "skill_id": "motion_quality_inspector",
+      "status": "ok",
+      "score": 0.995718,
+      "metrics": {
+        "dynamic": 1.0,
+        "smoothness": 0.991437
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.motion_quality",
+        "cache_contract_version": "harnesseval.motion_quality.cache_contract",
+        "aggregation": "equal_mean_required_components",
+        "missing_components": [],
+        "invalid_components": []
+      },
+      "notes": [],
+      "plan_role": "observation",
+      "plan_reason": "The rollout is driven by navigation controls, so motion should be present across chunks and temporally smooth rather than jittery, frozen, or discontinuous.",
+      "plan_parameters": {
+        "expected_motion": [
+          "forward movement during W",
+          "leftward camera turn during left"
+        ],
+        "check_for": [
+          "temporal smoothness",
+          "no frame popping",
+          "no sudden unexplained jumps"
+        ]
+      }
+    },
+    {
+      "skill_id": "appearance_consistency_inspector",
+      "status": "ok",
+      "score": 0.916847,
+      "metrics": {
+        "background": 0.916847
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.appearance_consistency",
+        "cache_contract_version": "harnesseval.appearance_consistency.cache_contract",
+        "aggregation": "single_required_component",
+        "missing_components": [],
+        "invalid_components": []
+      },
+      "notes": [],
+      "plan_role": "observation",
+      "plan_reason": "The same street corner world should persist through the exploratory movement, with stable anchors retaining coherent appearance and layout as viewpoint changes.",
+      "plan_parameters": {
+        "stable_anchors": [
+          "crosswalk",
+          "traffic lights",
+          "corner shop",
+          "bus shelter"
+        ],
+        "check_for": [
+          "anchor identity consistency",
+          "spatial relationship consistency",
+          "lighting and scene style consistency"
+        ]
+      }
+    },
+    {
+      "skill_id": "physical_plausibility_inspector",
+      "status": "ok",
+      "score": 0.62178,
+      "metrics": {
+        "visual_plausibility": 0.62178
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.physical_plausibility.pavrm",
+        "cache_contract_version": "harnesseval.physical_plausibility.cache_contract",
+        "aggregation": "pavrm_raw_score_divided_by_5",
+        "missing_components": [],
+        "invalid_components": []
+      },
+      "notes": [],
+      "plan_role": "observation",
+      "plan_reason": "Camera translation and rotation through an urban street scene should obey plausible perspective, scale, parallax, and collision constraints.",
+      "plan_parameters": {
+        "check_for": [
+          "plausible ego-motion",
+          "consistent perspective and parallax",
+          "no passing through solid objects",
+          "reasonable street-level camera height"
+        ]
+      }
+    },
+    {
+      "skill_id": "viewpoint_trajectory_verifier",
+      "status": "ok",
+      "score": 0.926948,
+      "metrics": {
+        "NavScore": 0.926948,
+        "Accuracy": 0.853896,
+        "Consistency": 1.0,
+        "nATE_t": 0.1323,
+        "nATE_r": 0.159909,
+        "cnATE_t": 0.0,
+        "cnATE_r": 0.0,
+        "consistency_pairs": 0,
+        "ATE_t": 0.298118,
+        "ATE_r": 7.901918,
+        "total_path_length": 2.253348,
+        "total_rotation_deg": 49.415238
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.viewpoint_trajectory.navscore",
+        "cache_contract_version": "harnesseval.viewpoint_trajectory.cache_contract",
+        "aggregation": "harnesseval_navigation_trajectory_navscore"
+      },
+      "notes": [],
+      "plan_role": "core",
+      "plan_reason": "The primary case target is an exploratory navigation transition with explicit action sequence W followed by left, requiring verification that the viewpoint moves forward and then turns left along a judgeable path.",
+      "plan_parameters": {
+        "control_scheme": "harnesseval_navigation_v1",
+        "action_sequence": [
+          {
+            "chunk_id": "c01",
+            "action": "W",
+            "expected_viewpoint_change": "forward movement along the visible street or crosswalk approach"
+          },
+          {
+            "chunk_id": "c02",
+            "action": "left",
+            "expected_viewpoint_change": "leftward rotation or turn from the advanced position"
+          }
+        ],
+        "navigation_affordances": [
+          "visible path",
+          "stable near-mid-far anchors",
+          "camera motion judgeable"
+        ],
+        "stable_anchors": [
+          "crosswalk",
+          "traffic lights",
+          "corner shop",
+          "bus shelter"
+        ]
+      }
+    }
+  ],
+  "case_score": {
+    "score": 0.926948,
+    "status": "ok",
+    "score_type": "selected_core_mean",
+    "core_skill_ids": [
+      "viewpoint_trajectory_verifier"
+    ],
+    "weights": {
+      "viewpoint_trajectory_verifier": 1.0
+    },
+    "routing_mode": "shipped_case_plan"
+  },
+  "observation_quality": {
+    "status": "ok",
+    "dimensions": {
+      "render_quality_inspector": 0.692303,
+      "motion_quality_inspector": 0.995718,
+      "appearance_consistency_inspector": 0.916847,
+      "physical_plausibility_inspector": 0.62178
+    },
+    "evidence_score": 0.806662,
+    "score_type": "selected_observation_mean"
+  },
+  "final_score": {
+    "score": 0.866805,
+    "status": "ok",
+    "score_type": "core_others_50_50",
+    "core_score": 0.926948,
+    "others_score": 0.806662,
+    "core_weight": 0.5,
+    "others_weight": 0.5
+  },
+  "provenance": {
+    "scorer_id": "harnesseval.score",
+    "input_digest": "99662711f09c9dab2ffa5b088029740fa8f141016b3f0a9e3e2387201858c9e3",
+    "cache_only": true
+  }
+}

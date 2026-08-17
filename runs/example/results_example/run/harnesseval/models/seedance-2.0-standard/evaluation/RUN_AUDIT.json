@@ -1,0 +1,47 @@
+{
+  "schema_version": "harnesseval.score_run_audit",
+  "plan": {
+    "schema_version": "harnesseval.score_plan",
+    "task_count": 6,
+    "status_counts": {
+      "pending": 6
+    },
+    "family_status_counts": {
+      "drift_resistance/pending": 1,
+      "exploratory_transition/pending": 1,
+      "intentional_transition/pending": 1,
+      "offscreen_evolution/pending": 1,
+      "physical_transition/pending": 1,
+      "return_revisit_consistency/pending": 1
+    },
+    "blocked_reasons": {}
+  },
+  "execution": {
+    "schema_version": "harnesseval.score_execution",
+    "requested": 6,
+    "eligible": 6,
+    "written": 6,
+    "blocked": 0,
+    "cached": 0,
+    "stale_not_refreshed": 0
+  },
+  "score_count": 6,
+  "report_score_count": 6,
+  "scoring_policy": {
+    "name": "all_families_core_observation_50_50",
+    "core_weight": 0.5,
+    "observation_weight": 0.5,
+    "observation_skills": [
+      "render_quality_inspector",
+      "motion_quality_inspector",
+      "appearance_consistency_inspector",
+      "physical_plausibility_inspector"
+    ],
+    "observation_denominator": "numeric_available_dimensions"
+  },
+  "runtime_inputs": {
+    "generation_root": "runs/example/results_example/generation",
+    "plan_root": "benchmark/plans",
+    "cache_root": "runs/example/results_example/run/harnesseval/metric_cache"
+  }
+}

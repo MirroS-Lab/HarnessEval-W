@@ -1,0 +1,124 @@
+{
+  "action_id": "explore_0001",
+  "action_segments": [
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_001_W",
+      "text": "The camera pushes forward.",
+      "token": "W"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_002_left",
+      "text": "The camera pans to the left.",
+      "token": "left"
+    }
+  ],
+  "action_tokens": [
+    "W",
+    "left"
+  ],
+  "case_id": "harnesseval_w_exploratory_0001_urban_crosswalk",
+  "combined_video": "vendor/harnesseval/work_dirs/seedance-2.0-standard/videos/case_harnesseval_w_exploratory_0001_urban_crosswalk_combined.mp4",
+  "completed_at_unix": 1786880099.9822893,
+  "concat": {
+    "drop_first_frame_after_first": true,
+    "fps": 24.0,
+    "output_frame_count": 193,
+    "segment_count": 2,
+    "segment_frame_counts": [
+      97,
+      97
+    ]
+  },
+  "hosted_provider": {
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "id": "seedance",
+    "paid_api_confirmed": true,
+    "segment_task_count": 2
+  },
+  "input_image": "benchmark/initial_observations/harnesseval_w_exploratory_0001_urban_crosswalk.png",
+  "interaction_action": {
+    "action_id": "explore_0001",
+    "chunks": [
+      {
+        "actions": [
+          {
+            "action": "W",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c01"
+      },
+      {
+        "actions": [
+          {
+            "action": "left",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c02"
+      }
+    ],
+    "control_scheme": "worlddojo_navigation_v1",
+    "type": "navigation_control"
+  },
+  "model": "ep-20260816184220-sdqt8",
+  "model_slug": "seedance-2.0-standard",
+  "output_dir": "runs/example/results_example/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk",
+  "output_video": "output.mp4",
+  "perspective": "first_person",
+  "prompt": "Navigation video in the same scene. The camera pushes forward. The camera pans to the left. Keep a first-person navigation viewpoint. Make the viewpoint change smooth and continuous. Preserve route landmarks, spatial layout, scene identity, and visual style. Do not teleport, cut to the destination, or introduce unrelated semantic/physical events.",
+  "rollout_mode": "autoregressive_segment_chaining",
+  "schema_version": "worlddojo.hosted_model_output.v2",
+  "segments": [
+    {
+      "action_text": "The camera pushes forward.",
+      "artifact_validation": "runs/example/results_example/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/segments/segment_001/artifact_validation.json",
+      "input_image": "benchmark/initial_observations/harnesseval_w_exploratory_0001_urban_crosswalk.png",
+      "last_frame": "runs/example/results_example/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/segments/segment_001_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/transition_correctness/exploratory_transition/harnesseval_w_exploratory_0001_urban_crosswalk/segment_001.json",
+      "prompt": "Navigation rollout segment 1 of 2 in the same scene. The camera pushes forward. Continue directly from the provided input frame. Execute only this segment's viewpoint change while preserving route landmarks, spatial layout, scene identity, and visual style. Do not reset the scene, teleport, cut to a new place, or introduce unrelated semantic or physical events. Full requested route context: Navigation video in the same scene. The camera pushes forward. The camera pans to the left. Keep a first-person navigation viewpoint. Make the viewpoint change smooth and continuous. Preserve route landmarks, spatial layout, scene identity, and visual style. Do not teleport, cut to the destination, or introduce unrelated semantic/physical events.",
+      "resumed": false,
+      "segment_id": "token_001_W",
+      "segment_index": 0,
+      "segment_kind": "navigation_token",
+      "segment_video": "segments/segment_001/output.mp4",
+      "task_id": "cgt-20260816192730-dm6s9",
+      "token": "W"
+    },
+    {
+      "action_text": "The camera pans to the left.",
+      "artifact_validation": "runs/example/results_example/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/segments/segment_002/artifact_validation.json",
+      "input_image": "runs/example/results_example/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/segments/segment_001_last_frame.png",
+      "last_frame": "runs/example/results_example/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/segments/segment_002_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/transition_correctness/exploratory_transition/harnesseval_w_exploratory_0001_urban_crosswalk/segment_002.json",
+      "prompt": "Navigation rollout segment 2 of 2 in the same scene. The camera pans to the left. Continue directly from the provided input frame. Execute only this segment's viewpoint change while preserving route landmarks, spatial layout, scene identity, and visual style. Do not reset the scene, teleport, cut to a new place, or introduce unrelated semantic or physical events. Full requested route context: Navigation video in the same scene. The camera pushes forward. The camera pans to the left. Keep a first-person navigation viewpoint. Make the viewpoint change smooth and continuous. Preserve route landmarks, spatial layout, scene identity, and visual style. Do not teleport, cut to the destination, or introduce unrelated semantic/physical events.",
+      "resumed": false,
+      "segment_id": "token_002_left",
+      "segment_index": 1,
+      "segment_kind": "navigation_token",
+      "segment_video": "segments/segment_002/output.mp4",
+      "task_id": "cgt-20260816193147-n822x",
+      "token": "left"
+    }
+  ],
+  "source_tags": {
+    "domain": "urban",
+    "generator": "seedream_initial_materializer_v0",
+    "perspective": "first_person",
+    "render_backend": "doubao_seedream_4_0",
+    "scene": "urban_crosswalk",
+    "style": "procedural_prompt_spec"
+  },
+  "status": "done",
+  "taxonomy": {
+    "primary_axis": "transition_correctness",
+    "probe_family": "exploratory_transition"
+  },
+  "video": {
+    "sha256": "3eb3e2b65ee1ea2ca9624f3f08c503d57f28f3d0d22c7226c68531718cc49c8f",
+    "size_bytes": 871937
+  },
+  "video_path": "output.mp4"
+}

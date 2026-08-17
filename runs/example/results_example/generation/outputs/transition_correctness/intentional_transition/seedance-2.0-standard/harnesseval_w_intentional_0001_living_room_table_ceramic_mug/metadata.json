@@ -1,0 +1,74 @@
+{
+  "action_id": "intentional_0001",
+  "action_segments": [
+    {
+      "kind": "text_action",
+      "segment_id": "text_action",
+      "text": "tip the white ceramic mug onto its side and create a small local spill. Keep the camera fixed and keep all unrelated scene anchors unchanged."
+    }
+  ],
+  "action_tokens": [],
+  "case_id": "harnesseval_w_intentional_0001_living_room_table_ceramic_mug",
+  "combined_video": "vendor/harnesseval/work_dirs/seedance-2.0-standard/videos/case_harnesseval_w_intentional_0001_living_room_table_ceramic_mug_combined.mp4",
+  "completed_at_unix": 1786884157.8733459,
+  "hosted_provider": {
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "id": "seedance",
+    "paid_api_confirmed": true,
+    "request": {
+      "content": [
+        {
+          "text": "Locked-off video in the same scene. tip the white ceramic mug onto its side and create a small local spill. Keep the camera fixed and keep all unrelated scene anchors unchanged. Show the requested state change clearly through a short, natural transition. Keep the camera, scene identity, background layout, lighting, and all unrelated objects unchanged. Do not introduce unrelated people, objects, camera cuts, or extra events.",
+          "type": "text"
+        },
+        {
+          "image_url": {
+            "url": "<image-data-url chars=390856 sha256=5596517ad561>"
+          },
+          "role": "first_frame",
+          "type": "image_url"
+        }
+      ],
+      "duration": 4,
+      "generate_audio": false,
+      "model": "ep-20260816184220-sdqt8",
+      "ratio": "adaptive",
+      "resolution": "480p",
+      "watermark": false
+    },
+    "request_digest": "48f20deef65e49f85167eb56fd34973550f43340bee4a3e5b02f072c14ae8966",
+    "result_url_recorded": true,
+    "task_id": "cgt-20260816203735-ts2v4"
+  },
+  "input_image": "benchmark/initial_observations/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.png",
+  "interaction_action": {
+    "action_id": "intentional_0001",
+    "text": "tip the white ceramic mug onto its side and create a small local spill. Keep the camera fixed and keep all unrelated scene anchors unchanged.",
+    "type": "text_based_state_change"
+  },
+  "model": "ep-20260816184220-sdqt8",
+  "model_slug": "seedance-2.0-standard",
+  "output_dir": "runs/example/results_example/outputs/transition_correctness/intentional_transition/seedance-2.0-standard/harnesseval_w_intentional_0001_living_room_table_ceramic_mug",
+  "output_video": "output.mp4",
+  "perspective": "third_person",
+  "prompt": "Locked-off video in the same scene. tip the white ceramic mug onto its side and create a small local spill. Keep the camera fixed and keep all unrelated scene anchors unchanged. Show the requested state change clearly through a short, natural transition. Keep the camera, scene identity, background layout, lighting, and all unrelated objects unchanged. Do not introduce unrelated people, objects, camera cuts, or extra events.",
+  "schema_version": "worlddojo.hosted_model_output.v1",
+  "source_tags": {
+    "domain": "realistic",
+    "generator": "seedream_initial_materializer_v0",
+    "perspective": "third_person",
+    "render_backend": "doubao_seedream_4_0",
+    "scene": "living_room_table",
+    "style": "procedural_prompt_spec"
+  },
+  "status": "done",
+  "taxonomy": {
+    "primary_axis": "transition_correctness",
+    "probe_family": "intentional_transition"
+  },
+  "video": {
+    "sha256": "b9c1b5ae017623d7d6b7b9e314ca3c605c7a9ef5439e8fd764680461e6bb0714",
+    "size_bytes": 439558
+  },
+  "video_path": "output.mp4"
+}

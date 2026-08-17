@@ -1,0 +1,101 @@
+{
+  "schema_version": "harnesseval.skill_run_audit",
+  "created_at": "2026-08-17T11:07:17.017092+00:00",
+  "runner_id": "harnesseval.runner",
+  "run_context": {
+    "shard": {
+      "count": 1,
+      "index": 0,
+      "key": "round_robin(skill_id, probe_family, sorted case_id)"
+    },
+    "filters": {
+      "skills": [
+        "return_consistency_verifier"
+      ],
+      "models": [
+        "seedance-2.0-standard"
+      ],
+      "case_ids": [
+        "harnesseval_w_offscreen_0002_torch_gateway",
+        "harnesseval_w_return_0001_city_intersection"
+      ],
+      "limit": 0
+    },
+    "backend_config": "runs/example/results_example/run/harnesseval/models/seedance-2.0-standard/backend_config.json",
+    "drift_stage": null
+  },
+  "plan": {
+    "schema_version": "harnesseval.skill_run_plan",
+    "task_count": 2,
+    "rollout_count": 2,
+    "case_count": 2,
+    "skill_counts": {
+      "return_consistency_verifier": 2
+    },
+    "family_counts": {
+      "offscreen_evolution": 1,
+      "return_revisit_consistency": 1
+    },
+    "shared_stage1_task_count": 0
+  },
+  "status": "passed",
+  "status_counts": {
+    "ok": 2
+  },
+  "skill_status_counts": {
+    "return_consistency_verifier/ok": 2
+  },
+  "backends": {
+    "return_consistency_verifier": {
+      "backend_id": "harnesseval.return_consistency.clip_b32",
+      "backend_version": "harnesseval.return_consistency",
+      "config_digest": "d82b73c720250bf3db0bdb2b0df7ec012cc495c0a6d8c00542992d0bce0ee613",
+      "execution_mode": "local",
+      "resource_mode": null,
+      "model_load_count": null
+    }
+  },
+  "cache_hits": 2,
+  "cache_misses": 0,
+  "score_min": 0.432318,
+  "score_max": 0.506551,
+  "outcomes": [
+    {
+      "case_id": "harnesseval_w_offscreen_0002_torch_gateway",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "world_persistence",
+      "probe_family": "offscreen_evolution",
+      "skill_id": "return_consistency_verifier",
+      "plan_role": "core",
+      "video": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_offscreen_0002_torch_gateway.png",
+      "plan": "benchmark/plans/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.metrics.json",
+      "status": "ok",
+      "cache_hit": true,
+      "cache_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/return_consistency/seedance-2.0-standard/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.json",
+      "skill_status": "ok",
+      "score": 0.432318
+    },
+    {
+      "case_id": "harnesseval_w_return_0001_city_intersection",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "world_persistence",
+      "probe_family": "return_revisit_consistency",
+      "skill_id": "return_consistency_verifier",
+      "plan_role": "core",
+      "video": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_return_0001_city_intersection.png",
+      "plan": "benchmark/plans/return_revisit_consistency/harnesseval_w_return_0001_city_intersection.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/return_revisit_consistency/harnesseval_w_return_0001_city_intersection.metrics.json",
+      "status": "ok",
+      "cache_hit": true,
+      "cache_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/return_consistency/seedance-2.0-standard/return_revisit_consistency/harnesseval_w_return_0001_city_intersection.json",
+      "skill_status": "ok",
+      "score": 0.506551
+    }
+  ],
+  "audit_path": "runs/example/results_example/run/harnesseval/metric_cache/run_audits/return_consistency_verifier/shard-000-of-001.5bd7b1e48642.json"
+}

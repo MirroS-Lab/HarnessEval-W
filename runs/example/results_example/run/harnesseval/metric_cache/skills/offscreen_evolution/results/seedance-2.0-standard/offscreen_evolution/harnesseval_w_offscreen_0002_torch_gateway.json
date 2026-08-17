@@ -1,0 +1,70 @@
+{
+  "schema_version": "harnesseval.offscreen_evolution.result",
+  "skill_id": "offscreen_evolution_verifier",
+  "definition_version": "harnesseval.offscreen_evolution",
+  "prompt_version": "harnesseval.offscreen_evolution.prompt",
+  "input_digest": "2eb737ea42fd19e6882a92c5b1b68b5063431de8a7a0e4e9d700bb220956168b",
+  "result": {
+    "skill_id": "offscreen_evolution_verifier",
+    "status": "ok",
+    "score": 0.127083,
+    "metrics": {
+      "Q1_pre_visible": 1.0,
+      "Q2_offscreen_absent": 0.75,
+      "Q3_return_visible": 0.25,
+      "Q4_anchor_preservation": 0.5,
+      "Q5_no_reset": 0.25,
+      "Q6_state_change_visible": 0.5,
+      "Q7_evolution_plausible": 0.0,
+      "Q8_judgeable": 1.0,
+      "visibility_score": 0.666667,
+      "validity_gate": 0.625,
+      "anchor_score": 0.5,
+      "evolution_score": 0.2,
+      "core_score": 0.305,
+      "final_score": 0.127083,
+      "expected_spec_alignment": 0.749158
+    },
+    "diagnostics": {
+      "definition_version": "harnesseval.offscreen_evolution",
+      "prompt_version": "harnesseval.offscreen_evolution.prompt",
+      "cache_contract_version": "harnesseval.offscreen_evolution.cache_contract",
+      "case_audit": {
+        "status": "ok",
+        "warning": false,
+        "expected_spec_alignment": 0.749158,
+        "target_alignment": 0.611111,
+        "anchor_alignment": 0.636364,
+        "visibility_alignment": 1.0
+      },
+      "stage1_cache": "runs/example/results_example/run/harnesseval/metric_cache/skills/offscreen_evolution/stage1/harnesseval_w_offscreen_0002_torch_gateway.json",
+      "stage1_evidence_digest": "19b4eb33edb085caad1b8bbb2ebe148d2cd3bcf2fdc80b9d5017560f1ddf62dc",
+      "stage2_cache": "runs/example/results_example/run/harnesseval/metric_cache/skills/offscreen_evolution/stage2/seedance-2.0-standard/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.json",
+      "stage2_evidence_digest": "0cefeac8e3464e7a54b90c87a66219f4bec4c2399eb20a501f22aafb3b6cab24"
+    },
+    "notes": [
+      "Stage 1 alignment is a case-audit warning only; scoring uses the canonical offscreen-evolution specification and generated video"
+    ]
+  },
+  "provenance": {
+    "backend": {
+      "backend_id": "openai_compatible.offscreen_evolution_vlm",
+      "backend_version": "gpt-5.5",
+      "config_digest": "dd63db4803747770f685bb1cc322eaa535820d5fdac24fe61d90d958a99505e8"
+    },
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "size_bytes": 4400447,
+      "mtime_ns": 1786886994283493351,
+      "sha256": "e36facea499a0d8ef5a8f7d78a5e695a634d8b4af67b71956665ce1d661bdd44"
+    },
+    "initial_observation": {
+      "path": "benchmark/initial_observations/harnesseval_w_offscreen_0002_torch_gateway.png",
+      "size_bytes": 433490,
+      "mtime_ns": 1784919766026946143,
+      "sha256": "a26c020a4ae643fbb940ea665fddc785796d31f18f01cb15bd3b6ce39e9bcbf9"
+    },
+    "stage1_cache_hit": false,
+    "stage2_cache_hit": false
+  }
+}

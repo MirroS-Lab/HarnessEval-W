@@ -1,0 +1,200 @@
+{
+  "action_id": "drift_0001",
+  "action_segments": [
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_001_W",
+      "text": "The camera pushes forward.",
+      "token": "W"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_002_W+left",
+      "text": "The camera pushes forward while panning to the left.",
+      "token": "W+left"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_003_W",
+      "text": "The camera pushes forward.",
+      "token": "W"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_004_right",
+      "text": "The camera pans to the right.",
+      "token": "right"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_005_W",
+      "text": "The camera pushes forward.",
+      "token": "W"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_006_A",
+      "text": "The camera moves to the left.",
+      "token": "A"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_007_W",
+      "text": "The camera pushes forward.",
+      "token": "W"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_008_D",
+      "text": "The camera moves to the right.",
+      "token": "D"
+    }
+  ],
+  "action_tokens": [
+    "W",
+    "W+left",
+    "W",
+    "right",
+    "W",
+    "A",
+    "W",
+    "D"
+  ],
+  "case_id": "harnesseval_w_drift_0001_old_town_lane",
+  "completed_at_unix": 1786878491.86025,
+  "hosted_provider": {
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "id": "seedance",
+    "paid_api_confirmed": true,
+    "request": {
+      "content": [
+        {
+          "text": "Continuation segment 8 of 8 in the same generated world. The camera moves to the right. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Follow a long continuous route through the same world without cuts or reset. The stable anchors should remain part of one coherent world state. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+          "type": "text"
+        },
+        {
+          "image_url": {
+            "url": "<image-data-url chars=424856 sha256=9070e63206bc>"
+          },
+          "role": "first_frame",
+          "type": "image_url"
+        }
+      ],
+      "duration": 4,
+      "generate_audio": false,
+      "model": "ep-20260816184220-sdqt8",
+      "ratio": "adaptive",
+      "resolution": "480p",
+      "watermark": false
+    },
+    "request_digest": "382059ecca1f8b228456c335d62175d18e3792c9454a185eb19291e0bbd6c5fb",
+    "result_url_recorded": true,
+    "task_id": "cgt-20260816190546-67ztr"
+  },
+  "input_image": "runs/example/results_example/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/segments/segment_007_last_frame.png",
+  "interaction_action": {
+    "action_id": "drift_0001",
+    "chunks": [
+      {
+        "actions": [
+          {
+            "action": "W",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c01"
+      },
+      {
+        "actions": [
+          {
+            "action": "W+left",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c02"
+      },
+      {
+        "actions": [
+          {
+            "action": "W",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c03"
+      },
+      {
+        "actions": [
+          {
+            "action": "right",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c04"
+      },
+      {
+        "actions": [
+          {
+            "action": "W",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c05"
+      },
+      {
+        "actions": [
+          {
+            "action": "A",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c06"
+      },
+      {
+        "actions": [
+          {
+            "action": "W",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c07"
+      },
+      {
+        "actions": [
+          {
+            "action": "D",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c08"
+      }
+    ],
+    "control_scheme": "worlddojo_navigation_v1",
+    "text": "Follow a long continuous route through the same world without cuts or reset. The stable anchors should remain part of one coherent world state.",
+    "type": "long_navigation_sequence"
+  },
+  "model": "ep-20260816184220-sdqt8",
+  "model_slug": "seedance-2.0-standard",
+  "output_dir": "runs/example/results_example/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/segments/segment_008",
+  "output_video": "runs/example/results_example/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/segments/segment_008/output.mp4",
+  "perspective": "first_person",
+  "prompt": "Continuation segment 8 of 8 in the same generated world. The camera moves to the right. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Follow a long continuous route through the same world without cuts or reset. The stable anchors should remain part of one coherent world state. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+  "schema_version": "worlddojo.hosted_model_output.v1",
+  "source_tags": {
+    "domain": "realistic",
+    "generator": "seedream_initial_materializer_v0",
+    "perspective": "first_person",
+    "render_backend": "doubao_seedream_4_0",
+    "scene": "old_town_lane",
+    "style": "procedural_prompt_spec"
+  },
+  "status": "done",
+  "taxonomy": {
+    "primary_axis": "world_persistence",
+    "probe_family": "drift_resistance"
+  },
+  "video": {
+    "sha256": "2bfd6c95881354c86b9382619fd509207c77f27e5051497857c5e41111cc3757",
+    "size_bytes": 917308
+  },
+  "video_path": "runs/example/results_example/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/segments/segment_008/output.mp4"
+}

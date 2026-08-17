@@ -1,0 +1,18 @@
+{
+  "audio_stream_count": 0,
+  "duration_seconds": 4.042,
+  "errors": [],
+  "expected": {
+    "duration_seconds": 4.0,
+    "duration_tolerance_seconds": 1.0,
+    "has_audio": false,
+    "height": 496,
+    "width": 864
+  },
+  "has_audio": false,
+  "height": 496,
+  "path": "runs/example/results_example/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/segments/segment_008/output.mp4",
+  "status": "passed",
+  "video_stream_count": 1,
+  "width": 864
+}

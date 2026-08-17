@@ -1,0 +1,275 @@
+{
+  "action_id": "offscreen_0002",
+  "action_segments": [
+    {
+      "kind": "text_chunk",
+      "segment_id": "c01",
+      "text": "Turn away from the torch flame silhouettes and brightness while it is still visible."
+    },
+    {
+      "kind": "text_chunk",
+      "segment_id": "c02",
+      "text": "Continue turning so the torch flame silhouettes and brightness leaves the camera view."
+    },
+    {
+      "kind": "text_chunk",
+      "segment_id": "c03",
+      "text": "Move forward while looking away; the torch flame silhouettes and brightness remains offscreen and should continue evolving."
+    },
+    {
+      "kind": "text_chunk",
+      "segment_id": "c04",
+      "text": "Pause briefly with the torch flame silhouettes and brightness still offscreen."
+    },
+    {
+      "kind": "text_chunk",
+      "segment_id": "c05",
+      "text": "Move back toward the original area while not facing the torch flame silhouettes and brightness."
+    },
+    {
+      "kind": "text_chunk",
+      "segment_id": "c06",
+      "text": "Turn back toward the same torch flame silhouettes and brightness."
+    },
+    {
+      "kind": "text_chunk",
+      "segment_id": "c07",
+      "text": "Return the torch flame silhouettes and brightness to view; it should have evolved rather than frozen or reset."
+    },
+    {
+      "kind": "text_chunk",
+      "segment_id": "c08",
+      "text": "Settle into a final view compatible with the original world."
+    }
+  ],
+  "action_tokens": [],
+  "case_id": "harnesseval_w_offscreen_0002_torch_gateway",
+  "combined_video": "vendor/harnesseval/work_dirs/seedance-2.0-standard/videos/case_harnesseval_w_offscreen_0002_torch_gateway_combined.mp4",
+  "completed_at_unix": 1786886996.317948,
+  "concat": {
+    "drop_first_frame_after_first": true,
+    "fps": 24.0,
+    "output_frame_count": 769,
+    "segment_count": 8,
+    "segment_frame_counts": [
+      97,
+      97,
+      97,
+      97,
+      97,
+      97,
+      97,
+      97
+    ]
+  },
+  "hosted_provider": {
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "id": "seedance",
+    "paid_api_confirmed": true,
+    "segment_task_count": 8
+  },
+  "input_image": "benchmark/initial_observations/harnesseval_w_offscreen_0002_torch_gateway.png",
+  "interaction_action": {
+    "action_id": "offscreen_0002",
+    "chunks": [
+      {
+        "action": {
+          "text": "Turn away from the torch flame silhouettes and brightness while it is still visible."
+        },
+        "chunk_id": "c01"
+      },
+      {
+        "action": {
+          "text": "Continue turning so the torch flame silhouettes and brightness leaves the camera view."
+        },
+        "chunk_id": "c02"
+      },
+      {
+        "action": {
+          "text": "Move forward while looking away; the torch flame silhouettes and brightness remains offscreen and should continue evolving."
+        },
+        "chunk_id": "c03"
+      },
+      {
+        "action": {
+          "text": "Pause briefly with the torch flame silhouettes and brightness still offscreen."
+        },
+        "chunk_id": "c04"
+      },
+      {
+        "action": {
+          "text": "Move back toward the original area while not facing the torch flame silhouettes and brightness."
+        },
+        "chunk_id": "c05"
+      },
+      {
+        "action": {
+          "text": "Turn back toward the same torch flame silhouettes and brightness."
+        },
+        "chunk_id": "c06"
+      },
+      {
+        "action": {
+          "text": "Return the torch flame silhouettes and brightness to view; it should have evolved rather than frozen or reset."
+        },
+        "chunk_id": "c07"
+      },
+      {
+        "action": {
+          "text": "Settle into a final view compatible with the original world."
+        },
+        "chunk_id": "c08"
+      }
+    ],
+    "text": "Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen.",
+    "type": "offscreen_evolution_sequence"
+  },
+  "model": "ep-20260816184220-sdqt8",
+  "model_slug": "seedance-2.0-standard",
+  "output_dir": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway",
+  "output_video": "output.mp4",
+  "perspective": "first_person",
+  "prompt": "Long-horizon persistence test in the same generated world. Execute this chunked text action sequence. Chunk 1: Turn away from the torch flame silhouettes and brightness while it is still visible. Chunk 2: Continue turning so the torch flame silhouettes and brightness leaves the camera view. Chunk 3: Move forward while looking away; the torch flame silhouettes and brightness remains offscreen and should continue evolving. Chunk 4: Pause briefly with the torch flame silhouettes and brightness still offscreen. Chunk 5: Move back toward the original area while not facing the torch flame silhouettes and brightness. Chunk 6: Turn back toward the same torch flame silhouettes and brightness. Chunk 7: Return the torch flame silhouettes and brightness to view; it should have evolved rather than frozen or reset. Chunk 8: Settle into a final view compatible with the original world. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Keep the interaction continuous across all chunks. Stable landmarks, layout, object identities, lighting style, and camera perspective should remain traceable. If the route leaves a region and later returns, the returned view should show the same world rather than a reset or a new scene.",
+  "rollout_mode": "autoregressive_segment_chaining",
+  "schema_version": "worlddojo.hosted_model_output.v2",
+  "segments": [
+    {
+      "action_text": "Turn away from the torch flame silhouettes and brightness while it is still visible.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_001/artifact_validation.json",
+      "input_image": "benchmark/initial_observations/harnesseval_w_offscreen_0002_torch_gateway.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_001_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway/segment_001.json",
+      "prompt": "Continuation segment 1 of 8 in the same generated world. Turn away from the torch flame silhouettes and brightness while it is still visible. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": false,
+      "segment_id": "c01",
+      "segment_index": 0,
+      "segment_kind": "text_chunk",
+      "segment_video": "segments/segment_001/output.mp4",
+      "task_id": "cgt-20260816205232-nnwm4",
+      "token": null
+    },
+    {
+      "action_text": "Continue turning so the torch flame silhouettes and brightness leaves the camera view.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_002/artifact_validation.json",
+      "input_image": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_001_last_frame.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_002_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway/segment_002.json",
+      "prompt": "Continuation segment 2 of 8 in the same generated world. Continue turning so the torch flame silhouettes and brightness leaves the camera view. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": false,
+      "segment_id": "c02",
+      "segment_index": 1,
+      "segment_kind": "text_chunk",
+      "segment_video": "segments/segment_002/output.mp4",
+      "task_id": "cgt-20260816205732-prctl",
+      "token": null
+    },
+    {
+      "action_text": "Move forward while looking away; the torch flame silhouettes and brightness remains offscreen and should continue evolving.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_003/artifact_validation.json",
+      "input_image": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_002_last_frame.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_003_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway/segment_003.json",
+      "prompt": "Continuation segment 3 of 8 in the same generated world. Move forward while looking away; the torch flame silhouettes and brightness remains offscreen and should continue evolving. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": false,
+      "segment_id": "c03",
+      "segment_index": 2,
+      "segment_kind": "text_chunk",
+      "segment_video": "segments/segment_003/output.mp4",
+      "task_id": "cgt-20260816210256-smjm8",
+      "token": null
+    },
+    {
+      "action_text": "Pause briefly with the torch flame silhouettes and brightness still offscreen.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_004/artifact_validation.json",
+      "input_image": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_003_last_frame.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_004_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway/segment_004.json",
+      "prompt": "Continuation segment 4 of 8 in the same generated world. Pause briefly with the torch flame silhouettes and brightness still offscreen. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": false,
+      "segment_id": "c04",
+      "segment_index": 3,
+      "segment_kind": "text_chunk",
+      "segment_video": "segments/segment_004/output.mp4",
+      "task_id": "cgt-20260816210625-2mpzx",
+      "token": null
+    },
+    {
+      "action_text": "Move back toward the original area while not facing the torch flame silhouettes and brightness.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_005/artifact_validation.json",
+      "input_image": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_004_last_frame.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_005_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway/segment_005.json",
+      "prompt": "Continuation segment 5 of 8 in the same generated world. Move back toward the original area while not facing the torch flame silhouettes and brightness. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": false,
+      "segment_id": "c05",
+      "segment_index": 4,
+      "segment_kind": "text_chunk",
+      "segment_video": "segments/segment_005/output.mp4",
+      "task_id": "cgt-20260816211155-p76rg",
+      "token": null
+    },
+    {
+      "action_text": "Turn back toward the same torch flame silhouettes and brightness.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_006/artifact_validation.json",
+      "input_image": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_005_last_frame.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_006_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway/segment_006.json",
+      "prompt": "Continuation segment 6 of 8 in the same generated world. Turn back toward the same torch flame silhouettes and brightness. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": false,
+      "segment_id": "c06",
+      "segment_index": 5,
+      "segment_kind": "text_chunk",
+      "segment_video": "segments/segment_006/output.mp4",
+      "task_id": "cgt-20260816211907-c7qpd",
+      "token": null
+    },
+    {
+      "action_text": "Return the torch flame silhouettes and brightness to view; it should have evolved rather than frozen or reset.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_007/artifact_validation.json",
+      "input_image": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_006_last_frame.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_007_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway/segment_007.json",
+      "prompt": "Continuation segment 7 of 8 in the same generated world. Return the torch flame silhouettes and brightness to view; it should have evolved rather than frozen or reset. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": false,
+      "segment_id": "c07",
+      "segment_index": 6,
+      "segment_kind": "text_chunk",
+      "segment_video": "segments/segment_007/output.mp4",
+      "task_id": "cgt-20260816212153-n44cq",
+      "token": null
+    },
+    {
+      "action_text": "Settle into a final view compatible with the original world.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_008/artifact_validation.json",
+      "input_image": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_007_last_frame.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_008_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway/segment_008.json",
+      "prompt": "Continuation segment 8 of 8 in the same generated world. Settle into a final view compatible with the original world. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": false,
+      "segment_id": "c08",
+      "segment_index": 7,
+      "segment_kind": "text_chunk",
+      "segment_video": "segments/segment_008/output.mp4",
+      "task_id": "cgt-20260816212450-sxn9z",
+      "token": null
+    }
+  ],
+  "source_tags": {
+    "domain": "realistic",
+    "generator": "seedream_initial_materializer_v0",
+    "perspective": "first_person",
+    "render_backend": "doubao_seedream_4_0",
+    "scene": "torch_gateway",
+    "style": "procedural_prompt_spec"
+  },
+  "status": "done",
+  "taxonomy": {
+    "primary_axis": "world_persistence",
+    "probe_family": "offscreen_evolution"
+  },
+  "video": {
+    "sha256": "e36facea499a0d8ef5a8f7d78a5e695a634d8b4af67b71956665ce1d661bdd44",
+    "size_bytes": 4400447
+  },
+  "video_path": "output.mp4"
+}

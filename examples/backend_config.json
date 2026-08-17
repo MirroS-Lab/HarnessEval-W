@@ -1,0 +1,74 @@
+{
+  "skills": {
+    "render_quality_inspector": {
+      "mode": "local",
+      "weights_root": "<HARNESSEVAL_WEIGHTS_ROOT>",
+      "device": "cuda",
+      "cpu_workers": 8
+    },
+    "motion_quality_inspector": {
+      "mode": "local",
+      "weights_root": "<HARNESSEVAL_WEIGHTS_ROOT>",
+      "device": "cuda",
+      "cpu_workers": 8
+    },
+    "appearance_consistency_inspector": {
+      "mode": "local",
+      "weights_root": "<HARNESSEVAL_WEIGHTS_ROOT>",
+      "device": "cuda"
+    },
+    "physical_plausibility_inspector": {
+      "mode": "local",
+      "weights_root": "<HARNESSEVAL_WEIGHTS_ROOT>",
+      "model_path": "<HARNESSEVAL_WEIGHTS_ROOT>/qwen3vl-a3b-visual-plausibility",
+      "device": "cuda"
+    },
+    "viewpoint_trajectory_verifier": {
+      "mode": "local",
+      "weights_root": "<HARNESSEVAL_WEIGHTS_ROOT>/megasam",
+      "device": "cuda",
+      "frame_batch_size": 1
+    },
+    "physical_law_validator": {
+      "mode": "local"
+    },
+    "drift_degradation_analyzer": {
+      "mode": "staged_local"
+    },
+    "return_consistency_verifier": {
+      "mode": "local"
+    },
+    "intentional_change_verifier_vlm": {
+      "mode": "api",
+      "base_url": "http://127.0.0.1:8000/v1",
+      "model": "your-vlm-judge-model",
+      "wire_api": "responses",
+      "api_key_env": "HARNESSEVAL_VLM_API_KEY",
+      "timeout": 180,
+      "retries": 1
+    },
+    "physical_response_verifier_vlm": {
+      "mode": "api",
+      "base_url": "http://127.0.0.1:8000/v1",
+      "model": "your-vlm-judge-model",
+      "wire_api": "responses",
+      "api_key_env": "HARNESSEVAL_VLM_API_KEY",
+      "timeout": 180,
+      "retries": 1
+    },
+    "offscreen_evolution_verifier": {
+      "mode": "api",
+      "base_url": "http://127.0.0.1:8000/v1",
+      "model": "your-vlm-judge-model",
+      "wire_api": "responses",
+      "api_key_env": "HARNESSEVAL_VLM_API_KEY",
+      "timeout": 180,
+      "retries": 1
+    }
+  },
+  "clip": {
+    "mode": "local",
+    "device": "cuda",
+    "download_root": "<HARNESSEVAL_WEIGHTS_ROOT>/clip"
+  }
+}

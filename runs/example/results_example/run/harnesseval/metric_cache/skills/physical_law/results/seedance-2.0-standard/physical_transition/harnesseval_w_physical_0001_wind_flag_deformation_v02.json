@@ -1,0 +1,53 @@
+{
+  "schema_version": "harnesseval.physical_law.result",
+  "input_digest": "cacfbe185cecbafdf70c39d61ae59a30683f4a53545c99023148d60e5f82ace0",
+  "skill_id": "physical_law_validator",
+  "definition_version": "harnesseval.physical_law",
+  "result": {
+    "skill_id": "physical_law_validator",
+    "status": "not_applicable",
+    "score": null,
+    "metrics": {
+      "PhysicalLawScore": null,
+      "law_score": null,
+      "law_count": 0,
+      "scored_law_count": 0,
+      "mean_scored_law_score": null
+    },
+    "diagnostics": {
+      "definition_version": "harnesseval.physical_law",
+      "engine_spec": {
+        "source": "scene_mapping",
+        "scene": "wind_flag_deformation",
+        "engine_model_id": null,
+        "sample_id": "",
+        "gt": {},
+        "law_checks": []
+      },
+      "laws": [],
+      "reliability_assumptions": [
+        "fixed camera",
+        "one dominant moving subject",
+        "static background",
+        "sufficient subject texture",
+        "moderate inter-frame displacement"
+      ]
+    },
+    "notes": [
+      "This diagnostic uses only final.md optical-flow laws; unavailable laws are not forced to zero."
+    ]
+  },
+  "provenance": {
+    "backend": {
+      "backend_id": "opencv_farneback.physical_law_signals",
+      "backend_version": "harnesseval.physical_law_signals",
+      "config_digest": "a1b42d4bfca8f7b5ff97a7387f449c9e565176834031393fc286c132d374176f"
+    },
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/transition_correctness/physical_transition/seedance-2.0-standard/harnesseval_w_physical_0001_wind_flag_deformation_v02/output.mp4",
+      "size_bytes": 694141,
+      "mtime_ns": 1786887693954889115,
+      "sha256": "e43dfa80dae8fb8972b0e4fd9003db0110e73340f606a4e96cb2e126ebd77f09"
+    }
+  }
+}

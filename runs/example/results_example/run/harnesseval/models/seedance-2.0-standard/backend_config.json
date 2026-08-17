@@ -1,0 +1,38 @@
+{
+  "skills": {
+    "render_quality_inspector": {
+      "mode": "local",
+      "weights_root": "WEIGHTS/weights"
+    },
+    "motion_quality_inspector": {
+      "mode": "local",
+      "weights_root": "WEIGHTS/weights"
+    },
+    "appearance_consistency_inspector": {
+      "mode": "local",
+      "weights_root": "WEIGHTS/weights"
+    },
+    "physical_plausibility_inspector": {
+      "mode": "local",
+      "weights_root": "WEIGHTS/weights",
+      "model_path": "WEIGHTS/weights/qwen3vl-a3b-visual-plausibility"
+    },
+    "viewpoint_trajectory_verifier": {
+      "mode": "local",
+      "weights_root": "WEIGHTS/weights/megasam"
+    },
+    "physical_law_validator": {
+      "mode": "local"
+    },
+    "drift_degradation_analyzer": {
+      "mode": "staged_local"
+    },
+    "return_consistency_verifier": {
+      "mode": "local"
+    }
+  },
+  "clip": {
+    "mode": "local",
+    "download_root": "WEIGHTS/weights/clip"
+  }
+}

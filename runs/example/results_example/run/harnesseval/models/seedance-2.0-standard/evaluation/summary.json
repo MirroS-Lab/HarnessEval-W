@@ -1,0 +1,99 @@
+{
+  "schema_version": "harnesseval.report",
+  "score_count": 6,
+  "model_count": 1,
+  "schemas": {
+    "harnesseval.skill_eval": 6
+  },
+  "common_case_counts": {
+    "exploratory_transition": 1,
+    "intentional_transition": 1,
+    "physical_transition": 1,
+    "drift_resistance": 1,
+    "return_revisit_consistency": 1,
+    "offscreen_evolution": 1
+  },
+  "scoring_policy": {
+    "name": "all_families_core_observation_50_50",
+    "core_weight": 0.5,
+    "observation_weight": 0.5,
+    "observation_skills": [
+      "render_quality_inspector",
+      "motion_quality_inspector",
+      "appearance_consistency_inspector",
+      "physical_plausibility_inspector"
+    ],
+    "observation_denominator": "numeric_available_dimensions"
+  },
+  "observation_groups": {
+    "quality": [
+      "render_quality_inspector",
+      "motion_quality_inspector",
+      "appearance_consistency_inspector"
+    ],
+    "physical_plausibility": [
+      "physical_plausibility_inspector"
+    ]
+  },
+  "observation_count_distribution": {
+    "4": 6
+  },
+  "leaderboard": [
+    {
+      "model_id": "seedance-2.0-standard",
+      "overall_macro": 0.787629,
+      "overall_core_macro": 0.784211,
+      "overall_observation_macro": 0.791047,
+      "observation_quality_macro": 0.847664,
+      "observation_physical_plausibility_macro": 0.621197,
+      "family_scores": {
+        "exploratory_transition": 0.866805,
+        "intentional_transition": 0.854834,
+        "physical_transition": 0.858426,
+        "drift_resistance": 0.804672,
+        "return_revisit_consistency": 0.715636,
+        "offscreen_evolution": 0.625403
+      },
+      "family_core_scores": {
+        "exploratory_transition": 0.926948,
+        "intentional_transition": 1.0,
+        "physical_transition": 0.850391,
+        "drift_resistance": 0.79786,
+        "return_revisit_consistency": 0.630584,
+        "offscreen_evolution": 0.499485
+      },
+      "family_observation_scores": {
+        "exploratory_transition": 0.806662,
+        "intentional_transition": 0.709668,
+        "physical_transition": 0.866461,
+        "drift_resistance": 0.811484,
+        "return_revisit_consistency": 0.800688,
+        "offscreen_evolution": 0.751321
+      },
+      "family_quality_scores": {
+        "exploratory_transition": 0.868289,
+        "intentional_transition": 0.733037,
+        "physical_transition": 0.913868,
+        "drift_resistance": 0.870472,
+        "return_revisit_consistency": 0.866744,
+        "offscreen_evolution": 0.833575
+      },
+      "family_physical_plausibility_scores": {
+        "exploratory_transition": 0.62178,
+        "intentional_transition": 0.63956,
+        "physical_transition": 0.72424,
+        "drift_resistance": 0.63452,
+        "return_revisit_consistency": 0.60252,
+        "offscreen_evolution": 0.50456
+      },
+      "coverage": {
+        "exploratory_transition": 1,
+        "intentional_transition": 1,
+        "physical_transition": 1,
+        "drift_resistance": 1,
+        "return_revisit_consistency": 1,
+        "offscreen_evolution": 1
+      }
+    }
+  ]
+}

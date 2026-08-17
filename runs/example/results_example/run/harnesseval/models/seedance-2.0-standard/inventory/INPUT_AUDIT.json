@@ -1,0 +1,33 @@
+{
+  "schema_version": "harnesseval.inventory",
+  "created_at": "2026-08-17T11:07:12.633165+00:00",
+  "status": "passed",
+  "inputs": {
+    "manifests": [
+      "runs/example/results_example/manifest.json"
+    ],
+    "generation_root": "runs/example/results_example/generation",
+    "assets_root": "REPO_ROOT",
+    "models": [
+      "seedance-2.0-standard"
+    ],
+    "video_check": "ffprobe"
+  },
+  "case_count": 6,
+  "model_count": 1,
+  "expected_rollout_count": 6,
+  "valid_rollout_count": 6,
+  "invalid_rollout_count": 0,
+  "family_case_counts": {
+    "drift_resistance": 1,
+    "exploratory_transition": 1,
+    "intentional_transition": 1,
+    "offscreen_evolution": 1,
+    "physical_transition": 1,
+    "return_revisit_consistency": 1
+  },
+  "issue_counts": {},
+  "manifest_issues": [],
+  "unexpected_rollouts": [],
+  "invalid_rollouts": []
+}

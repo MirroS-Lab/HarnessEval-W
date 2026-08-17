@@ -1,0 +1,474 @@
+{
+  "schema_version": "harnesseval.skill_eval",
+  "scorer_id": "harnesseval.score",
+  "created_at": "2026-08-17T11:08:55.476216+00:00",
+  "case_id": "harnesseval_w_return_0001_city_intersection",
+  "action_id": "return_0001",
+  "taxonomy": {
+    "primary_axis": "world_persistence",
+    "probe_family": "return_revisit_consistency"
+  },
+  "model": "ep-20260816184220-sdqt8",
+  "model_id": "seedance-2.0-standard",
+  "paths": {
+    "metadata": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/metadata.json",
+    "output_video": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/output.mp4",
+    "skill_plan": "benchmark/plans/return_revisit_consistency/harnesseval_w_return_0001_city_intersection.skill_plan.json",
+    "metric_bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/return_revisit_consistency/harnesseval_w_return_0001_city_intersection.metrics.json"
+  },
+  "video_validity": {
+    "status": "ok",
+    "score": 1.0,
+    "score_type": "cache_fingerprint_verified"
+  },
+  "skill_plan": {
+    "schema_version": "harnesseval.skill_plan",
+    "routing_mode": "shipped_case_plan",
+    "selected_skill_ids": [
+      "render_quality_inspector",
+      "motion_quality_inspector",
+      "appearance_consistency_inspector",
+      "physical_plausibility_inspector",
+      "viewpoint_trajectory_verifier",
+      "return_consistency_verifier"
+    ],
+    "observation_skill_ids": [
+      "render_quality_inspector",
+      "motion_quality_inspector",
+      "appearance_consistency_inspector",
+      "physical_plausibility_inspector"
+    ],
+    "core_skill_ids": [
+      "viewpoint_trajectory_verifier",
+      "return_consistency_verifier"
+    ],
+    "diagnostic_skill_ids": [],
+    "selected_skills": [
+      {
+        "skill_id": "render_quality_inspector",
+        "role": "observation",
+        "reason": "The generated city-intersection frames must be technically clean enough to judge the station arch, traffic gantry, zebra crossing, bus shelter, and return behavior without blur, artifacts, watermarks, split-screen, or geometry failures.",
+        "parameters": {
+          "domain": "realistic",
+          "scene": "city_intersection",
+          "check_for": [
+            "severe blur",
+            "watermarks or text artifacts",
+            "split-screen or collage composition",
+            "broken road/building/traffic-light geometry",
+            "unjudgeable stable anchors"
+          ]
+        }
+      },
+      {
+        "skill_id": "motion_quality_inspector",
+        "role": "observation",
+        "reason": "The rollout is driven by eight navigation chunks, so evaluation should confirm that motion is present, temporally smooth, and not dominated by flicker or abrupt unrelated jumps.",
+        "parameters": {
+          "action_chunks": [
+            "c01",
+            "c02",
+            "c03",
+            "c04",
+            "c05",
+            "c06",
+            "c07",
+            "c08"
+          ],
+          "expected_motion_type": "first_person_navigation"
+        }
+      },
+      {
+        "skill_id": "appearance_consistency_inspector",
+        "role": "observation",
+        "reason": "The same realistic world should persist through the navigation loop, with stable appearance for the protected anchors and surrounding intersection instead of semantic or style drift.",
+        "parameters": {
+          "protected_anchors": [
+            "station arch",
+            "traffic gantry",
+            "zebra crossing",
+            "bus shelter"
+          ],
+          "consistency_scope": "full_rollout"
+        }
+      },
+      {
+        "skill_id": "physical_plausibility_inspector",
+        "role": "observation",
+        "reason": "First-person movement through a realistic street scene should maintain plausible camera motion, perspective changes, object scale, road layout, and occlusion relationships.",
+        "parameters": {
+          "scene": "city_intersection",
+          "expected_camera_behavior": "ground-level first-person navigation",
+          "check_for": [
+            "impossible parallax",
+            "scale changes without viewpoint cause",
+            "objects sliding independently of the world",
+            "implausible occlusions"
+          ]
+        }
+      },
+      {
+        "skill_id": "viewpoint_trajectory_verifier",
+        "role": "core",
+        "reason": "The case explicitly requires active closed-loop navigation using W, S, left, right, A, and D actions, so the viewpoint should move away and then follow the inverse-balanced path back toward a compatible original view.",
+        "parameters": {
+          "control_scheme": "harnesseval_navigation_v1",
+          "chunks": [
+            {
+              "chunk_id": "c01",
+              "action": "W"
+            },
+            {
+              "chunk_id": "c02",
+              "action": "W"
+            },
+            {
+              "chunk_id": "c03",
+              "action": "S"
+            },
+            {
+              "chunk_id": "c04",
+              "action": "S"
+            },
+            {
+              "chunk_id": "c05",
+              "action": "left"
+            },
+            {
+              "chunk_id": "c06",
+              "action": "right"
+            },
+            {
+              "chunk_id": "c07",
+              "action": "A"
+            },
+            {
+              "chunk_id": "c08",
+              "action": "D"
+            }
+          ],
+          "expected_pattern": "move away, reverse forward/backward displacement, cancel rotation, cancel lateral displacement"
+        }
+      },
+      {
+        "skill_id": "return_consistency_verifier",
+        "role": "core",
+        "reason": "This is a return_revisit_consistency case with an explicit closed-loop pair requiring c08 to return to a compatible view of the same world as c01 without resetting or changing anchors.",
+        "parameters": {
+          "reference_chunk": "c01",
+          "return_chunk": "c08",
+          "closed_loop_pairs": [
+            {
+              "reference_chunk": "c01",
+              "return_chunk": "c08"
+            }
+          ],
+          "protected_anchors": [
+            "station arch",
+            "traffic gantry",
+            "zebra crossing",
+            "bus shelter"
+          ],
+          "expected_return": "compatible viewpoint and layout, not necessarily pixel-identical",
+          "must_preserve": [
+            "anchor identity",
+            "relative spatial arrangement",
+            "intersection layout",
+            "realistic first-person perspective"
+          ]
+        }
+      }
+    ]
+  },
+  "skills": [
+    {
+      "skill_id": "render_quality_inspector",
+      "status": "ok",
+      "score": 0.725919,
+      "metrics": {
+        "aesthetic": 0.546424,
+        "imaging": 0.70982,
+        "hpsv3": 0.722814,
+        "flickering": 0.92462
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.render_quality",
+        "cache_contract_version": "harnesseval.render_quality.cache_contract",
+        "aggregation": "equal_mean_required_components",
+        "missing_components": [],
+        "invalid_components": []
+      },
+      "notes": [],
+      "plan_role": "observation",
+      "plan_reason": "The generated city-intersection frames must be technically clean enough to judge the station arch, traffic gantry, zebra crossing, bus shelter, and return behavior without blur, artifacts, watermarks, split-screen, or geometry failures.",
+      "plan_parameters": {
+        "domain": "realistic",
+        "scene": "city_intersection",
+        "check_for": [
+          "severe blur",
+          "watermarks or text artifacts",
+          "split-screen or collage composition",
+          "broken road/building/traffic-light geometry",
+          "unjudgeable stable anchors"
+        ]
+      }
+    },
+    {
+      "skill_id": "motion_quality_inspector",
+      "status": "ok",
+      "score": 0.983896,
+      "metrics": {
+        "dynamic": 1.0,
+        "smoothness": 0.967791
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.motion_quality",
+        "cache_contract_version": "harnesseval.motion_quality.cache_contract",
+        "aggregation": "equal_mean_required_components",
+        "missing_components": [],
+        "invalid_components": []
+      },
+      "notes": [],
+      "plan_role": "observation",
+      "plan_reason": "The rollout is driven by eight navigation chunks, so evaluation should confirm that motion is present, temporally smooth, and not dominated by flicker or abrupt unrelated jumps.",
+      "plan_parameters": {
+        "action_chunks": [
+          "c01",
+          "c02",
+          "c03",
+          "c04",
+          "c05",
+          "c06",
+          "c07",
+          "c08"
+        ],
+        "expected_motion_type": "first_person_navigation"
+      }
+    },
+    {
+      "skill_id": "appearance_consistency_inspector",
+      "status": "ok",
+      "score": 0.890418,
+      "metrics": {
+        "background": 0.890418
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.appearance_consistency",
+        "cache_contract_version": "harnesseval.appearance_consistency.cache_contract",
+        "aggregation": "single_required_component",
+        "missing_components": [],
+        "invalid_components": []
+      },
+      "notes": [],
+      "plan_role": "observation",
+      "plan_reason": "The same realistic world should persist through the navigation loop, with stable appearance for the protected anchors and surrounding intersection instead of semantic or style drift.",
+      "plan_parameters": {
+        "protected_anchors": [
+          "station arch",
+          "traffic gantry",
+          "zebra crossing",
+          "bus shelter"
+        ],
+        "consistency_scope": "full_rollout"
+      }
+    },
+    {
+      "skill_id": "physical_plausibility_inspector",
+      "status": "ok",
+      "score": 0.60252,
+      "metrics": {
+        "visual_plausibility": 0.60252
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.physical_plausibility.pavrm",
+        "cache_contract_version": "harnesseval.physical_plausibility.cache_contract",
+        "aggregation": "pavrm_raw_score_divided_by_5",
+        "missing_components": [],
+        "invalid_components": []
+      },
+      "notes": [],
+      "plan_role": "observation",
+      "plan_reason": "First-person movement through a realistic street scene should maintain plausible camera motion, perspective changes, object scale, road layout, and occlusion relationships.",
+      "plan_parameters": {
+        "scene": "city_intersection",
+        "expected_camera_behavior": "ground-level first-person navigation",
+        "check_for": [
+          "impossible parallax",
+          "scale changes without viewpoint cause",
+          "objects sliding independently of the world",
+          "implausible occlusions"
+        ]
+      }
+    },
+    {
+      "skill_id": "viewpoint_trajectory_verifier",
+      "status": "ok",
+      "score": 0.754618,
+      "metrics": {
+        "NavScore": 0.754618,
+        "Accuracy": 0.786113,
+        "Consistency": 0.723122,
+        "nATE_t": 0.157737,
+        "nATE_r": 0.270036,
+        "cnATE_t": 0.292875,
+        "cnATE_r": 0.260881,
+        "consistency_pairs": 8,
+        "ATE_t": 1.594614,
+        "ATE_r": 53.874588,
+        "total_path_length": 10.109301,
+        "total_rotation_deg": 199.508784
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.viewpoint_trajectory.navscore",
+        "cache_contract_version": "harnesseval.viewpoint_trajectory.cache_contract",
+        "aggregation": "harnesseval_navigation_trajectory_navscore"
+      },
+      "notes": [],
+      "plan_role": "core",
+      "plan_reason": "The case explicitly requires active closed-loop navigation using W, S, left, right, A, and D actions, so the viewpoint should move away and then follow the inverse-balanced path back toward a compatible original view.",
+      "plan_parameters": {
+        "control_scheme": "harnesseval_navigation_v1",
+        "chunks": [
+          {
+            "chunk_id": "c01",
+            "action": "W"
+          },
+          {
+            "chunk_id": "c02",
+            "action": "W"
+          },
+          {
+            "chunk_id": "c03",
+            "action": "S"
+          },
+          {
+            "chunk_id": "c04",
+            "action": "S"
+          },
+          {
+            "chunk_id": "c05",
+            "action": "left"
+          },
+          {
+            "chunk_id": "c06",
+            "action": "right"
+          },
+          {
+            "chunk_id": "c07",
+            "action": "A"
+          },
+          {
+            "chunk_id": "c08",
+            "action": "D"
+          }
+        ],
+        "expected_pattern": "move away, reverse forward/backward displacement, cancel rotation, cancel lateral displacement"
+      }
+    },
+    {
+      "skill_id": "return_consistency_verifier",
+      "status": "ok",
+      "score": 0.506551,
+      "metrics": {
+        "closed_loop_pair_consistency": 0.506551,
+        "best_pair_similarity": 0.507357,
+        "mean_pair_similarity": 0.505744,
+        "mean_closed_loop_score": 0.506551,
+        "worst_pair_similarity": 0.506551,
+        "non_static_gate": 1.0,
+        "motion_presence": 1.0,
+        "mean_frame_diff": 0.240698,
+        "peak_frame_diff": 0.314868,
+        "active_frame_pair_ratio": 1.0,
+        "pair_weights": {
+          "best_similarity": 0.5,
+          "mean_similarity": 0.5
+        },
+        "multi_pair_weights": {
+          "mean_pair_score": 0.7,
+          "worst_pair_score": 0.3
+        }
+      },
+      "diagnostics": {
+        "definition_version": "harnesseval.return_consistency",
+        "cache_contract_version": "harnesseval.return_consistency.cache_contract",
+        "pair_details": [
+          {
+            "reference_chunk": "c01",
+            "return_chunk": "c08",
+            "best_similarity": 0.507357,
+            "mean_similarity": 0.505744,
+            "pair_score": 0.506551,
+            "comparison_count": 2
+          }
+        ],
+        "formal_gate_accepted": true
+      },
+      "notes": [],
+      "plan_role": "core",
+      "plan_reason": "This is a return_revisit_consistency case with an explicit closed-loop pair requiring c08 to return to a compatible view of the same world as c01 without resetting or changing anchors.",
+      "plan_parameters": {
+        "reference_chunk": "c01",
+        "return_chunk": "c08",
+        "closed_loop_pairs": [
+          {
+            "reference_chunk": "c01",
+            "return_chunk": "c08"
+          }
+        ],
+        "protected_anchors": [
+          "station arch",
+          "traffic gantry",
+          "zebra crossing",
+          "bus shelter"
+        ],
+        "expected_return": "compatible viewpoint and layout, not necessarily pixel-identical",
+        "must_preserve": [
+          "anchor identity",
+          "relative spatial arrangement",
+          "intersection layout",
+          "realistic first-person perspective"
+        ]
+      }
+    }
+  ],
+  "case_score": {
+    "score": 0.630584,
+    "status": "ok",
+    "score_type": "selected_core_mean",
+    "core_skill_ids": [
+      "viewpoint_trajectory_verifier",
+      "return_consistency_verifier"
+    ],
+    "weights": {
+      "viewpoint_trajectory_verifier": 0.5,
+      "return_consistency_verifier": 0.5
+    },
+    "routing_mode": "shipped_case_plan"
+  },
+  "observation_quality": {
+    "status": "ok",
+    "dimensions": {
+      "render_quality_inspector": 0.725919,
+      "motion_quality_inspector": 0.983896,
+      "appearance_consistency_inspector": 0.890418,
+      "physical_plausibility_inspector": 0.60252
+    },
+    "evidence_score": 0.800688,
+    "score_type": "selected_observation_mean"
+  },
+  "final_score": {
+    "score": 0.715636,
+    "status": "ok",
+    "score_type": "core_others_50_50",
+    "core_score": 0.630584,
+    "others_score": 0.800688,
+    "core_weight": 0.5,
+    "others_weight": 0.5
+  },
+  "provenance": {
+    "scorer_id": "harnesseval.score",
+    "input_digest": "91dd3b177607948064ffb576697914a99e667d6ce6e13b2c1b925067becc7e41",
+    "cache_only": true
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "harnesseval.return_consistency.cache",
+  "skill_id": "return_consistency_verifier",
+  "definition_version": "harnesseval.return_consistency",
+  "sample_plan": {
+    "sampled_frame_indices": [
+      0,
+      69,
+      139,
+      209,
+      279,
+      349,
+      418,
+      488,
+      558,
+      628,
+      698,
+      768
+    ],
+    "chunk_ids": [
+      "c01",
+      "c02",
+      "c03",
+      "c04",
+      "c05",
+      "c06",
+      "c07",
+      "c08"
+    ],
+    "pairs": [
+      {
+        "reference_chunk": "c01",
+        "return_chunk": "c08",
+        "reference_sample_indices": [
+          0
+        ],
+        "return_sample_indices": [
+          10,
+          11
+        ]
+      }
+    ],
+    "fallback_first_last": false
+  },
+  "evidence": {
+    "pairs": [
+      {
+        "reference_chunk": "c01",
+        "return_chunk": "c08",
+        "similarities": [
+          {
+            "reference_sample": 0,
+            "return_sample": 10,
+            "ncc_score": 0.38757449139314004,
+            "histogram_score": 0.4933437687736047,
+            "edge_iou": 0.12529550827423167,
+            "rgb_pixel_similarity": 0.12002992318346595,
+            "clip_similarity": 0.6440739556067651,
+            "rgb_mean_abs_diff": 0.3139910230449602
+          },
+          {
+            "reference_sample": 0,
+            "return_sample": 11,
+            "ncc_score": 0.5878773266426057,
+            "histogram_score": 0.6026645165955662,
+            "edge_iou": 0.08674873280231717,
+            "rgb_pixel_similarity": 0.010329003427542727,
+            "clip_similarity": 0.625128040281998,
+            "rgb_mean_abs_diff": 0.34690129897173716
+          }
+        ]
+      }
+    ],
+    "mean_diff": 0.22201088346049536,
+    "peak_diff": 0.3028901642444087,
+    "active_ratio": 1.0,
+    "clip_model": "ViT-B/32",
+    "clip_model_fingerprint": "sha256:40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af"
+  },
+  "provenance": {
+    "input_digest": "3afd1937ed65903774e846a60104cc15363ef7ecd6a4a86da31fc09f08ab689e",
+    "cache_contract_version": "harnesseval.return_consistency.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "size_bytes": 4400447,
+      "mtime_ns": 1786886994283493351
+    },
+    "backend": {
+      "backend_id": "harnesseval.return_consistency.clip_b32",
+      "backend_version": "harnesseval.return_consistency",
+      "config_digest": "d82b73c720250bf3db0bdb2b0df7ec012cc495c0a6d8c00542992d0bce0ee613"
+    },
+    "execution_mode": "local"
+  }
+}

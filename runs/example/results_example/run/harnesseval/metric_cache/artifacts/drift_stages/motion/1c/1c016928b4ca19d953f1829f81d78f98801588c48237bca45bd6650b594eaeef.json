@@ -1,0 +1,25 @@
+{
+  "schema_version": "harnesseval.drift_stage_cache",
+  "stage": "motion",
+  "input_digest": "1c016928b4ca19d953f1829f81d78f98801588c48237bca45bd6650b594eaeef",
+  "backend": {
+    "backend_id": "harnesseval.motion_quality",
+    "version": "harnesseval.motion_quality.two_metrics",
+    "config_digest": "1b748debcfeb5b2b1aa62cd23c48a4d0902fa598db8ee34d8d5179944b6a9258"
+  },
+  "evidence": {
+    "schema_version": "harnesseval.motion_quality.backend_output",
+    "metrics": {
+      "dynamic_degree": {
+        "raw_score": 1.0,
+        "sampled_frames": 33
+      },
+      "motion_smoothness": {
+        "raw_score": 0.9901828831968993,
+        "sampled_frames": 49
+      }
+    },
+    "source_fps": 24.0,
+    "decoded_frames": 97
+  }
+}

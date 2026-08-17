@@ -1,0 +1,33 @@
+{
+  "schema_version": "harnesseval.drift_stage_cache",
+  "stage": "render",
+  "input_digest": "941baf5b38922978396ad7e944abeda73ec8c73b653e9d19865ff97694a351d8",
+  "backend": {
+    "backend_id": "harnesseval.render_quality",
+    "version": "harnesseval.render_quality.four_metrics",
+    "config_digest": "defec4b60939d2dab0b70132cf4e650d0ec441890b563456c641dfac3dfa0e06"
+  },
+  "evidence": {
+    "schema_version": "harnesseval.render_quality.backend_output",
+    "metrics": {
+      "aesthetic_quality": {
+        "raw_score": 0.5491257905960083,
+        "sampled_frames": 9
+      },
+      "imaging_quality": {
+        "raw_score": 0.6792906787660387,
+        "sampled_frames": 9
+      },
+      "hpsv3_quality": {
+        "raw_score": 6.564993691444397,
+        "sampled_frames": 20
+      },
+      "temporal_flickering": {
+        "raw_score": 0.955163615357642,
+        "sampled_frames": 49
+      }
+    },
+    "source_fps": 24.0,
+    "decoded_frames": 97
+  }
+}

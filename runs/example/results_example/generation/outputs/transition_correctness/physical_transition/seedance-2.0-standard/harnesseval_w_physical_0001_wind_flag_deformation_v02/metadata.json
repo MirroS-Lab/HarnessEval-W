@@ -1,0 +1,87 @@
+{
+  "action_id": null,
+  "action_segments": [
+    {
+      "kind": "text_action",
+      "segment_id": "text_action",
+      "text": "Continue the calibrated fan airflow at 5.0 m/s."
+    }
+  ],
+  "action_tokens": [],
+  "case_id": "harnesseval_w_physical_0001_wind_flag_deformation_v02",
+  "combined_video": "vendor/harnesseval/work_dirs/seedance-2.0-standard/videos/case_harnesseval_w_physical_0001_wind_flag_deformation_v02_combined.mp4",
+  "completed_at_unix": 1786887694.0326371,
+  "hosted_provider": {
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "id": "seedance",
+    "paid_api_confirmed": true,
+    "request": {
+      "content": [
+        {
+          "text": "Fixed measurement-camera video of the same physical setup. Continue the calibrated fan airflow at 5.0 m/s. Show the physical evolution caused by the specified condition through the full rollout. Keep the camera, scale markers, apparatus, background, and all unspecified physical parameters unchanged. Do not introduce extra forces, camera cuts, new objects, or unrelated events.",
+          "type": "text"
+        },
+        {
+          "image_url": {
+            "url": "<image-data-url chars=1883172 sha256=dc66f4037b1a>"
+          },
+          "role": "first_frame",
+          "type": "image_url"
+        }
+      ],
+      "duration": 4,
+      "generate_audio": false,
+      "model": "ep-20260816184220-sdqt8",
+      "ratio": "adaptive",
+      "resolution": "480p",
+      "watermark": false
+    },
+    "request_digest": "54d24d408ede7768cad0cadba7e59813890aff01f519adc932b4bae818bec231",
+    "result_url_recorded": true,
+    "task_id": "cgt-20260816213532-bb5bm"
+  },
+  "input_image": "runs/v2_selected_330_20260811/input/hosted_seedance20_standard_480p/normalized_initial_images/harnesseval_w_physical_0001_wind_flag_deformation_v02.png",
+  "interaction_action": {
+    "parameters": {
+      "wind_speed_m_per_s": 5
+    },
+    "selected_variant": {
+      "action_id": null,
+      "parameters": {
+        "wind_speed_m_per_s": 5
+      },
+      "source": "single_physical_parameter_condition",
+      "text": "Continue the calibrated fan airflow at 5.0 m/s."
+    },
+    "selected_variant_policy": "representative_middle",
+    "text": "Continue the calibrated fan airflow at 5.0 m/s.",
+    "type": "apply_physical_control"
+  },
+  "model": "ep-20260816184220-sdqt8",
+  "model_slug": "seedance-2.0-standard",
+  "output_dir": "runs/example/results_example/outputs/transition_correctness/physical_transition/seedance-2.0-standard/harnesseval_w_physical_0001_wind_flag_deformation_v02",
+  "output_video": "output.mp4",
+  "perspective": "first_person",
+  "prompt": "Fixed measurement-camera video of the same physical setup. Continue the calibrated fan airflow at 5.0 m/s. Show the physical evolution caused by the specified condition through the full rollout. Keep the camera, scale markers, apparatus, background, and all unspecified physical parameters unchanged. Do not introduce extra forces, camera cuts, new objects, or unrelated events.",
+  "schema_version": "worlddojo.hosted_model_output.v1",
+  "source_tags": {
+    "construction_order": "real_image_then_image_calibrated_simulator",
+    "domain": "coastal_weather_station",
+    "generator": "seedream_image_first_then_simulator_v1",
+    "image_backend": "doubao_seedream_4_0",
+    "physics_backend": "image_calibrated_reduced_order_flag_v1",
+    "realization": "grounded_blower_flag_test",
+    "render_backend": "blender_eevee_next",
+    "scene": "wind_flag_deformation"
+  },
+  "status": "done",
+  "taxonomy": {
+    "primary_axis": "transition_correctness",
+    "probe_family": "physical_transition"
+  },
+  "video": {
+    "sha256": "e43dfa80dae8fb8972b0e4fd9003db0110e73340f606a4e96cb2e126ebd77f09",
+    "size_bytes": 694141
+  },
+  "video_path": "output.mp4"
+}

@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: harnesseval
+Version: 0.1.0
+Summary: HarnessEval: interactive world-model evaluation harness
+Requires-Python: >=3.10

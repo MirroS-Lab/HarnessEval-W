@@ -1,0 +1,18 @@
+{
+  "audio_stream_count": 0,
+  "duration_seconds": 4.042,
+  "errors": [],
+  "expected": {
+    "duration_seconds": 4.0,
+    "duration_tolerance_seconds": 1.0,
+    "has_audio": false,
+    "height": 496,
+    "width": 864
+  },
+  "has_audio": false,
+  "height": 496,
+  "path": "runs/example/results_example/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/segments/segment_007/output.mp4",
+  "status": "passed",
+  "video_stream_count": 1,
+  "width": 864
+}

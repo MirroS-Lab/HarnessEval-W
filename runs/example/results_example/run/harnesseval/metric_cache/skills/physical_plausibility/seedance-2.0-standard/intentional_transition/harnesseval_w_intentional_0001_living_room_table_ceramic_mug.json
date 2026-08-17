@@ -1,0 +1,33 @@
+{
+  "schema_version": "harnesseval.physical_plausibility.cache",
+  "skill_id": "physical_plausibility_inspector",
+  "definition_version": "harnesseval.physical_plausibility.pavrm",
+  "metrics": {
+    "visual_plausibility": 0.63956
+  },
+  "details": {
+    "pavrm": {
+      "raw_score": 3.1978,
+      "score": 0.63956,
+      "sampling": {
+        "fps": 2.0,
+        "max_pixels": 602112
+      }
+    }
+  },
+  "provenance": {
+    "input_digest": "d524fe7326a0b3a3790b0c692ebc8af6636dd3f6ea84e362b6c035b13f1dce43",
+    "cache_contract_version": "harnesseval.physical_plausibility.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/transition_correctness/intentional_transition/seedance-2.0-standard/harnesseval_w_intentional_0001_living_room_table_ceramic_mug/output.mp4",
+      "size_bytes": 439558,
+      "mtime_ns": 1786884157799596323
+    },
+    "backend": {
+      "backend_id": "harnesseval.physical_plausibility.pavrm",
+      "backend_version": "harnesseval.pavrm_qwen3vl_a3b",
+      "config_digest": "28fb755b9922a36fabd9b7359618b3f43d7f2d443f370ff7cc8b6d13fe62d6c0"
+    },
+    "execution_mode": "local"
+  }
+}

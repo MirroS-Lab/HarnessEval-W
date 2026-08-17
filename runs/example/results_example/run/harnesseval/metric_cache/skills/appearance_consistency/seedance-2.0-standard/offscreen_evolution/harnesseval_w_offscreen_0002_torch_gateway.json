@@ -1,0 +1,36 @@
+{
+  "schema_version": "harnesseval.appearance_consistency.cache",
+  "skill_id": "appearance_consistency_inspector",
+  "definition_version": "harnesseval.appearance_consistency",
+  "metrics": {
+    "background": 0.866722
+  },
+  "details": {
+    "background_consistency": {
+      "component": "background",
+      "raw_score": 0.8667220375500619,
+      "score": 0.8667220375500619,
+      "sampling": {
+        "fps": 2.0,
+        "short_video_fallback": "all_frames"
+      },
+      "sampling_policy": "2fps",
+      "sampled_frames": 65
+    }
+  },
+  "provenance": {
+    "input_digest": "8881fbee0c2e83985340793ee483d0719fe201252532eb74d24c5f5c08c83e48",
+    "cache_contract_version": "harnesseval.appearance_consistency.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "size_bytes": 4400447,
+      "mtime_ns": 1786886994283493351
+    },
+    "backend": {
+      "backend_id": "harnesseval.appearance_consistency",
+      "backend_version": "harnesseval.appearance_consistency.clip_b32",
+      "config_digest": "13e9f1f11f03ba93dee95c89bcf708f8fb6dbb56e57bd1b8c6642bbdde43494c"
+    },
+    "execution_mode": "local"
+  }
+}

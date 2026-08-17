@@ -1,0 +1,64 @@
+{
+  "schema_version": "harnesseval.render_quality.cache",
+  "skill_id": "render_quality_inspector",
+  "definition_version": "harnesseval.render_quality",
+  "metrics": {
+    "aesthetic": 0.5464240321746239,
+    "imaging": 0.7098197001677293,
+    "hpsv3": 0.7228139811754227,
+    "flickering": 0.9246198242785884
+  },
+  "details": {
+    "aesthetic_quality": {
+      "component": "aesthetic",
+      "raw_score": 0.5464240321746239,
+      "score": 0.5464240321746239,
+      "sampling": {
+        "fps": 2.0
+      },
+      "sampled_frames": 65
+    },
+    "imaging_quality": {
+      "component": "imaging",
+      "raw_score": 0.7098197001677293,
+      "score": 0.7098197001677293,
+      "sampling": {
+        "fps": 2.0
+      },
+      "sampled_frames": 65
+    },
+    "hpsv3_quality": {
+      "component": "hpsv3",
+      "raw_score": 6.456279623508453,
+      "score": 0.7228139811754227,
+      "sampling": {
+        "max_frames": 20
+      },
+      "sampled_frames": 20
+    },
+    "temporal_flickering": {
+      "component": "flickering",
+      "raw_score": 0.9246198242785884,
+      "score": 0.9246198242785884,
+      "sampling": {
+        "fps": 10.0
+      },
+      "sampled_frames": 385
+    }
+  },
+  "provenance": {
+    "input_digest": "bccf1d87266d5dc89561f96d2a9b08cbdd9fa4ad3ad669810e53bb75a270803c",
+    "cache_contract_version": "harnesseval.render_quality.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/output.mp4",
+      "size_bytes": 5072612,
+      "mtime_ns": 1786891115588583666
+    },
+    "backend": {
+      "backend_id": "harnesseval.render_quality",
+      "backend_version": "harnesseval.render_quality.four_metrics",
+      "config_digest": "defec4b60939d2dab0b70132cf4e650d0ec441890b563456c641dfac3dfa0e06"
+    },
+    "execution_mode": "local"
+  }
+}

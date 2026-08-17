@@ -1,0 +1,36 @@
+{
+  "schema_version": "harnesseval.appearance_consistency.cache",
+  "skill_id": "appearance_consistency_inspector",
+  "definition_version": "harnesseval.appearance_consistency",
+  "metrics": {
+    "background": 0.890418
+  },
+  "details": {
+    "background_consistency": {
+      "component": "background",
+      "raw_score": 0.8904182724654675,
+      "score": 0.8904182724654675,
+      "sampling": {
+        "fps": 2.0,
+        "short_video_fallback": "all_frames"
+      },
+      "sampling_policy": "2fps",
+      "sampled_frames": 65
+    }
+  },
+  "provenance": {
+    "input_digest": "cfab14ffa3a05388f636bc31573d25fafd509ff2e9d52b9f4e7a1c679bdbbef1",
+    "cache_contract_version": "harnesseval.appearance_consistency.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/output.mp4",
+      "size_bytes": 5072612,
+      "mtime_ns": 1786891115588583666
+    },
+    "backend": {
+      "backend_id": "harnesseval.appearance_consistency",
+      "backend_version": "harnesseval.appearance_consistency.clip_b32",
+      "config_digest": "13e9f1f11f03ba93dee95c89bcf708f8fb6dbb56e57bd1b8c6642bbdde43494c"
+    },
+    "execution_mode": "local"
+  }
+}

@@ -1,0 +1,1 @@
+Navigation video in the same scene. The camera pushes forward. The camera pans to the left. Keep a first-person navigation viewpoint. Make the viewpoint change smooth and continuous. Preserve route landmarks, spatial layout, scene identity, and visual style. Do not teleport, cut to the destination, or introduce unrelated semantic/physical events.

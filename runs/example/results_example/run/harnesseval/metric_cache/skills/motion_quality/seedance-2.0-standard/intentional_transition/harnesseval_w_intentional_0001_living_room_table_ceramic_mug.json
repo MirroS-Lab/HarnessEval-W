@@ -1,0 +1,44 @@
+{
+  "schema_version": "harnesseval.motion_quality.cache",
+  "skill_id": "motion_quality_inspector",
+  "definition_version": "harnesseval.motion_quality",
+  "metrics": {
+    "dynamic": 0.0,
+    "smoothness": 0.9973
+  },
+  "details": {
+    "dynamic_degree": {
+      "component": "dynamic",
+      "raw_score": 0.0,
+      "score": 0.0,
+      "sampling": {
+        "fps": 8.0
+      },
+      "sampled_frames": 33
+    },
+    "motion_smoothness": {
+      "component": "smoothness",
+      "raw_score": 0.9972998046747904,
+      "score": 0.9972998046747904,
+      "sampling": {
+        "fps": 10.0
+      },
+      "sampled_frames": 49
+    }
+  },
+  "provenance": {
+    "input_digest": "e7688326671ed492d5904faf5a87802547d2f4d0e88f90e4ac0dc6d51a5419a3",
+    "cache_contract_version": "harnesseval.motion_quality.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/transition_correctness/intentional_transition/seedance-2.0-standard/harnesseval_w_intentional_0001_living_room_table_ceramic_mug/output.mp4",
+      "size_bytes": 439558,
+      "mtime_ns": 1786884157799596323
+    },
+    "backend": {
+      "backend_id": "harnesseval.motion_quality",
+      "backend_version": "harnesseval.motion_quality.two_metrics",
+      "config_digest": "1b748debcfeb5b2b1aa62cd23c48a4d0902fa598db8ee34d8d5179944b6a9258"
+    },
+    "execution_mode": "local"
+  }
+}

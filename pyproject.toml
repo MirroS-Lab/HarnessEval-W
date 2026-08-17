@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harnesseval"
+version = "0.1.0"
+description = "HarnessEval: interactive world-model evaluation harness"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+harnesseval = "harnesseval.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

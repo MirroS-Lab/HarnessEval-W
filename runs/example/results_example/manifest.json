@@ -1,0 +1,628 @@
+{
+  "schema_version": "harnesseval.case_manifest",
+  "dataset_id": "harnesseval_w_smoke",
+  "taxonomy_schema": "harnesseval_taxonomy_v2",
+  "summary": {
+    "case_count": 6,
+    "probe_family_counts": {
+      "drift_resistance": 1,
+      "exploratory_transition": 1,
+      "intentional_transition": 1,
+      "offscreen_evolution": 1,
+      "physical_transition": 1,
+      "return_revisit_consistency": 1
+    }
+  },
+  "cases": [
+    {
+      "case_id": "harnesseval_w_drift_0001_old_town_lane",
+      "taxonomy": {
+        "primary_axis": "world_persistence",
+        "probe_family": "drift_resistance"
+      },
+      "world": {
+        "world_id": "wdw_harnesseval_w_drift_0001_old_town_lane",
+        "initial_observation": {
+          "type": "image",
+          "path": "benchmark/initial_observations/harnesseval_w_drift_0001_old_town_lane.png"
+        },
+        "source_tags": {
+          "scene": "old_town_lane",
+          "domain": "realistic",
+          "style": "procedural_prompt_spec",
+          "perspective": "first_person",
+          "generator": "seedream_initial_materializer_v0",
+          "render_backend": "doubao_seedream_4_0"
+        }
+      },
+      "non_model_facing": {
+        "stable_anchors": [
+          "clock tower",
+          "cobblestone lane",
+          "bakery awning",
+          "lamp posts"
+        ],
+        "case_quality_status": "pending_initial_observation_materialization",
+        "validation_questions": [
+          "Is the target or navigation affordance clearly visible?",
+          "Are stable anchors visible and spatially distinct?",
+          "Is the requested action judgeable from generated frames?",
+          "Is the case free of severe artifacts, watermarks, or ambiguity?"
+        ],
+        "drift_targets": [
+          "clock tower",
+          "cobblestone lane",
+          "bakery awning",
+          "lamp posts"
+        ],
+        "minimum_chunks": 8,
+        "pool_source": "template_generated"
+      },
+      "interaction": {
+        "action": {
+          "type": "long_navigation_sequence",
+          "action_id": "drift_0001",
+          "control_scheme": "harnesseval_navigation_v1",
+          "text": "Follow a long continuous route through the same world without cuts or reset. The stable anchors should remain part of one coherent world state.",
+          "chunks": [
+            {
+              "chunk_id": "c01",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "W"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c02",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "W+left"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c03",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "W"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c04",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "right"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c05",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "W"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c06",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "A"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c07",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "W"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c08",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "D"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "harnesseval_w_exploratory_0001_urban_crosswalk",
+      "taxonomy": {
+        "primary_axis": "transition_correctness",
+        "probe_family": "exploratory_transition"
+      },
+      "world": {
+        "world_id": "wdw_harnesseval_w_exploratory_0001_urban_crosswalk",
+        "initial_observation": {
+          "type": "image",
+          "path": "benchmark/initial_observations/harnesseval_w_exploratory_0001_urban_crosswalk.png"
+        },
+        "source_tags": {
+          "scene": "urban_crosswalk",
+          "domain": "urban",
+          "style": "procedural_prompt_spec",
+          "perspective": "first_person",
+          "generator": "seedream_initial_materializer_v0",
+          "render_backend": "doubao_seedream_4_0"
+        }
+      },
+      "non_model_facing": {
+        "stable_anchors": [
+          "crosswalk",
+          "traffic lights",
+          "corner shop",
+          "bus shelter"
+        ],
+        "case_quality_status": "pending_initial_observation_materialization",
+        "validation_questions": [
+          "Is the target or navigation affordance clearly visible?",
+          "Are stable anchors visible and spatially distinct?",
+          "Is the requested action judgeable from generated frames?",
+          "Is the case free of severe artifacts, watermarks, or ambiguity?"
+        ],
+        "navigation_affordances": [
+          "visible path",
+          "stable near-mid-far anchors",
+          "camera motion judgeable"
+        ],
+        "pool_source": "template_generated"
+      },
+      "interaction": {
+        "action": {
+          "type": "navigation_control",
+          "action_id": "explore_0001",
+          "control_scheme": "harnesseval_navigation_v1",
+          "chunks": [
+            {
+              "chunk_id": "c01",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "W"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c02",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "left"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "harnesseval_w_intentional_0001_living_room_table_ceramic_mug",
+      "taxonomy": {
+        "primary_axis": "transition_correctness",
+        "probe_family": "intentional_transition"
+      },
+      "world": {
+        "world_id": "wdw_harnesseval_w_intentional_0001_living_room_table_ceramic_mug",
+        "initial_observation": {
+          "type": "image",
+          "path": "benchmark/initial_observations/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.png"
+        },
+        "source_tags": {
+          "scene": "living_room_table",
+          "domain": "realistic",
+          "style": "procedural_prompt_spec",
+          "perspective": "third_person",
+          "generator": "seedream_initial_materializer_v0",
+          "render_backend": "doubao_seedream_4_0"
+        }
+      },
+      "non_model_facing": {
+        "stable_anchors": [
+          "sofa",
+          "coffee table",
+          "rug",
+          "floor lamp",
+          "ceramic mug"
+        ],
+        "case_quality_status": "pending_initial_observation_materialization",
+        "validation_questions": [
+          "Is the target or navigation affordance clearly visible?",
+          "Are stable anchors visible and spatially distinct?",
+          "Is the requested action judgeable from generated frames?",
+          "Is the case free of severe artifacts, watermarks, or ambiguity?"
+        ],
+        "target_entity": "ceramic mug",
+        "expected_outcome": [
+          "tip the white ceramic mug onto its side and create a small local spill",
+          "The ceramic mug remains identifiable as the same entity.",
+          "Protected anchors remain unchanged."
+        ],
+        "protected_anchors": [
+          "sofa",
+          "coffee table",
+          "rug",
+          "floor lamp"
+        ],
+        "negative_constraints": [
+          "Do not replace the whole scene.",
+          "Do not add unrelated extra events.",
+          "Do not change camera viewpoint."
+        ],
+        "pool_source": "template_generated"
+      },
+      "interaction": {
+        "action": {
+          "type": "text_based_state_change",
+          "action_id": "intentional_0001",
+          "text": "tip the white ceramic mug onto its side and create a small local spill. Keep the camera fixed and keep all unrelated scene anchors unchanged."
+        }
+      }
+    },
+    {
+      "case_id": "harnesseval_w_offscreen_0002_torch_gateway",
+      "taxonomy": {
+        "primary_axis": "world_persistence",
+        "probe_family": "offscreen_evolution"
+      },
+      "world": {
+        "world_id": "wdw_harnesseval_w_offscreen_0002_torch_gateway",
+        "initial_observation": {
+          "type": "image",
+          "path": "benchmark/initial_observations/harnesseval_w_offscreen_0002_torch_gateway.png"
+        },
+        "source_tags": {
+          "scene": "torch_gateway",
+          "domain": "realistic",
+          "style": "procedural_prompt_spec",
+          "perspective": "first_person",
+          "generator": "seedream_initial_materializer_v0",
+          "render_backend": "doubao_seedream_4_0"
+        }
+      },
+      "non_model_facing": {
+        "stable_anchors": [
+          "stone gateway",
+          "obelisk",
+          "path fork",
+          "fallen column",
+          "torch flame silhouettes and brightness"
+        ],
+        "case_quality_status": "pending_initial_observation_materialization",
+        "validation_questions": [
+          "Is the target or navigation affordance clearly visible?",
+          "Are stable anchors visible and spatially distinct?",
+          "Is the requested action judgeable from generated frames?",
+          "Is the case free of severe artifacts, watermarks, or ambiguity?"
+        ],
+        "offscreen_evolution_spec": {
+          "target_process": "torch flame silhouettes and brightness",
+          "expected_evolution": [
+            "The torch flame silhouettes and brightness continues changing during the offscreen interval.",
+            "When it returns, the torch flame silhouettes and brightness is not an exact frozen copy, but remains the same process in the same world."
+          ],
+          "failure_modes": [
+            "target never leaves view",
+            "target never returns",
+            "frozen copy",
+            "world reset",
+            "identity swap"
+          ]
+        },
+        "visibility_plan": {
+          "pre_visible": [
+            "c01"
+          ],
+          "offscreen": [
+            "c03",
+            "c04",
+            "c05"
+          ],
+          "return_visible": [
+            "c07",
+            "c08"
+          ]
+        },
+        "offscreen_window": {
+          "leave_chunk": "c02",
+          "return_chunk": "c07"
+        },
+        "return_window": {
+          "reference_chunk": "c01",
+          "return_chunk": "c08"
+        },
+        "protected_anchors": [
+          "stone gateway",
+          "obelisk",
+          "path fork",
+          "fallen column"
+        ],
+        "pool_source": "template_generated"
+      },
+      "interaction": {
+        "action": {
+          "type": "offscreen_evolution_sequence",
+          "action_id": "offscreen_0002",
+          "text": "Use a look-away-and-return sequence. The torch flame silhouettes and brightness should continue evolving while offscreen.",
+          "chunks": [
+            {
+              "chunk_id": "c01",
+              "action": {
+                "text": "Turn away from the torch flame silhouettes and brightness while it is still visible."
+              }
+            },
+            {
+              "chunk_id": "c02",
+              "action": {
+                "text": "Continue turning so the torch flame silhouettes and brightness leaves the camera view."
+              }
+            },
+            {
+              "chunk_id": "c03",
+              "action": {
+                "text": "Move forward while looking away; the torch flame silhouettes and brightness remains offscreen and should continue evolving."
+              }
+            },
+            {
+              "chunk_id": "c04",
+              "action": {
+                "text": "Pause briefly with the torch flame silhouettes and brightness still offscreen."
+              }
+            },
+            {
+              "chunk_id": "c05",
+              "action": {
+                "text": "Move back toward the original area while not facing the torch flame silhouettes and brightness."
+              }
+            },
+            {
+              "chunk_id": "c06",
+              "action": {
+                "text": "Turn back toward the same torch flame silhouettes and brightness."
+              }
+            },
+            {
+              "chunk_id": "c07",
+              "action": {
+                "text": "Return the torch flame silhouettes and brightness to view; it should have evolved rather than frozen or reset."
+              }
+            },
+            {
+              "chunk_id": "c08",
+              "action": {
+                "text": "Settle into a final view compatible with the original world."
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schema_version": "harnesseval_image_first_multiphysics",
+      "case_id": "harnesseval_w_physical_0001_wind_flag_deformation_v02",
+      "suite": "image_first_multiphysics_12",
+      "taxonomy": {
+        "primary_axis": "transition_correctness",
+        "probe_family": "physical_transition",
+        "phenomenon": "aeroelastic_fabric_deformation",
+        "complexity": "L2"
+      },
+      "world": {
+        "world_id": "wdw_harnesseval_w_physical_0001_wind_flag_deformation_v02",
+        "initial_observation": {
+          "type": "image",
+          "path": "benchmark/initial_observations/harnesseval_w_physical_0001_wind_flag_deformation_v02.png"
+        },
+        "source_tags": {
+          "scene": "wind_flag_deformation",
+          "realization": "grounded_blower_flag_test",
+          "domain": "coastal_weather_station",
+          "generator": "seedream_image_first_then_simulator_v1",
+          "image_backend": "doubao_seedream_4_0",
+          "physics_backend": "image_calibrated_reduced_order_flag_v1",
+          "render_backend": "blender_eevee_next",
+          "construction_order": "real_image_then_image_calibrated_simulator"
+        }
+      },
+      "interaction": {
+        "action": {
+          "type": "apply_physical_control",
+          "text": "Continue the calibrated fan airflow at 5.0 m/s.",
+          "parameters": {
+            "wind_speed_m_per_s": 5.0
+          }
+        }
+      },
+      "counterfactual": {
+        "group_id": "wdm_imagefirst_multi_g01_wind_flag_deformation",
+        "variant_index": 2,
+        "variant_label": "medium",
+        "varied_parameter": "wind_speed_m_per_s",
+        "parameter_unit": "meter_per_second",
+        "parameter_value": 5.0,
+        "expected_group_relation": "flag_deformation_increases_as_wind_speed_increases",
+        "relation_eligible": true,
+        "controlled_constants": {
+          "air_density_kg_m3": 1.225,
+          "known_flag_height_m": 1.25,
+          "effective_sheet_stiffness_n_m": 180.0,
+          "response_time_seconds": 0.65
+        }
+      },
+      "physics": {
+        "model": "image_calibrated_reduced_order_flag_v1",
+        "control_parameter_source": "experiment_protocol_not_inferred_from_single_image",
+        "expected_transition": "Higher dynamic pressure produces larger flexible-sheet deformation.",
+        "deterministic": true,
+        "single_view_policy": {
+          "measured": "visible object positions, silhouettes, contacts, and scale anchors",
+          "not_claimed_measured": "unobserved depth, instantaneous velocity, and future control response"
+        }
+      },
+      "generation": {
+        "photo_sha256": "9f2b6758021e831c390a95419e56d0da8db76bb22452580c83950f9b266d613a",
+        "image_quality_gate": {
+          "passed": true,
+          "errors": []
+        },
+        "correspondence_passed": true,
+        "blender_version": "4.2.22 LTS"
+      }
+    },
+    {
+      "case_id": "harnesseval_w_return_0001_city_intersection",
+      "taxonomy": {
+        "primary_axis": "world_persistence",
+        "probe_family": "return_revisit_consistency"
+      },
+      "world": {
+        "world_id": "wdw_harnesseval_w_return_0001_city_intersection",
+        "initial_observation": {
+          "type": "image",
+          "path": "benchmark/initial_observations/harnesseval_w_return_0001_city_intersection.png"
+        },
+        "source_tags": {
+          "scene": "city_intersection",
+          "domain": "realistic",
+          "style": "procedural_prompt_spec",
+          "perspective": "first_person",
+          "generator": "seedream_initial_materializer_v0",
+          "render_backend": "doubao_seedream_4_0"
+        }
+      },
+      "non_model_facing": {
+        "stable_anchors": [
+          "station arch",
+          "traffic gantry",
+          "zebra crossing",
+          "bus shelter"
+        ],
+        "case_quality_status": "pending_initial_observation_materialization",
+        "validation_questions": [
+          "Is the target or navigation affordance clearly visible?",
+          "Are stable anchors visible and spatially distinct?",
+          "Is the requested action judgeable from generated frames?",
+          "Is the case free of severe artifacts, watermarks, or ambiguity?"
+        ],
+        "return_window": {
+          "reference_chunk": "c01",
+          "return_chunk": "c08"
+        },
+        "closed_loop_pairs": [
+          {
+            "reference_chunk": "c01",
+            "return_chunk": "c08"
+          }
+        ],
+        "protected_anchors": [
+          "station arch",
+          "traffic gantry",
+          "zebra crossing",
+          "bus shelter"
+        ],
+        "pool_source": "template_generated"
+      },
+      "interaction": {
+        "action": {
+          "type": "closed_loop_navigation",
+          "action_id": "return_0001",
+          "control_scheme": "harnesseval_navigation_v1",
+          "text": "Move away from the initial viewpoint and then return to a compatible view of the same world without resetting the scene.",
+          "closed_loop": {
+            "intended": true,
+            "closure_type": "inverse_balanced_navigation_tokens"
+          },
+          "chunks": [
+            {
+              "chunk_id": "c01",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "W"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c02",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "W"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c03",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "S"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c04",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "S"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c05",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "left"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c06",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "right"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c07",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "A"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c08",
+              "actions": [
+                {
+                  "type": "navigation",
+                  "action": "D"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

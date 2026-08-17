@@ -1,0 +1,69 @@
+{
+  "schema_version": "harnesseval.intentional_change.result",
+  "skill_id": "intentional_change_verifier_vlm",
+  "definition_version": "harnesseval.intentional_change_vlm",
+  "input_digest": "bc21ef3271e4e0bd366d34b13ccfcede69da0b6b01faad41fb50bdb813fbfcf8",
+  "result": {
+    "skill_id": "intentional_change_verifier_vlm",
+    "status": "ok",
+    "score": 1.0,
+    "metrics": {
+      "Q1_target_visible": 1.0,
+      "Q2_transition_visible": 1.0,
+      "Q3_intended_change": 1.0,
+      "Q4_target_specificity": 1.0,
+      "Q5_final_state": 1.0,
+      "Q6_anchor_preservation": 1.0,
+      "Q7_no_extra_event": 1.0,
+      "Q8_judgeable": 1.0,
+      "target_visibility": 1.0,
+      "change_execution": 1.0,
+      "target_specificity": 1.0,
+      "final_state": 1.0,
+      "preservation": 1.0,
+      "validity_gate": 1.0,
+      "core_score": 1.0,
+      "final_score": 1.0,
+      "expected_spec_alignment": 0.44127
+    },
+    "diagnostics": {
+      "definition_version": "harnesseval.intentional_change_vlm",
+      "prompt_version": "harnesseval.intentional_change.prompt",
+      "cache_contract_version": "harnesseval.intentional_change.cache_contract",
+      "case_audit": {
+        "status": "ok",
+        "warning": false,
+        "expected_spec_alignment": 0.44127,
+        "target_alignment": 0.333333,
+        "change_alignment": 0.190476,
+        "anchor_alignment": 0.8
+      },
+      "stage1_cache": "runs/example/results_example/run/harnesseval/metric_cache/skills/intentional_change/stage1/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.json",
+      "stage1_evidence_digest": "fe5f64d0763de4f7b2b5b21c26e6da3488a7c147b27386d846ac5c9811fb7570",
+      "stage2_cache": "runs/example/results_example/run/harnesseval/metric_cache/skills/intentional_change/stage2/seedance-2.0-standard/intentional_transition/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.json",
+      "stage2_evidence_digest": "de13f52bfc278670dfa8347838914947f59024562079c28a032f83191c53581e"
+    },
+    "notes": []
+  },
+  "provenance": {
+    "backend": {
+      "backend_id": "openai_compatible.intentional_change_vlm",
+      "backend_version": "gpt-5.5",
+      "config_digest": "93dc736fe2796334d6e71f9edc8467b92de552fc2e67ed42da7cf85d87d3c624"
+    },
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/transition_correctness/intentional_transition/seedance-2.0-standard/harnesseval_w_intentional_0001_living_room_table_ceramic_mug/output.mp4",
+      "size_bytes": 439558,
+      "mtime_ns": 1786884157799596323,
+      "sha256": "b9c1b5ae017623d7d6b7b9e314ca3c605c7a9ef5439e8fd764680461e6bb0714"
+    },
+    "initial_observation": {
+      "path": "benchmark/initial_observations/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.png",
+      "size_bytes": 293142,
+      "mtime_ns": 1784919754343200090,
+      "sha256": "83e591995e7fd4e71e40137395dfc46daf250038f91c044794d969421b966382"
+    },
+    "stage1_cache_hit": false,
+    "stage2_cache_hit": false
+  }
+}

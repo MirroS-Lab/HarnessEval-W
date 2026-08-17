@@ -1,0 +1,44 @@
+{
+  "schema_version": "harnesseval.motion_quality.cache",
+  "skill_id": "motion_quality_inspector",
+  "definition_version": "harnesseval.motion_quality",
+  "metrics": {
+    "dynamic": 1.0,
+    "smoothness": 0.991437
+  },
+  "details": {
+    "dynamic_degree": {
+      "component": "dynamic",
+      "raw_score": 1.0,
+      "score": 1.0,
+      "sampling": {
+        "fps": 8.0
+      },
+      "sampled_frames": 65
+    },
+    "motion_smoothness": {
+      "component": "smoothness",
+      "raw_score": 0.9914366617865867,
+      "score": 0.9914366617865867,
+      "sampling": {
+        "fps": 10.0
+      },
+      "sampled_frames": 97
+    }
+  },
+  "provenance": {
+    "input_digest": "cd3da30708d413765808d25870851e98be9ecc44cefad59cfd9d757ae023a471",
+    "cache_contract_version": "harnesseval.motion_quality.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/output.mp4",
+      "size_bytes": 871937,
+      "mtime_ns": 1786880098812933791
+    },
+    "backend": {
+      "backend_id": "harnesseval.motion_quality",
+      "backend_version": "harnesseval.motion_quality.two_metrics",
+      "config_digest": "1b748debcfeb5b2b1aa62cd23c48a4d0902fa598db8ee34d8d5179944b6a9258"
+    },
+    "execution_mode": "local"
+  }
+}

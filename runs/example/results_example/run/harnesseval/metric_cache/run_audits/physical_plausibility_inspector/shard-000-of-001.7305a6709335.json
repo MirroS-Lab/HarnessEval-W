@@ -1,0 +1,181 @@
+{
+  "schema_version": "harnesseval.skill_run_audit",
+  "created_at": "2026-08-17T11:07:15.397932+00:00",
+  "runner_id": "harnesseval.runner",
+  "run_context": {
+    "shard": {
+      "count": 1,
+      "index": 0,
+      "key": "round_robin(skill_id, probe_family, sorted case_id)"
+    },
+    "filters": {
+      "skills": [
+        "physical_plausibility_inspector"
+      ],
+      "models": [
+        "seedance-2.0-standard"
+      ],
+      "case_ids": [
+        "harnesseval_w_physical_0001_wind_flag_deformation_v02",
+        "harnesseval_w_drift_0001_old_town_lane",
+        "harnesseval_w_exploratory_0001_urban_crosswalk",
+        "harnesseval_w_intentional_0001_living_room_table_ceramic_mug",
+        "harnesseval_w_offscreen_0002_torch_gateway",
+        "harnesseval_w_return_0001_city_intersection"
+      ],
+      "limit": 0
+    },
+    "backend_config": "runs/example/results_example/run/harnesseval/models/seedance-2.0-standard/backend_config.json",
+    "drift_stage": null
+  },
+  "plan": {
+    "schema_version": "harnesseval.skill_run_plan",
+    "task_count": 6,
+    "rollout_count": 6,
+    "case_count": 6,
+    "skill_counts": {
+      "physical_plausibility_inspector": 6
+    },
+    "family_counts": {
+      "drift_resistance": 1,
+      "exploratory_transition": 1,
+      "intentional_transition": 1,
+      "offscreen_evolution": 1,
+      "physical_transition": 1,
+      "return_revisit_consistency": 1
+    },
+    "shared_stage1_task_count": 0
+  },
+  "status": "passed",
+  "status_counts": {
+    "ok": 6
+  },
+  "skill_status_counts": {
+    "physical_plausibility_inspector/ok": 6
+  },
+  "backends": {
+    "physical_plausibility_inspector": {
+      "backend_id": "harnesseval.physical_plausibility.pavrm",
+      "backend_version": "harnesseval.pavrm_qwen3vl_a3b",
+      "config_digest": "28fb755b9922a36fabd9b7359618b3f43d7f2d443f370ff7cc8b6d13fe62d6c0",
+      "execution_mode": "local",
+      "resource_mode": null,
+      "model_load_count": 0
+    }
+  },
+  "cache_hits": 6,
+  "cache_misses": 0,
+  "score_min": 0.50456,
+  "score_max": 0.72424,
+  "outcomes": [
+    {
+      "case_id": "harnesseval_w_physical_0001_wind_flag_deformation_v02",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "transition_correctness",
+      "probe_family": "physical_transition",
+      "skill_id": "physical_plausibility_inspector",
+      "plan_role": "observation",
+      "video": "runs/example/results_example/generation/outputs/transition_correctness/physical_transition/seedance-2.0-standard/harnesseval_w_physical_0001_wind_flag_deformation_v02/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/transition_correctness/physical_transition/seedance-2.0-standard/harnesseval_w_physical_0001_wind_flag_deformation_v02/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_physical_0001_wind_flag_deformation_v02.png",
+      "plan": "benchmark/plans/physical_transition/harnesseval_w_physical_0001_wind_flag_deformation_v02.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/physical_transition/harnesseval_w_physical_0001_wind_flag_deformation_v02.metrics.json",
+      "status": "ok",
+      "cache_hit": true,
+      "cache_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/physical_plausibility/seedance-2.0-standard/physical_transition/harnesseval_w_physical_0001_wind_flag_deformation_v02.json",
+      "skill_status": "ok",
+      "score": 0.72424
+    },
+    {
+      "case_id": "harnesseval_w_drift_0001_old_town_lane",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "world_persistence",
+      "probe_family": "drift_resistance",
+      "skill_id": "physical_plausibility_inspector",
+      "plan_role": "observation",
+      "video": "runs/example/results_example/generation/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_drift_0001_old_town_lane.png",
+      "plan": "benchmark/plans/drift_resistance/harnesseval_w_drift_0001_old_town_lane.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/drift_resistance/harnesseval_w_drift_0001_old_town_lane.metrics.json",
+      "status": "ok",
+      "cache_hit": true,
+      "cache_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/physical_plausibility/seedance-2.0-standard/drift_resistance/harnesseval_w_drift_0001_old_town_lane.json",
+      "skill_status": "ok",
+      "score": 0.63452
+    },
+    {
+      "case_id": "harnesseval_w_exploratory_0001_urban_crosswalk",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "transition_correctness",
+      "probe_family": "exploratory_transition",
+      "skill_id": "physical_plausibility_inspector",
+      "plan_role": "observation",
+      "video": "runs/example/results_example/generation/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/transition_correctness/exploratory_transition/seedance-2.0-standard/harnesseval_w_exploratory_0001_urban_crosswalk/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_exploratory_0001_urban_crosswalk.png",
+      "plan": "benchmark/plans/exploratory_transition/harnesseval_w_exploratory_0001_urban_crosswalk.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/exploratory_transition/harnesseval_w_exploratory_0001_urban_crosswalk.metrics.json",
+      "status": "ok",
+      "cache_hit": true,
+      "cache_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/physical_plausibility/seedance-2.0-standard/exploratory_transition/harnesseval_w_exploratory_0001_urban_crosswalk.json",
+      "skill_status": "ok",
+      "score": 0.62178
+    },
+    {
+      "case_id": "harnesseval_w_intentional_0001_living_room_table_ceramic_mug",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "transition_correctness",
+      "probe_family": "intentional_transition",
+      "skill_id": "physical_plausibility_inspector",
+      "plan_role": "observation",
+      "video": "runs/example/results_example/generation/outputs/transition_correctness/intentional_transition/seedance-2.0-standard/harnesseval_w_intentional_0001_living_room_table_ceramic_mug/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/transition_correctness/intentional_transition/seedance-2.0-standard/harnesseval_w_intentional_0001_living_room_table_ceramic_mug/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.png",
+      "plan": "benchmark/plans/intentional_transition/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/intentional_transition/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.metrics.json",
+      "status": "ok",
+      "cache_hit": true,
+      "cache_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/physical_plausibility/seedance-2.0-standard/intentional_transition/harnesseval_w_intentional_0001_living_room_table_ceramic_mug.json",
+      "skill_status": "ok",
+      "score": 0.63956
+    },
+    {
+      "case_id": "harnesseval_w_offscreen_0002_torch_gateway",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "world_persistence",
+      "probe_family": "offscreen_evolution",
+      "skill_id": "physical_plausibility_inspector",
+      "plan_role": "observation",
+      "video": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_offscreen_0002_torch_gateway.png",
+      "plan": "benchmark/plans/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.metrics.json",
+      "status": "ok",
+      "cache_hit": true,
+      "cache_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/physical_plausibility/seedance-2.0-standard/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.json",
+      "skill_status": "ok",
+      "score": 0.50456
+    },
+    {
+      "case_id": "harnesseval_w_return_0001_city_intersection",
+      "model_id": "seedance-2.0-standard",
+      "primary_axis": "world_persistence",
+      "probe_family": "return_revisit_consistency",
+      "skill_id": "physical_plausibility_inspector",
+      "plan_role": "observation",
+      "video": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/output.mp4",
+      "metadata": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/metadata.json",
+      "initial_observation": "benchmark/initial_observations/harnesseval_w_return_0001_city_intersection.png",
+      "plan": "benchmark/plans/return_revisit_consistency/harnesseval_w_return_0001_city_intersection.skill_plan.json",
+      "bundle": "runs/example/results_example/run/harnesseval/metric_cache/bundles/seedance-2.0-standard/return_revisit_consistency/harnesseval_w_return_0001_city_intersection.metrics.json",
+      "status": "ok",
+      "cache_hit": true,
+      "cache_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/physical_plausibility/seedance-2.0-standard/return_revisit_consistency/harnesseval_w_return_0001_city_intersection.json",
+      "skill_status": "ok",
+      "score": 0.60252
+    }
+  ],
+  "audit_path": "runs/example/results_example/run/harnesseval/metric_cache/run_audits/physical_plausibility_inspector/shard-000-of-001.7305a6709335.json"
+}

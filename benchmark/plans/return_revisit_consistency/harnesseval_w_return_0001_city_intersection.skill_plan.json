@@ -1,0 +1,182 @@
+{
+  "schema_version": "harnesseval.skill_plan",
+  "routing_mode": "shipped_case_plan",
+  "case_id": "harnesseval_w_return_0001_city_intersection",
+  "taxonomy": {
+    "primary_axis": "world_persistence",
+    "probe_family": "return_revisit_consistency"
+  },
+  "selected_skills": [
+    {
+      "skill_id": "render_quality_inspector",
+      "role": "observation",
+      "reason": "The generated city-intersection frames must be technically clean enough to judge the station arch, traffic gantry, zebra crossing, bus shelter, and return behavior without blur, artifacts, watermarks, split-screen, or geometry failures.",
+      "parameters": {
+        "domain": "realistic",
+        "scene": "city_intersection",
+        "check_for": [
+          "severe blur",
+          "watermarks or text artifacts",
+          "split-screen or collage composition",
+          "broken road/building/traffic-light geometry",
+          "unjudgeable stable anchors"
+        ]
+      }
+    },
+    {
+      "skill_id": "motion_quality_inspector",
+      "role": "observation",
+      "reason": "The rollout is driven by eight navigation chunks, so evaluation should confirm that motion is present, temporally smooth, and not dominated by flicker or abrupt unrelated jumps.",
+      "parameters": {
+        "action_chunks": [
+          "c01",
+          "c02",
+          "c03",
+          "c04",
+          "c05",
+          "c06",
+          "c07",
+          "c08"
+        ],
+        "expected_motion_type": "first_person_navigation"
+      }
+    },
+    {
+      "skill_id": "appearance_consistency_inspector",
+      "role": "observation",
+      "reason": "The same realistic world should persist through the navigation loop, with stable appearance for the protected anchors and surrounding intersection instead of semantic or style drift.",
+      "parameters": {
+        "protected_anchors": [
+          "station arch",
+          "traffic gantry",
+          "zebra crossing",
+          "bus shelter"
+        ],
+        "consistency_scope": "full_rollout"
+      }
+    },
+    {
+      "skill_id": "physical_plausibility_inspector",
+      "role": "observation",
+      "reason": "First-person movement through a realistic street scene should maintain plausible camera motion, perspective changes, object scale, road layout, and occlusion relationships.",
+      "parameters": {
+        "scene": "city_intersection",
+        "expected_camera_behavior": "ground-level first-person navigation",
+        "check_for": [
+          "impossible parallax",
+          "scale changes without viewpoint cause",
+          "objects sliding independently of the world",
+          "implausible occlusions"
+        ]
+      }
+    },
+    {
+      "skill_id": "viewpoint_trajectory_verifier",
+      "role": "core",
+      "reason": "The case explicitly requires active closed-loop navigation using W, S, left, right, A, and D actions, so the viewpoint should move away and then follow the inverse-balanced path back toward a compatible original view.",
+      "parameters": {
+        "control_scheme": "harnesseval_navigation_v1",
+        "chunks": [
+          {
+            "chunk_id": "c01",
+            "action": "W"
+          },
+          {
+            "chunk_id": "c02",
+            "action": "W"
+          },
+          {
+            "chunk_id": "c03",
+            "action": "S"
+          },
+          {
+            "chunk_id": "c04",
+            "action": "S"
+          },
+          {
+            "chunk_id": "c05",
+            "action": "left"
+          },
+          {
+            "chunk_id": "c06",
+            "action": "right"
+          },
+          {
+            "chunk_id": "c07",
+            "action": "A"
+          },
+          {
+            "chunk_id": "c08",
+            "action": "D"
+          }
+        ],
+        "expected_pattern": "move away, reverse forward/backward displacement, cancel rotation, cancel lateral displacement"
+      }
+    },
+    {
+      "skill_id": "return_consistency_verifier",
+      "role": "core",
+      "reason": "This is a return_revisit_consistency case with an explicit closed-loop pair requiring c08 to return to a compatible view of the same world as c01 without resetting or changing anchors.",
+      "parameters": {
+        "reference_chunk": "c01",
+        "return_chunk": "c08",
+        "closed_loop_pairs": [
+          {
+            "reference_chunk": "c01",
+            "return_chunk": "c08"
+          }
+        ],
+        "protected_anchors": [
+          "station arch",
+          "traffic gantry",
+          "zebra crossing",
+          "bus shelter"
+        ],
+        "expected_return": "compatible viewpoint and layout, not necessarily pixel-identical",
+        "must_preserve": [
+          "anchor identity",
+          "relative spatial arrangement",
+          "intersection layout",
+          "realistic first-person perspective"
+        ]
+      }
+    }
+  ],
+  "selected_skill_ids": [
+    "render_quality_inspector",
+    "motion_quality_inspector",
+    "appearance_consistency_inspector",
+    "physical_plausibility_inspector",
+    "viewpoint_trajectory_verifier",
+    "return_consistency_verifier"
+  ],
+  "skipped_skills": [
+    {
+      "skill_id": "intentional_change_verifier_vlm",
+      "reason": "The task is navigation and world persistence, not an explicitly specified semantic or object-state transition."
+    },
+    {
+      "skill_id": "physical_response_verifier_vlm",
+      "reason": "There is no physical intervention or force whose causal response is the primary target."
+    },
+    {
+      "skill_id": "physical_law_validator",
+      "reason": "No case-specific physical-law response needs validation beyond general navigation plausibility."
+    },
+    {
+      "skill_id": "drift_degradation_analyzer",
+      "reason": "The rollout has eight short navigation chunks and targets a closed-loop return, not long-horizon progressive degradation resistance."
+    },
+    {
+      "skill_id": "offscreen_evolution_verifier",
+      "reason": "The case does not specify an offscreen process that must continue evolving while outside the camera view."
+    }
+  ],
+  "validation": {
+    "status": "ok",
+    "registered_skill_count": 11,
+    "selected_skill_count": 6,
+    "selection_source": "planner",
+    "selection_modified": false
+  }
+}

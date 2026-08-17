@@ -1,0 +1,95 @@
+{
+  "schema_version": "harnesseval.skill_plan",
+  "routing_mode": "shipped_case_plan",
+  "case_id": "harnesseval_w_physical_0001_wind_flag_deformation_v02",
+  "taxonomy": {
+    "primary_axis": "transition_correctness",
+    "probe_family": "physical_transition"
+  },
+  "selected_skills": [
+    {
+      "skill_id": "render_quality_inspector",
+      "role": "observation",
+      "reason": "The result must preserve a clean coastal weather-station scene with the blower, flagpole, platform, ocean horizon, and flag visible without rendering artifacts.",
+      "parameters": {}
+    },
+    {
+      "skill_id": "motion_quality_inspector",
+      "role": "observation",
+      "reason": "The flag should show ongoing wind-driven motion under continued 5.0 m/s airflow, with temporally smooth fabric deformation rather than jitter, freezing, or popping.",
+      "parameters": {}
+    },
+    {
+      "skill_id": "appearance_consistency_inspector",
+      "role": "observation",
+      "reason": "The rollout should maintain the initial image appearance: red flag material, pole, blower, concrete platform, sea background, lighting, scale, and object identities should remain consistent.",
+      "parameters": {}
+    },
+    {
+      "skill_id": "physical_plausibility_inspector",
+      "role": "observation",
+      "reason": "The flag motion must look causally driven by airflow from the blower and remain plausible for a flexible sheet attached to a fixed vertical pole.",
+      "parameters": {}
+    },
+    {
+      "skill_id": "physical_response_verifier_vlm",
+      "role": "core",
+      "reason": "The primary target is a physical transition: continuing calibrated fan airflow at 5.0 m/s should produce the correct causal flag deformation response over time.",
+      "parameters": {
+        "control": "continue fan airflow",
+        "wind_speed_m_per_s": 5.0,
+        "expected_response": "medium wind produces sustained flexible-sheet deformation downstream from the pole"
+      }
+    },
+    {
+      "skill_id": "physical_law_validator",
+      "role": "diagnostic",
+      "reason": "The case includes a counterfactual relation and physical constants; evaluation should check that deformation magnitude is consistent with medium dynamic pressure and increases relative to lower wind variants while remaining below stronger-wind behavior.",
+      "parameters": {
+        "wind_speed_m_per_s": 5.0,
+        "air_density_kg_m3": 1.225,
+        "flag_height_m": 1.25,
+        "effective_sheet_stiffness_n_m": 180.0,
+        "response_time_seconds": 0.65,
+        "expected_group_relation": "flag_deformation_increases_as_wind_speed_increases"
+      }
+    }
+  ],
+  "selected_skill_ids": [
+    "render_quality_inspector",
+    "motion_quality_inspector",
+    "appearance_consistency_inspector",
+    "physical_plausibility_inspector",
+    "physical_response_verifier_vlm",
+    "physical_law_validator"
+  ],
+  "skipped_skills": [
+    {
+      "skill_id": "viewpoint_trajectory_verifier",
+      "reason": "No active camera path, navigation movement, or viewpoint trajectory is required; the task concerns a fixed-scene physical response."
+    },
+    {
+      "skill_id": "intentional_change_verifier_vlm",
+      "reason": "The target is not a semantic edit or intentional object-state change; it is a causal aeroelastic response to wind."
+    },
+    {
+      "skill_id": "drift_degradation_analyzer",
+      "reason": "The case is not a long-horizon multi-turn drift-resistance test."
+    },
+    {
+      "skill_id": "return_consistency_verifier",
+      "reason": "There is no non-static loop or requirement to return to a previous viewpoint."
+    },
+    {
+      "skill_id": "offscreen_evolution_verifier",
+      "reason": "The relevant flag deformation remains visible; no offscreen process continuation is specified."
+    }
+  ],
+  "validation": {
+    "status": "ok",
+    "registered_skill_count": 11,
+    "selected_skill_count": 6,
+    "selection_source": "planner",
+    "selection_modified": false
+  }
+}

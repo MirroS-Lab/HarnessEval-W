@@ -1,0 +1,44 @@
+{
+  "schema_version": "harnesseval.motion_quality.cache",
+  "skill_id": "motion_quality_inspector",
+  "definition_version": "harnesseval.motion_quality",
+  "metrics": {
+    "dynamic": 1.0,
+    "smoothness": 0.962763
+  },
+  "details": {
+    "dynamic_degree": {
+      "component": "dynamic",
+      "raw_score": 1.0,
+      "score": 1.0,
+      "sampling": {
+        "fps": 8.0
+      },
+      "sampled_frames": 257
+    },
+    "motion_smoothness": {
+      "component": "smoothness",
+      "raw_score": 0.962763113929887,
+      "score": 0.962763113929887,
+      "sampling": {
+        "fps": 10.0
+      },
+      "sampled_frames": 385
+    }
+  },
+  "provenance": {
+    "input_digest": "e7f2283f846b7f1f08891992595444a5a11b725687396e1a78d94070f413493e",
+    "cache_contract_version": "harnesseval.motion_quality.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "size_bytes": 4400447,
+      "mtime_ns": 1786886994283493351
+    },
+    "backend": {
+      "backend_id": "harnesseval.motion_quality",
+      "backend_version": "harnesseval.motion_quality.two_metrics",
+      "config_digest": "1b748debcfeb5b2b1aa62cd23c48a4d0902fa598db8ee34d8d5179944b6a9258"
+    },
+    "execution_mode": "local"
+  }
+}

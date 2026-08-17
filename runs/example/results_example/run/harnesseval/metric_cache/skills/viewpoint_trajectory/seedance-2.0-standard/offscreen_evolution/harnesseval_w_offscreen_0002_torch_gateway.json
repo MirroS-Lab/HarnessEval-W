@@ -1,0 +1,75 @@
+{
+  "schema_version": "harnesseval.viewpoint_trajectory.cache",
+  "skill_id": "viewpoint_trajectory_verifier",
+  "definition_version": "harnesseval.viewpoint_trajectory.navscore",
+  "pose_path": "runs/example/results_example/run/harnesseval/metric_cache/skills/viewpoint_trajectory/seedance-2.0-standard/offscreen_evolution/harnesseval_w_offscreen_0002_torch_gateway.pose.npz",
+  "metrics": {
+    "NavScore": 0.939053,
+    "Accuracy": 0.878105,
+    "Consistency": 1.0,
+    "nATE_t": 0.084583,
+    "nATE_r": 0.159207,
+    "cnATE_t": 0.0,
+    "cnATE_r": 0.0,
+    "consistency_pairs": 0,
+    "ATE_t": 0.066021,
+    "ATE_r": 7.881495,
+    "total_path_length": 0.780555,
+    "total_rotation_deg": 49.504773
+  },
+  "provenance": {
+    "input_digest": "993c79a1fc60a6a2d6495032753232d43971055c237d9b6f7a61d941f42f69c4",
+    "cache_contract_version": "harnesseval.viewpoint_trajectory.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/offscreen_evolution/seedance-2.0-standard/harnesseval_w_offscreen_0002_torch_gateway/output.mp4",
+      "size_bytes": 4400447,
+      "mtime_ns": 1786886994283493351
+    },
+    "case_navigation_input": {
+      "interactions": [
+        {
+          "type": "text_chunk",
+          "action": "Turn away from the torch flame silhouettes and brightness while it is still visible."
+        },
+        {
+          "type": "text_chunk",
+          "action": "Continue turning so the torch flame silhouettes and brightness leaves the camera view."
+        },
+        {
+          "type": "navigation",
+          "action": "W"
+        },
+        {
+          "type": "text_chunk",
+          "action": "Pause briefly with the torch flame silhouettes and brightness still offscreen."
+        },
+        {
+          "type": "text_chunk",
+          "action": "Move back toward the original area while not facing the torch flame silhouettes and brightness."
+        },
+        {
+          "type": "text_chunk",
+          "action": "Turn back toward the same torch flame silhouettes and brightness."
+        },
+        {
+          "type": "text_chunk",
+          "action": "Return the torch flame silhouettes and brightness to view; it should have evolved rather than frozen or reset."
+        },
+        {
+          "type": "text_chunk",
+          "action": "Settle into a final view compatible with the original world."
+        }
+      ],
+      "settings": {
+        "perspective": "first_person"
+      }
+    },
+    "pose_sha256": "51ab30ef7c50c01316300899dace15610abe8f7b04263aff00aedbeaf05f770a",
+    "backend": {
+      "backend_id": "harnesseval.viewpoint_trajectory.megasam",
+      "backend_version": "harnesseval.megasam_cam_c2w",
+      "config_digest": "577fa086d0f97c536916bc1eee281225d10af2b44a3f11a515210ec778c5415b"
+    },
+    "execution_mode": "local"
+  }
+}

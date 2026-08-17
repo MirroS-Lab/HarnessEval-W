@@ -1,0 +1,9 @@
+name: harnesseval-main
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pip:
+      - -e .

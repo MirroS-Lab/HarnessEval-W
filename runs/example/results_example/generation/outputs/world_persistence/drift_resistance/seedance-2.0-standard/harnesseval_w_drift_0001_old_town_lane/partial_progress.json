@@ -1,0 +1,28 @@
+{
+  "case_id": "harnesseval_w_drift_0001_old_town_lane",
+  "completed_segment_count": 1,
+  "model": "ep-20260816184220-sdqt8",
+  "model_slug": "seedance-2.0-standard",
+  "remaining_segment_count": 7,
+  "schema_version": "worlddojo.hosted_model_partial.v1",
+  "segments": [
+    {
+      "action_text": "The camera pushes forward.",
+      "artifact_validation": "runs/example/results_example/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/segments/segment_001/artifact_validation.json",
+      "input_image": "benchmark/initial_observations/harnesseval_w_drift_0001_old_town_lane.png",
+      "last_frame": "runs/example/results_example/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/segments/segment_001_last_frame.png",
+      "ledger": "runs/example/results_example/hosted_model_tasks/seedance/seedance-2.0-standard/world_persistence/drift_resistance/harnesseval_w_drift_0001_old_town_lane/segment_001.json",
+      "prompt": "Continuation segment 1 of 8 in the same generated world. The camera pushes forward. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Follow a long continuous route through the same world without cuts or reset. The stable anchors should remain part of one coherent world state. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+      "resumed": true,
+      "segment_id": "token_001_W",
+      "segment_index": 0,
+      "segment_kind": "navigation_token",
+      "segment_video": "runs/example/results_example/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/segments/segment_001/output.mp4",
+      "task_id": "cgt-20260816184413-589pr",
+      "token": "W"
+    }
+  ],
+  "status": "partial",
+  "total_segment_count": 8,
+  "updated_at_unix": 1786877259.2283108
+}

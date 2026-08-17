@@ -1,0 +1,204 @@
+{
+  "action_id": "return_0001",
+  "action_segments": [
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_001_W",
+      "text": "The camera pushes forward.",
+      "token": "W"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_002_W",
+      "text": "The camera pushes forward.",
+      "token": "W"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_003_S",
+      "text": "The camera pulls back.",
+      "token": "S"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_004_S",
+      "text": "The camera pulls back.",
+      "token": "S"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_005_left",
+      "text": "The camera pans to the left.",
+      "token": "left"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_006_right",
+      "text": "The camera pans to the right.",
+      "token": "right"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_007_A",
+      "text": "The camera moves to the left.",
+      "token": "A"
+    },
+    {
+      "kind": "navigation_token",
+      "segment_id": "token_008_D",
+      "text": "The camera moves to the right.",
+      "token": "D"
+    }
+  ],
+  "action_tokens": [
+    "W",
+    "W",
+    "S",
+    "S",
+    "left",
+    "right",
+    "A",
+    "D"
+  ],
+  "case_id": "harnesseval_w_return_0001_city_intersection",
+  "completed_at_unix": 1786890084.2099862,
+  "hosted_provider": {
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "id": "seedance",
+    "paid_api_confirmed": true,
+    "request": {
+      "content": [
+        {
+          "text": "Continuation segment 4 of 8 in the same generated world. The camera pulls back. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Move away from the initial viewpoint and then return to a compatible view of the same world without resetting the scene. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+          "type": "text"
+        },
+        {
+          "image_url": {
+            "url": "<image-data-url chars=584688 sha256=5a08c975f3ad>"
+          },
+          "role": "first_frame",
+          "type": "image_url"
+        }
+      ],
+      "duration": 4,
+      "generate_audio": false,
+      "model": "ep-20260816184220-sdqt8",
+      "ratio": "adaptive",
+      "resolution": "480p",
+      "watermark": false
+    },
+    "request_digest": "ec6c89964ea94bd108e764cd5628be9d07453a894f315dc9dd524edbbee03966",
+    "result_url_recorded": true,
+    "task_id": "cgt-20260816221808-8l44c"
+  },
+  "input_image": "runs/example/results_example/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/segments/segment_003_last_frame.png",
+  "interaction_action": {
+    "action_id": "return_0001",
+    "chunks": [
+      {
+        "actions": [
+          {
+            "action": "W",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c01"
+      },
+      {
+        "actions": [
+          {
+            "action": "W",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c02"
+      },
+      {
+        "actions": [
+          {
+            "action": "S",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c03"
+      },
+      {
+        "actions": [
+          {
+            "action": "S",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c04"
+      },
+      {
+        "actions": [
+          {
+            "action": "left",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c05"
+      },
+      {
+        "actions": [
+          {
+            "action": "right",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c06"
+      },
+      {
+        "actions": [
+          {
+            "action": "A",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c07"
+      },
+      {
+        "actions": [
+          {
+            "action": "D",
+            "type": "navigation"
+          }
+        ],
+        "chunk_id": "c08"
+      }
+    ],
+    "closed_loop": {
+      "closure_type": "inverse_balanced_navigation_tokens",
+      "intended": true
+    },
+    "control_scheme": "worlddojo_navigation_v1",
+    "text": "Move away from the initial viewpoint and then return to a compatible view of the same world without resetting the scene.",
+    "type": "closed_loop_navigation"
+  },
+  "model": "ep-20260816184220-sdqt8",
+  "model_slug": "seedance-2.0-standard",
+  "output_dir": "runs/example/results_example/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/segments/segment_004",
+  "output_video": "runs/example/results_example/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/segments/segment_004/output.mp4",
+  "perspective": "first_person",
+  "prompt": "Continuation segment 4 of 8 in the same generated world. The camera pulls back. Continue directly from the provided input frame. Do not reset the scene, teleport, cut to a new place, or introduce unrelated events. Move away from the initial viewpoint and then return to a compatible view of the same world without resetting the scene. Preserve stable landmarks, spatial layout, object identities, lighting style, and camera perspective across this segment.",
+  "schema_version": "worlddojo.hosted_model_output.v1",
+  "source_tags": {
+    "domain": "realistic",
+    "generator": "seedream_initial_materializer_v0",
+    "perspective": "first_person",
+    "render_backend": "doubao_seedream_4_0",
+    "scene": "city_intersection",
+    "style": "procedural_prompt_spec"
+  },
+  "status": "done",
+  "taxonomy": {
+    "primary_axis": "world_persistence",
+    "probe_family": "return_revisit_consistency"
+  },
+  "video": {
+    "sha256": "f9cb469c436357d2fc3fd4adf80597a54f733900a6acc53e8d359e691d387706",
+    "size_bytes": 1120758
+  },
+  "video_path": "runs/example/results_example/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/segments/segment_004/output.mp4"
+}

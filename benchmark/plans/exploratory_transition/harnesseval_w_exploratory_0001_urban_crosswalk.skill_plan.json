@@ -1,0 +1,142 @@
+{
+  "schema_version": "harnesseval.skill_plan",
+  "routing_mode": "shipped_case_plan",
+  "case_id": "harnesseval_w_exploratory_0001_urban_crosswalk",
+  "taxonomy": {
+    "primary_axis": "transition_correctness",
+    "probe_family": "exploratory_transition"
+  },
+  "selected_skills": [
+    {
+      "skill_id": "render_quality_inspector",
+      "role": "observation",
+      "reason": "Generated urban crosswalk frames must remain technically clean, free of severe artifacts, blur, watermark-like text artifacts, broken geometry, or ambiguous navigation affordances.",
+      "parameters": {
+        "check_for": [
+          "clean first-person urban rendering",
+          "no split-screen or collage artifacts",
+          "no severe blur or watermark",
+          "stable visibility of crosswalk, traffic lights, corner shop, and bus shelter when in view"
+        ]
+      }
+    },
+    {
+      "skill_id": "motion_quality_inspector",
+      "role": "observation",
+      "reason": "The rollout is driven by navigation controls, so motion should be present across chunks and temporally smooth rather than jittery, frozen, or discontinuous.",
+      "parameters": {
+        "expected_motion": [
+          "forward movement during W",
+          "leftward camera turn during left"
+        ],
+        "check_for": [
+          "temporal smoothness",
+          "no frame popping",
+          "no sudden unexplained jumps"
+        ]
+      }
+    },
+    {
+      "skill_id": "appearance_consistency_inspector",
+      "role": "observation",
+      "reason": "The same street corner world should persist through the exploratory movement, with stable anchors retaining coherent appearance and layout as viewpoint changes.",
+      "parameters": {
+        "stable_anchors": [
+          "crosswalk",
+          "traffic lights",
+          "corner shop",
+          "bus shelter"
+        ],
+        "check_for": [
+          "anchor identity consistency",
+          "spatial relationship consistency",
+          "lighting and scene style consistency"
+        ]
+      }
+    },
+    {
+      "skill_id": "physical_plausibility_inspector",
+      "role": "observation",
+      "reason": "Camera translation and rotation through an urban street scene should obey plausible perspective, scale, parallax, and collision constraints.",
+      "parameters": {
+        "check_for": [
+          "plausible ego-motion",
+          "consistent perspective and parallax",
+          "no passing through solid objects",
+          "reasonable street-level camera height"
+        ]
+      }
+    },
+    {
+      "skill_id": "viewpoint_trajectory_verifier",
+      "role": "core",
+      "reason": "The primary case target is an exploratory navigation transition with explicit action sequence W followed by left, requiring verification that the viewpoint moves forward and then turns left along a judgeable path.",
+      "parameters": {
+        "control_scheme": "harnesseval_navigation_v1",
+        "action_sequence": [
+          {
+            "chunk_id": "c01",
+            "action": "W",
+            "expected_viewpoint_change": "forward movement along the visible street or crosswalk approach"
+          },
+          {
+            "chunk_id": "c02",
+            "action": "left",
+            "expected_viewpoint_change": "leftward rotation or turn from the advanced position"
+          }
+        ],
+        "navigation_affordances": [
+          "visible path",
+          "stable near-mid-far anchors",
+          "camera motion judgeable"
+        ],
+        "stable_anchors": [
+          "crosswalk",
+          "traffic lights",
+          "corner shop",
+          "bus shelter"
+        ]
+      }
+    }
+  ],
+  "selected_skill_ids": [
+    "render_quality_inspector",
+    "motion_quality_inspector",
+    "appearance_consistency_inspector",
+    "physical_plausibility_inspector",
+    "viewpoint_trajectory_verifier"
+  ],
+  "skipped_skills": [
+    {
+      "skill_id": "intentional_change_verifier_vlm",
+      "reason": "The case does not ask for an intentional semantic or object-state edit; it asks for navigation through the same scene."
+    },
+    {
+      "skill_id": "physical_response_verifier_vlm",
+      "reason": "There is no explicit physical intervention or force whose causal response must be evaluated."
+    },
+    {
+      "skill_id": "physical_law_validator",
+      "reason": "No case-specific physical-law response is required beyond general plausibility of camera motion."
+    },
+    {
+      "skill_id": "drift_degradation_analyzer",
+      "reason": "This is a short two-chunk navigation rollout, not a long-horizon sequence explicitly targeting progressive drift resistance."
+    },
+    {
+      "skill_id": "return_consistency_verifier",
+      "reason": "The action sequence does not return to a previously visited view or form a loop."
+    },
+    {
+      "skill_id": "offscreen_evolution_verifier",
+      "reason": "The case contains no offscreen process that must continue evolving while out of view."
+    }
+  ],
+  "validation": {
+    "status": "ok",
+    "registered_skill_count": 11,
+    "selected_skill_count": 5,
+    "selection_source": "planner",
+    "selection_modified": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "skills": {
+    "intentional_change_verifier_vlm": {
+      "mode": "api",
+      "base_url": "http://127.0.0.1:8000/v1",
+      "model": "your-vlm-judge-model",
+      "wire_api": "responses",
+      "api_key_env": "HARNESSEVAL_VLM_API_KEY",
+      "timeout": 180,
+      "retries": 1
+    },
+    "physical_response_verifier_vlm": {
+      "mode": "api",
+      "base_url": "http://127.0.0.1:8000/v1",
+      "model": "your-vlm-judge-model",
+      "wire_api": "responses",
+      "api_key_env": "HARNESSEVAL_VLM_API_KEY",
+      "timeout": 180,
+      "retries": 1
+    },
+    "offscreen_evolution_verifier": {
+      "mode": "api",
+      "base_url": "http://127.0.0.1:8000/v1",
+      "model": "your-vlm-judge-model",
+      "wire_api": "responses",
+      "api_key_env": "HARNESSEVAL_VLM_API_KEY",
+      "timeout": 180,
+      "retries": 1
+    }
+  }
+}

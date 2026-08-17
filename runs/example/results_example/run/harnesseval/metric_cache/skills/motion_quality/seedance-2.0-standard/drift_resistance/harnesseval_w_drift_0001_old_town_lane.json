@@ -1,0 +1,44 @@
+{
+  "schema_version": "harnesseval.motion_quality.cache",
+  "skill_id": "motion_quality_inspector",
+  "definition_version": "harnesseval.motion_quality",
+  "metrics": {
+    "dynamic": 1.0,
+    "smoothness": 0.992143
+  },
+  "details": {
+    "dynamic_degree": {
+      "component": "dynamic",
+      "raw_score": 1.0,
+      "score": 1.0,
+      "sampling": {
+        "fps": 8.0
+      },
+      "sampled_frames": 257
+    },
+    "motion_smoothness": {
+      "component": "smoothness",
+      "raw_score": 0.9921426004284427,
+      "score": 0.9921426004284427,
+      "sampling": {
+        "fps": 10.0
+      },
+      "sampled_frames": 385
+    }
+  },
+  "provenance": {
+    "input_digest": "647a4d148dea63434dee1a4e9df03633ae45dc9ca6928dd83ffa4a05bb782ed2",
+    "cache_contract_version": "harnesseval.motion_quality.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/drift_resistance/seedance-2.0-standard/harnesseval_w_drift_0001_old_town_lane/output.mp4",
+      "size_bytes": 3591180,
+      "mtime_ns": 1786878504821288871
+    },
+    "backend": {
+      "backend_id": "harnesseval.motion_quality",
+      "backend_version": "harnesseval.motion_quality.two_metrics",
+      "config_digest": "1b748debcfeb5b2b1aa62cd23c48a4d0902fa598db8ee34d8d5179944b6a9258"
+    },
+    "execution_mode": "local"
+  }
+}

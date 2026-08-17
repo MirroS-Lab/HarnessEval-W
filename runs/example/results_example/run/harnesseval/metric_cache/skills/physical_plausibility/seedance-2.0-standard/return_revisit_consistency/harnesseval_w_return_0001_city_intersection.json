@@ -1,0 +1,33 @@
+{
+  "schema_version": "harnesseval.physical_plausibility.cache",
+  "skill_id": "physical_plausibility_inspector",
+  "definition_version": "harnesseval.physical_plausibility.pavrm",
+  "metrics": {
+    "visual_plausibility": 0.60252
+  },
+  "details": {
+    "pavrm": {
+      "raw_score": 3.0126,
+      "score": 0.60252,
+      "sampling": {
+        "fps": 2.0,
+        "max_pixels": 602112
+      }
+    }
+  },
+  "provenance": {
+    "input_digest": "116afb1e83ecbbf19e6ce983c5fafa178052ce76b053b9157696c862324997dc",
+    "cache_contract_version": "harnesseval.physical_plausibility.cache_contract",
+    "video": {
+      "path": "runs/example/results_example/generation/outputs/world_persistence/return_revisit_consistency/seedance-2.0-standard/harnesseval_w_return_0001_city_intersection/output.mp4",
+      "size_bytes": 5072612,
+      "mtime_ns": 1786891115588583666
+    },
+    "backend": {
+      "backend_id": "harnesseval.physical_plausibility.pavrm",
+      "backend_version": "harnesseval.pavrm_qwen3vl_a3b",
+      "config_digest": "28fb755b9922a36fabd9b7359618b3f43d7f2d443f370ff7cc8b6d13fe62d6c0"
+    },
+    "execution_mode": "local"
+  }
+}

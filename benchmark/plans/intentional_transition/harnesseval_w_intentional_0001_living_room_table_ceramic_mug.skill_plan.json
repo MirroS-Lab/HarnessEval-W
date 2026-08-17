@@ -1,0 +1,96 @@
+{
+  "schema_version": "harnesseval.skill_plan",
+  "routing_mode": "shipped_case_plan",
+  "case_id": "harnesseval_w_intentional_0001_living_room_table_ceramic_mug",
+  "taxonomy": {
+    "primary_axis": "transition_correctness",
+    "probe_family": "intentional_transition"
+  },
+  "selected_skills": [
+    {
+      "skill_id": "render_quality_inspector",
+      "role": "observation",
+      "reason": "Generated frames must be technically clean and realistic enough to judge the mug, spill, coffee table, sofa, rug, and floor lamp without artifacts, watermarks, blur, or ambiguity.",
+      "parameters": {}
+    },
+    {
+      "skill_id": "motion_quality_inspector",
+      "role": "observation",
+      "reason": "The requested transition should show a visible change from upright mug to tipped mug with spill, and any rollout motion should be temporally coherent rather than flickering or jumping.",
+      "parameters": {}
+    },
+    {
+      "skill_id": "appearance_consistency_inspector",
+      "role": "observation",
+      "reason": "The living room layout, lighting, materials, and the white ceramic mug identity should remain consistent while only the mug state and small local spill change.",
+      "parameters": {}
+    },
+    {
+      "skill_id": "physical_plausibility_inspector",
+      "role": "observation",
+      "reason": "A ceramic mug tipping onto its side and producing a small nearby spill should look causally and spatially plausible on the coffee table, with the spill staying local and the mug resting naturally.",
+      "parameters": {}
+    },
+    {
+      "skill_id": "intentional_change_verifier_vlm",
+      "role": "core",
+      "reason": "Primary requirement is an explicitly specified intentional object-state transition: tip the white ceramic mug onto its side and create a small local spill while protected anchors remain unchanged and camera fixed.",
+      "parameters": {
+        "target_entity": "white ceramic mug",
+        "required_state_change": "upright mug becomes tipped onto its side",
+        "required_secondary_effect": "small local spill near the mug",
+        "protected_anchors": [
+          "sofa",
+          "coffee table",
+          "rug",
+          "floor lamp"
+        ],
+        "negative_constraints": [
+          "do not replace the whole scene",
+          "do not add unrelated extra events",
+          "do not change camera viewpoint"
+        ]
+      }
+    }
+  ],
+  "selected_skill_ids": [
+    "render_quality_inspector",
+    "motion_quality_inspector",
+    "appearance_consistency_inspector",
+    "physical_plausibility_inspector",
+    "intentional_change_verifier_vlm"
+  ],
+  "skipped_skills": [
+    {
+      "skill_id": "viewpoint_trajectory_verifier",
+      "reason": "The case explicitly requires a fixed camera, not active navigation or a viewpoint trajectory."
+    },
+    {
+      "skill_id": "physical_response_verifier_vlm",
+      "reason": "The primary target is a directly specified intentional object-state edit, not evaluating the causal response to an external physical intervention or force."
+    },
+    {
+      "skill_id": "physical_law_validator",
+      "reason": "No case-specific physical-law diagnostic is required beyond general plausibility of the tipped mug and local spill; this is not a physical_transition case."
+    },
+    {
+      "skill_id": "drift_degradation_analyzer",
+      "reason": "The case is not a long-horizon rollout targeting resistance to progressive visual or semantic degradation."
+    },
+    {
+      "skill_id": "return_consistency_verifier",
+      "reason": "There is no non-static loop or returned view to compare for revisit consistency."
+    },
+    {
+      "skill_id": "offscreen_evolution_verifier",
+      "reason": "No offscreen process is specified; the mug transition and spill are visible in the same fixed view."
+    }
+  ],
+  "validation": {
+    "status": "ok",
+    "registered_skill_count": 11,
+    "selected_skill_count": 5,
+    "selection_source": "planner",
+    "selection_modified": false
+  }
+}
