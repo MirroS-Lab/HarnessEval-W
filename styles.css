@@ -2252,56 +2252,6 @@ h3 {
   white-space: pre;
 }
 
-.site-footer {
-  padding: 48px 0 54px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: var(--black);
-  color: #ffffff;
-}
-
-.footer-grid {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.footer-brand .brand-mark {
-  border: 0;
-}
-
-.footer-grid > div:first-child p {
-  max-width: 620px;
-  margin-top: 12px;
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.footer-company {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 16px;
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 11px;
-}
-
-.footer-company img {
-  width: 94px;
-  height: 34px;
-  object-fit: contain;
-  background: transparent;
-}
-
-.footer-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 12px;
-}
-
 .back-to-top {
   position: fixed;
   right: 20px;
@@ -3473,14 +3423,9 @@ h3 {
     min-height: 0;
   }
 
-  .resource-row,
-  .footer-grid {
+  .resource-row {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .resource-row .button {
-    width: 100%;
   }
 
   .bibtex-shell {
@@ -3497,10 +3442,6 @@ h3 {
 
   .bibtex-code code {
     font-size: 12px;
-  }
-
-  .footer-meta {
-    align-items: flex-start;
   }
 
   .detail-dialog {
