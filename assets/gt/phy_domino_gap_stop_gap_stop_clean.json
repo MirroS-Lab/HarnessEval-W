@@ -1,0 +1,40 @@
+{
+  "model_id": "domino_gap_stop",
+  "sample_id": "gap_stop_clean",
+  "parameters": {
+    "domino_count": 7,
+    "gap_after_index": 4,
+    "expected_chain_length": 4
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {}
+  },
+  "events": {
+    "topple_times": [
+      {
+        "domino": 1,
+        "starts_falling_t": 0.06
+      },
+      {
+        "domino": 2,
+        "starts_falling_t": 0.16
+      },
+      {
+        "domino": 3,
+        "starts_falling_t": 0.26
+      },
+      {
+        "domino": 4,
+        "starts_falling_t": 0.36000000000000004
+      }
+    ],
+    "chain_length": 4,
+    "standing_after_gap": 3
+  },
+  "law_checks": [
+    "chain stops at the gap"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "model_id": "domino_gap_stop",
+  "sample_id": "narrow_gap_cross",
+  "parameters": {
+    "domino_count": 7,
+    "gap_after_index": 4,
+    "expected_chain_length": 7,
+    "gap": "narrow_crossable"
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {}
+  },
+  "events": {
+    "topple_times": [
+      {
+        "domino": 1,
+        "starts_falling_t": 0.06
+      },
+      {
+        "domino": 2,
+        "starts_falling_t": 0.16
+      },
+      {
+        "domino": 3,
+        "starts_falling_t": 0.26
+      },
+      {
+        "domino": 4,
+        "starts_falling_t": 0.36000000000000004
+      },
+      {
+        "domino": 5,
+        "starts_falling_t": 0.52
+      },
+      {
+        "domino": 6,
+        "starts_falling_t": 0.6200000000000001
+      },
+      {
+        "domino": 7,
+        "starts_falling_t": 0.7200000000000002
+      }
+    ],
+    "chain_length": 7,
+    "standing_after_gap": 0
+  },
+  "law_checks": [
+    "chain crosses the narrow gap with a delay",
+    "all dominoes fall"
+  ]
+}

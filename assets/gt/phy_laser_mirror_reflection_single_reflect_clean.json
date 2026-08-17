@@ -1,0 +1,35 @@
+{
+  "model_id": "laser_mirror_reflection",
+  "sample_id": "single_reflect_clean",
+  "parameters": {
+    "mirror_angle_deg": 30,
+    "law": "incidence_equals_reflection"
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {
+      "segments": [
+        [
+          140,
+          300,
+          760,
+          460
+        ],
+        [
+          760,
+          460,
+          854,
+          123
+        ]
+      ]
+    }
+  },
+  "events": {
+    "beam_reaches_sensor_t": 0.625
+  },
+  "law_checks": [
+    "incidence angle equals reflection angle at the -30deg mirror"
+  ]
+}

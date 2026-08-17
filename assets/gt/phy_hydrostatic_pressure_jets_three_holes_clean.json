@@ -1,0 +1,38 @@
+{
+  "model_id": "hydrostatic_pressure_jets",
+  "sample_id": "three_holes_clean",
+  "parameters": {
+    "hole_depths_px": [
+      130,
+      270,
+      410
+    ],
+    "law": "v~sqrt(depth)"
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {
+      "jet_speed_ratio": [
+        1.0,
+        1.4412,
+        1.7759
+      ],
+      "landing_reach_px": [
+        429.7,
+        481.9,
+        350.7
+      ]
+    }
+  },
+  "events": {
+    "fastest_jet": "deepest",
+    "farthest_landing": "middle",
+    "reach_law": "R = 2*sqrt(depth*height_above_floor)"
+  },
+  "law_checks": [
+    "jet speed ~ sqrt(depth)",
+    "middle hole lands farthest (depth-height tradeoff)"
+  ]
+}

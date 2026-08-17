@@ -1,0 +1,21 @@
+{
+  "model_id": "billiards_collision_2d",
+  "sample_id": "single_break_clean",
+  "parameters": {
+    "cue_speed": 2.0,
+    "cue_angle_deg": 0
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {}
+  },
+  "events": {
+    "break_t": 0.45
+  },
+  "law_checks": [
+    "rack scatters only after cue impact",
+    "spread grows with cue speed"
+  ]
+}

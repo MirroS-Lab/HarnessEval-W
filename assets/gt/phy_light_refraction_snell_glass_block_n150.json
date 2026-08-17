@@ -1,0 +1,40 @@
+{
+  "model_id": "light_refraction_snell",
+  "sample_id": "glass_block_n150",
+  "parameters": {
+    "n1": 1.0,
+    "n2": 1.5,
+    "law": "snell"
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {
+      "segments": [
+        [
+          185.0,
+          165.0,
+          640.0,
+          340.0
+        ]
+      ],
+      "incidence_rad": [
+        1.2036224929766774
+      ],
+      "refraction_rad": [
+        0.6715886282302362
+      ]
+    }
+  },
+  "events": {
+    "kink_at": [
+      640.0,
+      340.0
+    ]
+  },
+  "law_checks": [
+    "sin(i)/sin(r) = n2/n1 = 1.33",
+    "bends toward normal entering water"
+  ]
+}

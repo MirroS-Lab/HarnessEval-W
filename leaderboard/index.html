@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f8fc" />
+    <meta
+      name="description"
+      content="HarnessEval-W leaderboard, adapted from the public LiveBench leaderboard pattern."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HarnessEval-W Leaderboard" />
+    <meta
+      property="og:description"
+      content="Agentifying evaluation leaderboard for interactive world models with harness."
+    />
+    <title>HarnessEval-W Leaderboard</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/brand/mirros-mark.svg" />
+    <link rel="preload" as="image" type="image/webp" href="./assets/hero/set-a-1-street-market.webp" />
+    <link rel="preload" as="image" type="image/webp" href="./assets/hero/set-a-2-mountain-trail.webp" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#leaderboard">Skip to leaderboard</a>
+
+    <header class="lb-nav">
+      <div class="lb-nav-in">
+        <a class="lb-brand" href="#top" aria-label="HarnessEval-W leaderboard home">
+          <img src="./assets/brand/mirros-mark.svg" alt="" width="32" height="32" />
+          <span>HarnessEval-W</span>
+        </a>
+        <nav class="lb-links" aria-label="Primary navigation">
+          <a href="../">Home</a>
+          <a href="#overview">Overview</a>
+          <a href="#leaderboard">Leaderboard</a>
+          <a href="#submit">Submit</a>
+          <a href="#findings">Findings</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="lb-hero" aria-labelledby="hero-title">
+        <div class="lb-wrap hero-grid">
+          <div class="hero-copy">
+            <p class="lb-eyebrow">Agentifying Evaluation of Interactive World Models with Harness</p>
+            <h1 id="hero-title">HarnessEval-W Leaderboard</h1>
+            <p class="hero-sub">
+              HarnessEval-W evaluates whether an interactive world model keeps one usable world
+              across observation, transition, and persistence tests.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#leaderboard">
+                <i data-lucide="bar-chart-3" aria-hidden="true"></i>
+                <span>View results</span>
+              </a>
+              <a
+                class="button button-plain"
+                href="https://rome-interim-exercises-partner.trycloudflare.com/#leaderboard"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i data-lucide="external-link" aria-hidden="true"></i>
+                <span>Original data</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="scene-strip" aria-label="HarnessEval-W example scenes">
+            <img src="./assets/hero/set-a-1-street-market.webp" alt="Street market world-model case" width="960" height="540" />
+            <img src="./assets/hero/set-a-2-mountain-trail.webp" alt="Mountain trail navigation case" width="960" height="540" />
+            <img src="./assets/hero/set-a-3-prism-dispersion.webp" alt="Prism physical reasoning case" width="960" height="540" />
+            <img src="./assets/hero/set-a-4-museum-revisit.webp" alt="Museum revisit persistence case" width="960" height="540" />
+            <img src="./assets/hero/set-a-5-river-waterfall.webp" alt="River waterfall semantic case" width="960" height="540" />
+            <img src="./assets/hero/set-a-6-orchard-path.webp" alt="Orchard path navigation case" width="960" height="540" />
+          </div>
+        </div>
+      </section>
+
+      <section class="lb-section" id="overview" aria-labelledby="overview-title">
+        <div class="lb-wrap">
+          <div class="lb-sec-head">
+            <span class="lb-sec-no">01</span>
+            <div>
+              <h2 id="overview-title">Overview</h2>
+            </div>
+          </div>
+
+          <div class="lb-tl" aria-label="Release timeline">
+            <div class="lb-tl-head">
+              <span class="lab">Leaderboard release</span>
+              <span class="date" data-timeline-head-date>2026-08-18</span>
+            </div>
+            <div class="lb-rail" data-timeline-rail>
+              <span class="lb-rail-line"></span>
+              <span class="lb-rail-prog" data-timeline-progress style="width: 0%"></span>
+              <button class="lb-dot active" type="button" style="left: 0%" data-timeline-choice="release" aria-label="2026-08-18 release" aria-pressed="true"></button>
+              <button class="lb-dot" type="button" style="left: 100%" data-timeline-choice="coming-soon" aria-label="Coming Soon" aria-pressed="false"></button>
+            </div>
+            <div class="lb-tl-ends">
+              <span>2026-08-18 V1</span>
+              <span>Coming Soon</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="lb-section lb-section-table" id="leaderboard" aria-labelledby="leaderboard-title">
+        <div class="lb-wrap">
+          <div class="lb-sec-head">
+            <span class="lb-sec-no">02</span>
+            <div>
+              <h2 id="leaderboard-title">Leaderboard</h2>
+            </div>
+          </div>
+
+          <div class="lb-tabs" role="tablist" aria-label="Leaderboard views">
+            <button type="button" role="tab" aria-selected="true" aria-controls="scored-panel" data-tab="scored">
+              Official results <span>16</span>
+            </button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="queue-panel" data-tab="queue">
+              Incomplete rows <span>0</span>
+            </button>
+          </div>
+
+          <section class="lb-panel" id="scored-panel" role="tabpanel" data-panel="scored">
+            <div class="lb-controls" aria-label="Leaderboard controls">
+              <label class="lb-search">
+                <span>Search models</span>
+                <input type="search" data-search placeholder="Model or organization" autocomplete="off" />
+              </label>
+
+              <select class="lb-org-select" data-interface-select aria-label="Filter by interface">
+                <option value="all">All interfaces</option>
+                <option value="Prompt I2V">Prompt I2V</option>
+                <option value="Camera pose">Camera pose</option>
+                <option value="Native action">Native action</option>
+              </select>
+
+              <button class="lb-chip" type="button" aria-pressed="true" data-group="observation">Observation</button>
+              <button class="lb-chip" type="button" aria-pressed="true" data-group="transition">Transition</button>
+              <button class="lb-chip" type="button" aria-pressed="true" data-group="persistence">Persistence</button>
+              <button class="lb-chip" type="button" aria-pressed="true" data-group="summary">Overall</button>
+              <button class="lb-chip" type="button" data-action="reset">Reset</button>
+            </div>
+
+            <div class="lb-bar-add" aria-label="Active summary">
+              <span class="lb-mdot interface-prompt" aria-hidden="true"></span><span>Prompt I2V</span>
+              <span class="lb-mdot interface-camera" aria-hidden="true"></span><span>Camera pose</span>
+              <span class="lb-mdot interface-native" aria-hidden="true"></span><span>Native action</span>
+              <span class="table-summary" data-table-summary aria-live="polite"></span>
+            </div>
+
+            <div class="lb-tbl-scroll" tabindex="0">
+              <table class="lb-tbl">
+                <thead data-leaderboard-head></thead>
+                <tbody data-leaderboard-body></tbody>
+              </table>
+            </div>
+
+            <div class="lb-state" data-empty hidden>
+              <strong>No matching rows</strong>
+              <span>Change the search term, interface, or metric group filter.</span>
+            </div>
+
+            <div class="leaderboard-note">
+              <i data-lucide="info" aria-hidden="true"></i>
+              <p>
+                Scores are official values on a 0-100 scale from the selected 330-case leaderboard.
+                Overall is the arithmetic mean of all selected 50/50 composite case scores, and
+                Rank is global across interfaces. Obs-R and Obs-P are diagnostic aggregates.
+                DreamX-World's native-action label applies to navigation; its intentional and
+                physical cases use text conditioning with a static camera action sequence.
+              </p>
+            </div>
+          </section>
+
+          <section class="lb-panel" id="queue-panel" role="tabpanel" data-panel="queue" hidden>
+            <div class="queue-grid">
+              <article>
+                <i data-lucide="type" aria-hidden="true"></i>
+                <h3>Prompt I2V</h3>
+                <strong>0</strong>
+                <p>All reported rows are complete.</p>
+              </article>
+              <article>
+                <i data-lucide="camera" aria-hidden="true"></i>
+                <h3>Camera pose</h3>
+                <strong>0</strong>
+                <p>All reported rows are complete.</p>
+              </article>
+              <article>
+                <i data-lucide="gamepad-2" aria-hidden="true"></i>
+                <h3>Native action</h3>
+                <strong>0</strong>
+                <p>All reported rows are complete.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="lb-section" id="submit" aria-labelledby="submit-title">
+        <div class="lb-wrap">
+          <div class="lb-sec-head">
+            <span class="lb-sec-no">03</span>
+            <div>
+              <h2 id="submit-title">Submit</h2>
+              <p class="lb-sec-sub">
+                Upload a JSON file, paste JSON directly, or submit a ZIP containing
+                <code>leaderboard_submission.json</code> at the root. Accepted submissions are
+                saved to the backend pending queue and are not added to the public leaderboard
+                automatically.
+              </p>
+            </div>
+          </div>
+
+          <div class="submit-shell">
+            <form class="submit-form" data-submit-form>
+              <div class="submit-field-grid">
+                <label class="submit-field">
+                  <span>Submission File</span>
+                  <input
+                    class="submit-file-native"
+                    type="file"
+                    accept=".json,.zip,application/json,application/zip"
+                    data-submit-file
+                    aria-label="Submission file"
+                  />
+                  <span class="submit-file-control">
+                    <button type="button" class="submit-file-button" data-submit-file-trigger>
+                      Choose File
+                    </button>
+                    <span class="submit-file-name" data-submit-file-name>No file selected</span>
+                  </span>
+                </label>
+                <label class="submit-field">
+                  <span>Model Name</span>
+                  <input type="text" data-submit-field="model_name" placeholder="Example Model" autocomplete="off" />
+                </label>
+                <label class="submit-field">
+                  <span>Model Link</span>
+                  <input type="url" data-submit-field="model_link" placeholder="https://example.com/model" autocomplete="off" />
+                </label>
+                <label class="submit-field">
+                  <span>Team Name</span>
+                  <input type="text" data-submit-field="team_name" placeholder="Research group or company" autocomplete="off" />
+                </label>
+                <label class="submit-field">
+                  <span>Contact Email</span>
+                  <input type="email" data-submit-field="contact_email" placeholder="contact@example.com" autocomplete="off" />
+                </label>
+                <label class="submit-field">
+                  <span>Model Type</span>
+                  <select data-submit-field="model_type">
+                    <option value="">Use JSON value</option>
+                    <option value="Prompt I2V">Prompt I2V</option>
+                    <option value="Camera pose">Camera pose</option>
+                    <option value="Native action">Native action</option>
+                  </select>
+                </label>
+                <label class="submit-field">
+                  <span>Accessibility</span>
+                  <select data-submit-field="accessibility">
+                    <option value="">Use JSON value</option>
+                    <option value="Unknown">Unknown</option>
+                    <option value="Open weights">Open weights</option>
+                    <option value="API only">API only</option>
+                    <option value="Closed">Closed</option>
+                    <option value="Research preview">Research preview</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="submit-json">
+                <span>leaderboard_submission.json</span>
+                <textarea data-submit-json spellcheck="false" rows="18"></textarea>
+              </label>
+
+              <div class="submit-actions">
+                <button class="button button-plain" type="button" data-submit-template>
+                  <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                  <span>Reset template</span>
+                </button>
+                <button class="button button-primary" type="submit">
+                  <i data-lucide="upload" aria-hidden="true"></i>
+                  <span>Submit JSON</span>
+                </button>
+              </div>
+
+              <div class="submit-status" data-submit-status aria-live="polite" hidden></div>
+            </form>
+
+            <aside class="submit-guide" aria-label="Submission requirements">
+              <h3>Review flow</h3>
+              <p>
+                Required JSON keys are <code>model_name</code>, <code>model_link</code>,
+                <code>model_type</code>, and one overall score field. ZIP uploads must place
+                <code>leaderboard_submission.json</code> at the ZIP root.
+              </p>
+              <p>
+                Overall can be provided as <code>overall</code>, <code>total_score</code>,
+                <code>total_m_score</code>, or <code>scores.overall</code>. Scores should use the
+                0-100 scale shown on this leaderboard.
+              </p>
+              <p>
+                The backend stores accepted submissions under <code>submissions/pending/</code>.
+                Verification outputs can be included under <code>verification/</code> in ZIP
+                uploads or referenced in <code>notes</code>.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="lb-section" id="findings" aria-labelledby="findings-title">
+        <div class="lb-wrap">
+          <div class="lb-sec-head">
+            <span class="lb-sec-no">04</span>
+            <div>
+              <h2 id="findings-title">Findings</h2>
+              <p class="lb-sec-sub">
+                Metric leaders and interface behavior from the official rows.
+              </p>
+            </div>
+          </div>
+          <div class="lb-ins-grid" data-findings></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="lb-footer">
+      <div class="lb-wrap">
+        <span>HarnessEval-W leaderboard / pending-review backend</span>
+        <span>Snapshot: 2026-08-18 V1</span>
+      </div>
+    </footer>
+  </body>
+</html>

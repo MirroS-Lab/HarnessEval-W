@@ -1,0 +1,37 @@
+{
+  "model_id": "prism_dispersion_fan",
+  "sample_id": "single_disperse_clean",
+  "parameters": {
+    "order": "red_least_violet_most",
+    "law": "dispersion"
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {
+      "fan_angles_deg": [
+        12,
+        17,
+        22,
+        27,
+        32,
+        37
+      ]
+    }
+  },
+  "events": {
+    "colors_in_order": [
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "blue",
+      "violet"
+    ]
+  },
+  "law_checks": [
+    "red deviates least, violet most",
+    "order never swaps"
+  ]
+}

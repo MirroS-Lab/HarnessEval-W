@@ -1,0 +1,26 @@
+{
+  "model_id": "surface_tension_drip",
+  "sample_id": "periodic_drip_clean",
+  "parameters": {
+    "drip_period_t": 0.25,
+    "mode": "discrete_drops"
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {}
+  },
+  "events": {
+    "drip_times": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "law_checks": [
+    "discrete periodic drops",
+    "constant drip period"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "model_id": "domino_chain_topple",
+  "sample_id": "wide_spacing_slow",
+  "parameters": {
+    "domino_count": 6,
+    "spacing_px": 150,
+    "trigger_side": "left"
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {}
+  },
+  "events": {
+    "topple_times": [
+      {
+        "domino": 1,
+        "starts_falling_t": 0.06
+      },
+      {
+        "domino": 2,
+        "starts_falling_t": 0.21
+      },
+      {
+        "domino": 3,
+        "starts_falling_t": 0.36
+      },
+      {
+        "domino": 4,
+        "starts_falling_t": 0.51
+      },
+      {
+        "domino": 5,
+        "starts_falling_t": 0.6599999999999999
+      },
+      {
+        "domino": 6,
+        "starts_falling_t": 0.81
+      }
+    ],
+    "chain_length": 6
+  },
+  "law_checks": [
+    "strict left-to-right order",
+    "constant propagation interval"
+  ]
+}

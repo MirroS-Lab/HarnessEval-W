@@ -1,0 +1,36 @@
+{
+  "model_id": "wall_bounce_angle_2d",
+  "sample_id": "steep_angle_bounce",
+  "parameters": {
+    "law": "incidence_equals_reflection",
+    "speed_retention": 0.6,
+    "hit_y_px": 180
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {
+      "path_points": [
+        [
+          220,
+          560
+        ],
+        [
+          1150,
+          300
+        ],
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "events": {
+    "bounce_at_t": null
+  },
+  "law_checks": [
+    "angle in equals angle out against the wall"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "model_id": "stack_overhang_topple",
+  "sample_id": "single_topple_clean",
+  "parameters": {
+    "levels": 4,
+    "overhang_ratio": 0.6,
+    "falling_block": "top"
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {}
+  },
+  "events": {
+    "top_block_falls_t": 0.35,
+    "fallen_by_t": 0.75
+  },
+  "law_checks": [
+    "only the overhanging top block falls",
+    "falls toward overhang side"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "model_id": "newton_cradle_transfer",
+  "sample_id": "double_release_2balls",
+  "parameters": {
+    "released_ball_count": 2,
+    "release_angle_deg": 45
+  },
+  "trajectory": {
+    "n_frames": 96,
+    "t": "linspace(0,1)",
+    "space": "control-render pixels",
+    "channels": {}
+  },
+  "events": {
+    "impact_t": 0.5,
+    "incoming_balls": 2,
+    "outgoing_balls": 2
+  },
+  "law_checks": [
+    "outgoing ball count equals incoming"
+  ]
+}
