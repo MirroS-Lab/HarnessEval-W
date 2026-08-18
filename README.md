@@ -172,7 +172,7 @@ If you find HarnessEval useful, please cite:
 ```bibtex
 @article{mirros2026harnessevalw,
   title   = {HarnessEval-W: Agentifying the Evaluation of Visual Worlds},
-  author  = {MirroS Team},
+  author  = {{MirroS Team}},
   journal = {arXiv preprint arXiv:2608.16859},
   year    = {2026}
 }
