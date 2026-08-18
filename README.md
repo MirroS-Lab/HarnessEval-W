@@ -13,7 +13,7 @@ Visual Worlds</b>
 </p>
 
 <p align="center">
-  <a href="TODO(arxiv-link)"><img alt="Paper" src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white"></a>
+  <a href="https://arxiv.org/abs/2608.16859"><img alt="Paper" src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white"></a>
   <a href="https://mirros-lab.github.io/HarnessEval-W"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-5F38FF"></a>
   <a href="https://mirros.ai/blog/harnesseval"><img alt="Blog" src="https://img.shields.io/badge/MirroS-Blog-745AE8"></a>
   <a href="https://mirros-lab.github.io/HarnessEval-W#leaderboard"><img alt="Leaderboard" src="https://img.shields.io/badge/🏆-Leaderboard-C9A227"></a>
@@ -42,7 +42,7 @@ A benchmark should deliver more than a scalar score: what makes an evaluation tr
 
 ## News
 
-- [2026/08/18] 📄 [Paper](TODO(arxiv-link)) now available. 
+- [2026/08/18] 📄 [Paper](https://arxiv.org/pdf/2608.16859) now available. 
 - [2026/08/18] 🌐 [Homepage](https://mirros-lab.github.io/HarnessEval-W) with leaderboard-ready reports and benchmark resources is live. 
 - [2026/08/18] 🚀 Released the full HarnessEval benchmark, evaluation code, fixed plans, and metric backends.
 
@@ -173,10 +173,10 @@ If you find HarnessEval useful, please cite:
 @article{Mirros2026harnessevalw,
   title   = {HarnessEval-W: Agentifying the Evaluation of Visual Worlds},
   author  = {MirrosTeam},
-  journal = {arXiv preprint},
+  journal = {arXiv preprint arXiv:2608.16859},
   year    = {2026}
 }
 ```
 
 ## License
-We release our code with Apache 2.0 License.
+We release our code under the Apache 2.0 License.
