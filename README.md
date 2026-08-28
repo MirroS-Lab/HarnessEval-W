@@ -153,7 +153,7 @@ Keep submissions aligned with the existing benchmark format so they can plug int
 - [x] ArXiv paper, homepage with interactive leaderboard, blog release
 
 
-## Acknowledge
+## Acknowledgments
 
 This project builds upon the following excellent works:
 
