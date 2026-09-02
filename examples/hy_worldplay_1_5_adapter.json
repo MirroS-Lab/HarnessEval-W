@@ -1,0 +1,14 @@
+{
+  "schema_version": "harnesseval.command_model_adapter",
+  "adapter_id": "hy-worldplay-1.5",
+  "command": [
+    "python",
+    "-m",
+    "harnesseval.models",
+    "--model",
+    "hy-worldplay-1.5",
+    "--request",
+    "{request}"
+  ],
+  "working_directory": "{project_root}"
+}

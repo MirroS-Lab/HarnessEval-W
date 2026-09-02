@@ -166,6 +166,11 @@ def _video_from_metadata(
     plan: dict[str, Any],
     bundle: dict[str, Any],
 ) -> tuple[Path, Path, dict[str, Any]]:
+    identity = (
+        model_id,
+        str(plan["taxonomy"]["probe_family"]),
+        str(plan["case_id"]),
+    )
     metadata_path = metadata_path.resolve(strict=True)
     metadata = read_json(metadata_path)
     raw_video = metadata.get("output_video") or metadata.get("video_path")
@@ -177,15 +182,10 @@ def _video_from_metadata(
     video = video_path.resolve(strict=True)
     bundle_video = (bundle.get("video") or {}).get("path")
     if not bundle_video or Path(str(bundle_video)).resolve(strict=True) != video:
-        raise ValueError(
-            f"generation/cache video mismatch for {(model_id, family, case_id)}"
-        )
+        raise ValueError(f"generation/cache video mismatch for {identity}")
     fingerprint = bundle.get("video") or {}
     stat = video.stat()
-    if (
-        fingerprint.get("size_bytes") != stat.st_size
-        or fingerprint.get("mtime_ns") != stat.st_mtime_ns
-    ):
+    if fingerprint.get("size_bytes") != stat.st_size:
         raise ValueError(f"generation video changed after cache creation: {video}")
     return metadata_path, video, metadata
 

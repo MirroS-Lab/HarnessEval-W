@@ -17,6 +17,7 @@ Visual Worlds</b>
   <a href="https://mirros-lab.github.io/HarnessEval-W"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-5F38FF"></a>
   <a href="https://mirros.ai/blog/harnesseval"><img alt="Blog" src="https://img.shields.io/badge/MirroS-Blog-745AE8"></a>
   <a href="https://mirros-lab.github.io/HarnessEval-W#leaderboard"><img alt="Leaderboard" src="https://img.shields.io/badge/🏆-Leaderboard-C9A227"></a>
+  <a href="https://huggingface.co/datasets/MirroS-Lab/HarnessEval-W"><img alt="Hugging Face Dataset" src="https://img.shields.io/badge/🤗-Dataset-FFD21E"></a>
 </p>
 
 
@@ -41,10 +42,11 @@ A benchmark should deliver more than a scalar score: what makes an evaluation tr
 **HarnessEval** is an agentified evaluation pipeline that brings the harness paradigm from the LLM ecosystem to world model benchmarking. Rather than applying a fixed rubric, HarnessEval interprets the context of each evaluation case, decomposes the evaluation question into measurable sub-questions, and spawns specialized sub-agents, each equipped with tailored context and diagnostic tools to reason over its own sub-question. The parent agent then validates the gathered evidence and aggregates it into the final verdict. Every evaluation becomes a **transparent evidence tree** whose complete reasoning chain justifies the result.
 
 ## News
-
-- [2026/08/18] 📄 [Paper](https://arxiv.org/pdf/2608.16859) now available. 
+- [2026/09/02] 🤝 Launched the [Contribute page](https://mirros-lab.github.io/HarnessEval-W/contribute.html) for case, skill, model, and concrete suggestion submissions.
+- [2026/09/02] 🏆 Released the 100-case [public set](https://huggingface.co/datasets/MirroS-Lab/HarnessEval-W) and its [leaderboard](https://mirros-lab.github.io/HarnessEval-W/).
+- [2026/08/18] 📄 [Paper](https://arxiv.org/abs/2608.16859) now available. 
 - [2026/08/18] 🌐 [Homepage](https://mirros-lab.github.io/HarnessEval-W) with leaderboard-ready reports and benchmark resources is live. 
-- [2026/08/18] 🚀 Released the full HarnessEval benchmark, evaluation code, fixed plans, and metric backends.
+- [2026/08/18] 🚀 Released the full HarnessEval benchmark, evaluation code, and metric backends.
 
 ## How It Works
 
@@ -135,7 +137,7 @@ Per-case artifacts and caches live under `run/harnesseval/metric_cache/` and `ru
 
 ## Extending HarnessEval
 
-HarnessEval is a living benchmark, and contributions are welcome.
+HarnessEval is a living benchmark, and contributions are [welcome](https://mirros-lab.github.io/HarnessEval-W/contribute.html) !
 
 - **Submit a new case** with a new world, action, or probe family.
 - **Submit a new skill** when a case needs a new kind of evaluation.
@@ -146,9 +148,9 @@ Keep submissions aligned with the existing benchmark format so they can plug int
 
 
 - [ ] Hosted submission & evaluation service (submit videos, get scores)
-- [ ] Full cases on HuggingFace
-- [ ] Subset cases & weights on HuggingFace
-- [x] Model generation example
+- [x] Public contribution page for cases, skills, model additions, and concrete suggestions
+- [x] public set & model weights on HuggingFace
+- [x] Model generation adapters for text/image-, action-, and camera-conditioned models
 - [x] Evaluation code & example release
 - [x] ArXiv paper, homepage with interactive leaderboard, blog release
 
@@ -170,13 +172,13 @@ This project builds upon the following excellent works:
 If you find HarnessEval useful, please cite:
 
 ```bibtex
-@article{mirros2026harnessevalw,
+@article{Mirros2026harnessevalw,
   title   = {HarnessEval-W: Agentifying the Evaluation of Visual Worlds},
-  author  = {{MirroS Team}},
+  author  = {MirroS Team},
   journal = {arXiv preprint arXiv:2608.16859},
   year    = {2026}
 }
 ```
 
 ## License
-We release our code under the Apache 2.0 License.
+We release our code with Apache 2.0 License.

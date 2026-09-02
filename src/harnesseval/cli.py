@@ -16,6 +16,9 @@ from .report import build_report, load_scores, write_report_artifacts
 from .validation import validate_reference_vectors, validate_run
 
 
+DEFAULT_MANIFEST = PROJECT_ROOT / "runs/example/results_example/manifest.json"
+
+
 def emit(value: Any) -> None:
     print(json.dumps(value, indent=2, ensure_ascii=False))
 
@@ -30,7 +33,7 @@ def command_plan(args: argparse.Namespace) -> int:
         write_plan_audit,
     )
 
-    manifests = args.manifests or [PROJECT_ROOT / "benchmark/manifest_selected_330.clean.json"]
+    manifests = args.manifests or [DEFAULT_MANIFEST]
     output_root = args.output_root.resolve()
     model = args.model or os.getenv("OPENAI_MODEL") or ""
     base_url = args.base_url or os.getenv("OPENAI_BASE_URL") or "https://api.openai.com/v1"
@@ -253,9 +256,7 @@ def command_eval(args: argparse.Namespace) -> int:
         for name, value in values.items():
             if value is not None:
                 environment[name] = str(value)
-        environment.setdefault(
-            "MANIFEST", str(PROJECT_ROOT / "benchmark/manifest_selected_330.json")
-        )
+        environment.setdefault("MANIFEST", str(DEFAULT_MANIFEST))
         environment.setdefault("PLAN_ROOT", str(PROJECT_ROOT / "benchmark/plans"))
         if args.model_id:
             environment.setdefault("RUN_ROOT", str(PROJECT_ROOT / "runs" / args.model_id))
@@ -345,7 +346,7 @@ def build_parser() -> argparse.ArgumentParser:
     generate.add_argument(
         "--manifest",
         type=Path,
-        default=PROJECT_ROOT / "benchmark/manifest_selected_330.json",
+        default=DEFAULT_MANIFEST,
     )
     generate.add_argument("--output-root", "--output", type=Path)
     generate.add_argument("--assets-root", type=Path, default=PROJECT_ROOT)

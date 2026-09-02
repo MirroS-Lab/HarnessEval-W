@@ -1,0 +1,14 @@
+{
+  "schema_version": "harnesseval.command_model_adapter",
+  "adapter_id": "seedance-2.0",
+  "command": [
+    "python",
+    "-m",
+    "harnesseval.models",
+    "--model",
+    "seedance-2.0",
+    "--request",
+    "{request}"
+  ],
+  "working_directory": "{project_root}"
+}

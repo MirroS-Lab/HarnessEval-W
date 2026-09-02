@@ -1,0 +1,8 @@
+[submodule "third_party/SANA"]
+	path = third_party/SANA
+	url = https://github.com/NVlabs/Sana.git
+	shallow = true
+[submodule "third_party/HY-WorldPlay"]
+	path = third_party/HY-WorldPlay
+	url = https://github.com/Tencent-Hunyuan/HY-WorldPlay.git
+	shallow = true
