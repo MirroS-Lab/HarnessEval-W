@@ -21,12 +21,12 @@
 }
 
 .contribute-hero h1 {
-  max-width: 760px;
   color: var(--ink-serif);
   font-family: "Newsreader", Georgia, serif;
   font-size: 62px;
   font-weight: 600;
   line-height: 0.98;
+  white-space: nowrap;
 }
 
 .contribute-hero p {
@@ -464,6 +464,12 @@
 
   .contribution-recognition p {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .contribute-hero h1 {
+    white-space: normal;
   }
 }
 

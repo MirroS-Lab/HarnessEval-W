@@ -361,6 +361,35 @@ const leaderboardRows = [
   },
 ];
 
+const publicSet100Scores = [
+  { model: "Seedance 2.0", render: 0.846, physicalObs: 0.623, explore: 0.803, intent: 0.843, physicalTrans: 0.738, drift: 0.809, returnScore: 0.773, offscreen: 0.699, avg: 0.796 },
+  { model: "Kling 3.0", render: 0.829, physicalObs: 0.613, explore: 0.796, intent: 0.848, physicalTrans: 0.725, drift: 0.761, returnScore: 0.761, offscreen: 0.673, avg: 0.786 },
+  { model: "Wan 2.7", render: 0.821, physicalObs: 0.586, explore: 0.792, intent: 0.835, physicalTrans: 0.771, drift: 0.754, returnScore: 0.690, offscreen: 0.674, avg: 0.777 },
+  { model: "MiniMax H3", render: 0.831, physicalObs: 0.613, explore: 0.778, intent: 0.811, physicalTrans: 0.790, drift: 0.753, returnScore: 0.725, offscreen: 0.720, avg: 0.775 },
+  { model: "Grok Imagine 1.5", render: 0.863, physicalObs: 0.607, explore: 0.764, intent: 0.865, physicalTrans: 0.748, drift: 0.796, returnScore: 0.713, offscreen: 0.641, avg: 0.774 },
+  { model: "Cosmos3-Super", render: 0.843, physicalObs: 0.618, explore: 0.780, intent: 0.807, physicalTrans: 0.633, drift: 0.789, returnScore: 0.715, offscreen: 0.669, avg: 0.759 },
+  { model: "FLUX 3", render: 0.816, physicalObs: 0.629, explore: 0.761, intent: 0.787, physicalTrans: 0.744, drift: 0.768, returnScore: 0.705, offscreen: 0.685, avg: 0.755 },
+  { model: "HunyuanVideo 1.5", render: 0.807, physicalObs: 0.590, explore: 0.773, intent: 0.781, physicalTrans: 0.580, drift: 0.764, returnScore: 0.714, offscreen: 0.625, avg: 0.740 },
+  { model: "LingBot World v2", render: 0.827, physicalObs: 0.630, explore: 0.818, intent: 0.597, physicalTrans: 0.547, drift: 0.798, returnScore: 0.766, offscreen: 0.719, avg: 0.732 },
+  { model: "SANA-WM", render: 0.821, physicalObs: 0.628, explore: 0.828, intent: 0.527, physicalTrans: 0.497, drift: 0.810, returnScore: 0.793, offscreen: 0.760, avg: 0.723 },
+  { model: "HY-WorldPlay 1.5", render: 0.806, physicalObs: 0.651, explore: 0.805, intent: 0.506, physicalTrans: 0.479, drift: 0.813, returnScore: 0.830, offscreen: 0.671, avg: 0.707 },
+  { model: "DreamX-World", render: 0.801, physicalObs: 0.604, explore: 0.819, intent: 0.519, physicalTrans: 0.511, drift: 0.775, returnScore: 0.741, offscreen: 0.675, avg: 0.705 },
+  { model: "Wan 2.2", render: 0.811, physicalObs: 0.584, explore: 0.768, intent: 0.648, physicalTrans: 0.559, drift: 0.753, returnScore: 0.674, offscreen: 0.670, avg: 0.705 },
+  { model: "ABot-World", render: 0.793, physicalObs: 0.607, explore: 0.844, intent: 0.486, physicalTrans: 0.441, drift: 0.758, returnScore: 0.750, offscreen: 0.644, avg: 0.700 },
+  { model: "Lyra 2", render: 0.814, physicalObs: 0.639, explore: 0.811, intent: 0.490, physicalTrans: 0.453, drift: 0.799, returnScore: 0.801, offscreen: 0.629, avg: 0.697 },
+  { model: "LTX-2.3", render: 0.790, physicalObs: 0.546, explore: 0.729, intent: 0.646, physicalTrans: 0.560, drift: 0.714, returnScore: 0.642, offscreen: 0.606, avg: 0.677 },
+  { model: "Fantasy-World", render: 0.753, physicalObs: 0.637, explore: 0.737, intent: 0.548, physicalTrans: 0.542, drift: 0.705, returnScore: 0.686, offscreen: 0.575, avg: 0.661 },
+  { model: "InSpatio-World", render: 0.810, physicalObs: 0.630, explore: 0.717, intent: 0.489, physicalTrans: 0.458, drift: 0.757, returnScore: 0.780, offscreen: 0.577, avg: 0.647 },
+];
+
+const publicSet100LeaderboardRows = publicSet100Scores.map((scores, index) => {
+  const model = leaderboardRows.find((row) => row.model === scores.model);
+  if (!model) throw new Error(`Missing leaderboard metadata for ${scores.model}`);
+  return { ...model, ...scores, sourceOrder: index + 1, rank: index + 1 };
+});
+
+let activeLeaderboardRows = publicSet100LeaderboardRows;
+
 const leaderboardMetricKeys = [
   "render",
   "physicalObs",
@@ -411,30 +440,24 @@ const leaderboardMetrics = metricGroups.flatMap((group) =>
   group.metrics.map((metric) => ({ ...metric, groupId: group.id, groupLabel: group.label })),
 );
 
-const leaderboardMedalRanks = Object.fromEntries(
-  leaderboardMetrics.map((metric) => [
-    metric.key,
-    new Map(
-      leaderboardRows
-        .filter((row) => row[metric.key] != null)
-        .sort((a, b) => b[metric.key] - a[metric.key] || a.sourceOrder - b.sourceOrder)
-        .slice(0, 3)
-        .map((row, index) => [row.sourceOrder, index + 1]),
-    ),
-  ]),
-);
+let leaderboardMedalRanks = {};
+let leaderboardMetricRanks = {};
 
-const leaderboardMetricRanks = Object.fromEntries(
-  leaderboardMetrics.map((metric) => [
-    metric.key,
-    new Map(
-      leaderboardRows
-        .filter((row) => row[metric.key] != null)
-        .sort((a, b) => b[metric.key] - a[metric.key] || a.sourceOrder - b.sourceOrder)
-        .map((row, index) => [row.sourceOrder, index + 1]),
-    ),
-  ]),
-);
+function syncLeaderboardRankings() {
+  const rankedRows = (metric, limit) =>
+    activeLeaderboardRows
+      .filter((row) => row[metric.key] != null)
+      .sort((a, b) => b[metric.key] - a[metric.key] || a.sourceOrder - b.sourceOrder)
+      .slice(0, limit)
+      .map((row, index) => [row.sourceOrder, index + 1]);
+
+  leaderboardMedalRanks = Object.fromEntries(
+    leaderboardMetrics.map((metric) => [metric.key, new Map(rankedRows(metric, 3))]),
+  );
+  leaderboardMetricRanks = Object.fromEntries(
+    leaderboardMetrics.map((metric) => [metric.key, new Map(rankedRows(metric, activeLeaderboardRows.length))]),
+  );
+}
 
 const typeLabels = {
   semantic: "Semantic",
@@ -476,15 +499,17 @@ const leaderboardState = {
   interface: "all",
   groups: new Set(metricGroups.map((group) => group.id)),
 };
-let timelineState = "release";
+let timelineState = "public-100";
 const timelineStates = {
   release: {
     label: "2026-08-18 V1",
     progress: "0%",
+    rows: leaderboardRows,
   },
-  "coming-soon": {
-    label: "Coming Soon",
-    progress: "100%",
+  "public-100": {
+    label: "2026-09-01 Public Set",
+    progress: "50%",
+    rows: publicSet100LeaderboardRows,
   },
 };
 
@@ -759,7 +784,7 @@ function rowSearchText(row) {
 
 function filteredLeaderboardRows() {
   const query = leaderboardState.query.trim().toLowerCase();
-  return leaderboardRows
+  return activeLeaderboardRows
     .filter((row) => leaderboardState.interface === "all" || row.interface === leaderboardState.interface)
     .filter((row) => !query || rowSearchText(row).includes(query))
     .sort(compareLeaderboardRows);
@@ -905,7 +930,7 @@ function renderLeaderboardRows() {
 
   const summary = document.querySelector("[data-leaderboard-summary]");
   if (summary) {
-    summary.textContent = `Showing ${rows.length} of ${leaderboardRows.length}. Sorted by ${leaderboardMetricLabel(leaderboardState.sortKey)} ${leaderboardState.direction}.`;
+    summary.textContent = `Showing ${rows.length} of ${activeLeaderboardRows.length}. Sorted by ${leaderboardMetricLabel(leaderboardState.sortKey)} ${leaderboardState.direction}.`;
   }
 
   const empty = document.querySelector("[data-leaderboard-empty]");
@@ -925,9 +950,11 @@ function syncTimeline() {
   const timeline = timelineStates[timelineState] || timelineStates.release;
   const headDate = document.querySelector("[data-timeline-head-date]");
   const progress = document.querySelector("[data-timeline-progress]");
+  const releaseStamp = document.querySelector("[data-release-stamp]");
 
   if (headDate) headDate.textContent = timeline.label;
   if (progress) progress.style.width = timeline.progress;
+  if (releaseStamp) releaseStamp.textContent = timeline.label;
 
   document.querySelectorAll("[data-timeline-choice]").forEach((button) => {
     const active = button.dataset.timelineChoice === timelineState;
@@ -939,7 +966,12 @@ function syncTimeline() {
 function setTimeline(choice) {
   if (!timelineStates[choice]) return;
   timelineState = choice;
+  activeLeaderboardRows = timelineStates[choice].rows;
+  syncLeaderboardRankings();
+  resetLeaderboardState();
+  syncLeaderboardControls();
   syncTimeline();
+  renderLeaderboard();
 }
 
 function caseSearchText(item) {
@@ -1634,7 +1666,7 @@ function setupInteractions() {
 
     const rail = event.currentTarget;
     const rect = rail.getBoundingClientRect();
-    const choice = event.clientX >= rect.left + rect.width / 2 ? "coming-soon" : "release";
+    const choice = event.clientX >= rect.left + rect.width / 4 ? "public-100" : "release";
     setTimeline(choice);
   });
 
@@ -1806,6 +1838,7 @@ function setupSkillLibraryVideo() {
   });
 }
 
+syncLeaderboardRankings();
 renderLeaderboard();
 syncTimeline();
 syncLeaderboardControls();

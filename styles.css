@@ -931,13 +931,25 @@ h3 {
   box-shadow: 0 0 0 4px rgba(37, 129, 79, 0.16);
 }
 
+.leaderboard-dot:disabled {
+  cursor: default;
+}
+
 .leaderboard-timeline-ends {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   color: var(--faint);
   font-size: 11px;
   font-weight: 700;
+}
+
+.leaderboard-timeline-ends span:nth-child(2) {
+  text-align: center;
+}
+
+.leaderboard-timeline-ends span:last-child {
+  text-align: right;
 }
 
 .leaderboard-panel {
@@ -1103,14 +1115,6 @@ h3 {
   min-width: 1240px;
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
-}
-
-.leaderboard-table caption {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
 }
 
 .leaderboard-table th,

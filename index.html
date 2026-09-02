@@ -541,7 +541,7 @@
             </div>
             <div class="release-stamp">
               <span>Snapshot</span>
-              <strong>2026-08-18 V1</strong>
+              <strong data-release-stamp>2026-09-01 Public Set</strong>
             </div>
           </header>
 
@@ -549,30 +549,38 @@
             <div class="leaderboard-timeline" aria-label="Release timeline">
               <div class="leaderboard-timeline-head">
                 <span>Leaderboard release</span>
-                <strong data-timeline-head-date>2026-08-18 V1</strong>
+                <strong data-timeline-head-date>2026-09-01 Public Set</strong>
               </div>
               <div class="leaderboard-rail" data-timeline-rail>
                 <span class="leaderboard-rail-line"></span>
-                <span class="leaderboard-rail-progress" data-timeline-progress style="width: 0%"></span>
+                <span class="leaderboard-rail-progress" data-timeline-progress style="width: 50%"></span>
                 <button
-                  class="leaderboard-dot is-active"
+                  class="leaderboard-dot"
                   type="button"
                   style="left: 0%"
                   data-timeline-choice="release"
                   aria-label="2026-08-18 V1 release"
+                  aria-pressed="false"
+                ></button>
+                <button
+                  class="leaderboard-dot is-active"
+                  type="button"
+                  style="left: 50%"
+                  data-timeline-choice="public-100"
+                  aria-label="2026-09-01 100-case public set release"
                   aria-pressed="true"
                 ></button>
                 <button
                   class="leaderboard-dot"
                   type="button"
                   style="left: 100%"
-                  data-timeline-choice="coming-soon"
-                  aria-label="Coming Soon"
-                  aria-pressed="false"
+                  aria-label="Coming soon"
+                  disabled
                 ></button>
               </div>
               <div class="leaderboard-timeline-ends">
                 <span>2026-08-18 V1</span>
+                <span>2026-09-01 Public Set</span>
                 <span>Coming Soon</span>
               </div>
             </div>
@@ -624,7 +632,6 @@
           <div class="leaderboard-panel">
             <div class="table-scroll" tabindex="0">
               <table class="leaderboard-table">
-                <caption>Selected 330-case leaderboard scores from the 2026-08-18 V1 snapshot.</caption>
                 <thead data-leaderboard-head></thead>
                 <tbody data-leaderboard-body></tbody>
               </table>
