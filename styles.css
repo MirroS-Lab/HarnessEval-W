@@ -1942,6 +1942,64 @@ h3 {
   font-size: 12px;
 }
 
+.homepage-contribute-section {
+  padding-block: 76px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+
+.homepage-contribute-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 64px;
+}
+
+.homepage-contribute-copy h2 {
+  font-size: 46px;
+}
+
+.homepage-contribute-copy p {
+  max-width: 720px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.homepage-contribute-link {
+  min-width: 148px;
+  min-height: 46px;
+  padding: 10px 18px;
+  border: 1px solid var(--violet);
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--violet);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.homepage-contribute-link:hover,
+.homepage-contribute-link:focus-visible {
+  border-color: var(--ink);
+  background: var(--ink);
+}
+
+.homepage-contribute-link:focus-visible {
+  outline: 2px solid rgba(123, 92, 245, 0.3);
+  outline-offset: 3px;
+}
+
+.homepage-contribute-link svg {
+  width: 17px;
+  height: 17px;
+}
+
 .bibtex-section {
   background: var(--page);
 }
@@ -3191,6 +3249,27 @@ h3 {
   .case-card-content h3,
   .output-card-content h3 {
     min-height: 0;
+  }
+
+  .homepage-contribute-section {
+    padding-block: 56px;
+  }
+
+  .homepage-contribute-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .homepage-contribute-copy h2 {
+    font-size: 34px;
+  }
+
+  .homepage-contribute-copy p {
+    font-size: 15px;
+  }
+
+  .homepage-contribute-link {
+    width: 100%;
   }
 
   .bibtex-shell {

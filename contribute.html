@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f2f9" />
+    <meta
+      name="description"
+      content="Contribute an evaluation case, taxonomy, evaluator skill, or concrete suggestion to HarnessEval-W."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contribute to HarnessEval-W" />
+    <meta
+      property="og:description"
+      content="Contribute an evaluation case, taxonomy, evaluator skill, or concrete suggestion to HarnessEval-W."
+    />
+    <meta property="og:image" content="./assets/figures/arenanext-world-og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contribute to HarnessEval-W" />
+    <meta
+      name="twitter:description"
+      content="Contribute an evaluation case, taxonomy, evaluator skill, or concrete suggestion to HarnessEval-W."
+    />
+    <meta name="twitter:image" content="./assets/figures/arenanext-world-og.jpg" />
+    <title>Contribute | HarnessEval-W</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/brand/mirros-mark.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Poppins:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260818-poppins-nav" />
+    <link rel="stylesheet" href="./contribute.css?v=20260902-1" />
+    <script defer src="./contribute.js?v=20260902-1"></script>
+    <script async src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  </head>
+  <body class="contribute-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <a class="brand" href="./index.html" aria-label="HarnessEval-W home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="./assets/brand/mirros-mark.svg" alt="" width="847" height="847" />
+          </span>
+          <span>HarnessEval-W</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="./index.html#statistics">Statistics</a>
+          <a href="./index.html#contributions">HarnessEval-W</a>
+          <a href="./index.html#leaderboard">Leaderboard</a>
+          <a href="./index.html#gallery">Gallery</a>
+          <a class="is-active" href="./contribute.html" aria-current="page">Contribute</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            class="icon-button menu-button"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="mobile-navigation"
+            data-menu-toggle
+            title="Open navigation"
+          >
+            <i data-lucide="menu" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden>
+        <a href="./index.html#statistics">Statistics</a>
+        <a href="./index.html#contributions">HarnessEval-W</a>
+        <a href="./index.html#leaderboard">Leaderboard</a>
+        <a href="./index.html#gallery">Gallery</a>
+        <a class="is-active" href="./contribute.html" aria-current="page">Contribute</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="contribute-hero" aria-labelledby="page-title">
+        <div class="contribute-shell contribute-hero-inner">
+          <div>
+            <h1 id="page-title">Contribute to HarnessEval</h1>
+            <p>
+              Everyone is welcome to contribute to HarnessEval. Contact us with case or skill
+              contributions, evaluation model additions, or other concrete suggestions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contribute-types" id="contribute" aria-labelledby="types-title">
+        <div class="contribute-shell">
+          <header class="contribute-section-heading">
+            <h2 id="types-title">Select a contribution type</h2>
+          </header>
+
+          <div class="contribute-type-grid">
+            <article class="contribute-type-card contribute-type-case">
+              <div class="contribute-type-label">
+                <i data-lucide="scan-search" aria-hidden="true"></i>
+                Case / Taxonomy
+              </div>
+              <h3>Contribute an evaluation case.</h3>
+              <p>Define the initial world, action, observation, and taxonomy.</p>
+              <button class="contribute-type-button" type="button" data-open-entry="case">
+                Prepare a case
+                <i data-lucide="arrow-right" aria-hidden="true"></i>
+              </button>
+            </article>
+
+            <article class="contribute-type-card contribute-type-skill">
+              <div class="contribute-type-label">
+                <i data-lucide="blocks" aria-hidden="true"></i>
+                Skill
+              </div>
+              <h3>Contribute an evaluator skill.</h3>
+              <p>Define one evaluation question, its contract, implementation, and tests.</p>
+              <button class="contribute-type-button" type="button" data-open-entry="skill">
+                Prepare a skill
+                <i data-lucide="arrow-right" aria-hidden="true"></i>
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="submission-section" id="submission-template" aria-labelledby="template-title">
+        <div class="contribute-shell submission-workspace" data-mode="case">
+          <header class="submission-heading">
+            <h2 id="template-title">Submission template</h2>
+            <div class="submission-tabs" role="tablist" aria-label="Contribution type">
+              <button
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="template-preview"
+                tabindex="0"
+                data-mode="case"
+              >
+                <i data-lucide="scan-search" aria-hidden="true"></i>
+                Case
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="template-preview"
+                tabindex="-1"
+                data-mode="skill"
+              >
+                <i data-lucide="blocks" aria-hidden="true"></i>
+                Skill
+              </button>
+            </div>
+          </header>
+
+          <div class="submission-grid">
+            <div class="submission-preview">
+              <div class="submission-preview-bar">submission.json</div>
+              <pre id="template-preview" tabindex="0" aria-label="Starter submission JSON">{
+  "schema_version": "harnesseval.case_submission.v1",
+  "kind": "case",
+  "case_id": "replace_with_case_id",
+  "title": "Concise case title",
+  "evaluation_question": "What observable behavior should this case evaluate?",
+  "taxonomy": {},
+  "world": {
+    "initial_observation": "assets/initial_observation.png"
+  },
+  "action": {
+    "type": "physical_parameter_condition",
+    "text": "Describe the requested action and constraints."
+  },
+  "provenance": {
+    "author": "github-user",
+    "license": "Apache-2.0",
+    "redistribution_allowed": true
+  }
+}</pre>
+            </div>
+
+            <aside class="submission-actions">
+              <p id="submission-guidance">
+                Complete the required fields before emailing your submission.
+              </p>
+              <div class="submission-action-list">
+                <button class="submission-action submission-action-primary" type="button" id="download-template">
+                  <i data-lucide="download" aria-hidden="true"></i>
+                  Download template
+                </button>
+                <a
+                  class="submission-action submission-action-secondary"
+                  id="submission-link"
+                  href="mailto:cwl24@mails.tsinghua.edu.cn?subject=%5BHarnessEval-W%5D%20Case%20%2F%20Taxonomy%20submission"
+                >
+                  <i data-lucide="mail" aria-hidden="true"></i>
+                  Email submission
+                </a>
+                <a
+                  class="submission-discuss"
+                  id="discuss-link"
+                  href="mailto:cwl24@mails.tsinghua.edu.cn?subject=%5BHarnessEval-W%5D%20Case%20%2F%20Taxonomy%20discussion"
+                >
+                  <i data-lucide="message-circle" aria-hidden="true"></i>
+                  Discuss <span>(optional)</span>
+                </a>
+              </div>
+              <p class="submission-status" id="download-status" role="status" aria-live="polite"></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="contribution-recognition" aria-labelledby="recognition-title">
+        <div class="contribute-shell">
+          <h2 id="recognition-title">Acknowledging Contributions</h2>
+          <p>
+            We welcome contributions and concrete suggestions. Contributions accepted following
+            human review will be acknowledged, and substantial contributions may be considered for
+            authorship in the next version. We invite everyone to help build and improve this
+            benchmark together.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
